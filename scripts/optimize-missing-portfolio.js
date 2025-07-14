@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Optimize missing images from subdirectories
+ * Optimize missing portfolio images
  */
 
 const sharp = require('sharp');
@@ -9,29 +9,14 @@ const fs = require('fs');
 const path = require('path');
 
 const GALLERY_INPUT_DIR = path.join(__dirname, '../public/images/gallery');
-const GALLERY_OUTPUT_DIR = path.join(__dirname, '../public/images/gallery-optimized');
+const PORTFOLIO_OUTPUT_DIR = path.join(__dirname, '../public/images/portfolio-optimized');
 
-// Missing images that need to be optimized
-const missingImages = [
-  'DSC04002.jpg',
-  'DSC04447.jpg', 
-  'DSC04495.jpg',
-  'DSC04593.jpg',
-  'DSC04602.jpg',
-  'DSC04746.jpg',
-  'DSC04263.jpg',
-  'DSC04225.jpg',
-  'DSC02447.jpg',
-  'DSC02452.jpg',
-  'DSC03838.jpg',
-  'DSC03892.jpg',
-  'DSC04008.jpg',
-  'DSC04050.jpg',
-  'DSC04116.jpg',
-  'DSC04149.jpg',
-  'DSC04161.jpg',
-  'DSC04178.jpg',
-  'DSC04757.jpg'
+// Missing portfolio images
+const missingPortfolioImages = [
+  'IMG_2115-2.jpg',
+  'IMG_2119-2.jpg',
+  'IMG_2146-2.jpg',
+  'IMG_2147-2.jpg'
 ];
 
 async function optimizeImage(inputPath, outputPath, targetWidth = 800) {
@@ -65,10 +50,10 @@ async function optimizeImage(inputPath, outputPath, targetWidth = 800) {
   }
 }
 
-async function findAndOptimizeImages() {
-  console.log('🔍 Finding and optimizing missing images...\n');
+async function findAndOptimizePortfolioImages() {
+  console.log('🔍 Finding and optimizing missing portfolio images...\n');
   
-  for (const imageName of missingImages) {
+  for (const imageName of missingPortfolioImages) {
     // Find the image in subdirectories
     const realismPath = path.join(GALLERY_INPUT_DIR, 'Realism', imageName);
     const traditionalPath = path.join(GALLERY_INPUT_DIR, 'American Tradition', imageName);
@@ -82,15 +67,15 @@ async function findAndOptimizeImages() {
     }
     
     if (inputPath) {
-      const outputPath = path.join(GALLERY_OUTPUT_DIR, imageName);
+      const outputPath = path.join(PORTFOLIO_OUTPUT_DIR, imageName);
       await optimizeImage(inputPath, outputPath);
     } else {
       console.log(`⚠️  Could not find ${imageName} in subdirectories`);
     }
   }
   
-  console.log('\n✅ Missing images optimization complete!');
+  console.log('\n✅ Missing portfolio images optimization complete!');
 }
 
 // Run optimization
-findAndOptimizeImages().catch(console.error);
+findAndOptimizePortfolioImages().catch(console.error);
