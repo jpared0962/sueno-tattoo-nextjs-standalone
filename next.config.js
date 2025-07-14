@@ -6,6 +6,35 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  // Railway deployment optimizations
+  webpack: (config, { isServer }) => {
+    // Increase memory allocation for webpack
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        net: false,
+        tls: false,
+      };
+    }
+    
+    // Optimize bundle size
+    config.optimization = {
+      ...config.optimization,
+      splitChunks: {
+        chunks: 'all',
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'vendors',
+            chunks: 'all',
+          },
+        },
+      },
+    };
+    
+    return config;
+  },
   images: {
     remotePatterns: [
       {
