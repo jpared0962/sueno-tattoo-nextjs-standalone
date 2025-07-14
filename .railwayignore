@@ -1,0 +1,14 @@
+node_modules/
+.next/
+.git/
+.DS_Store
+*.log
+coverage/
+public/images/gallery/
+public/images/portfolio/
+public/Tattoo-Images/
+.env*
+.vercel/
+out/
+build/
+*.tsbuildinfo
