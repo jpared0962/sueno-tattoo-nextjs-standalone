@@ -1,0 +1,10 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Simplified monochrome "S" for Safari pinned tab -->
+  <path d="M8 12c0-2 1.5-3 3-3s3 1 3 3-1.5 3-3 3h-1v2h1c1.5 0 3 1 3 3s-1.5 3-3 3-3-1-3-3" 
+        fill="none" 
+        stroke="currentColor" 
+        stroke-width="3" 
+        stroke-linecap="round"/>
+  <!-- Small accent dot -->
+  <circle cx="22" cy="10" r="2" fill="currentColor"/>
+</svg>
