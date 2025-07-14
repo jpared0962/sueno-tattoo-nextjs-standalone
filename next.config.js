@@ -8,7 +8,7 @@ const nextConfig = {
   },
   // Railway deployment optimizations
   webpack: (config, { isServer }) => {
-    // Increase memory allocation for webpack
+    // Reduce memory usage during build
     if (!isServer) {
       config.resolve.fallback = {
         ...config.resolve.fallback,
@@ -18,20 +18,24 @@ const nextConfig = {
       };
     }
     
-    // Optimize bundle size
-    config.optimization = {
-      ...config.optimization,
-      splitChunks: {
-        chunks: 'all',
-        cacheGroups: {
-          vendor: {
-            test: /[\\/]node_modules[\\/]/,
-            name: 'vendors',
-            chunks: 'all',
+    // Optimize for production builds
+    if (process.env.NODE_ENV === 'production') {
+      config.optimization = {
+        ...config.optimization,
+        splitChunks: {
+          chunks: 'all',
+          minSize: 20000,
+          maxSize: 244000,
+          cacheGroups: {
+            vendor: {
+              test: /[\\/]node_modules[\\/]/,
+              name: 'vendors',
+              chunks: 'all',
+            },
           },
         },
-      },
-    };
+      };
+    }
     
     return config;
   },
@@ -50,8 +54,8 @@ const nextConfig = {
     minimumCacheTTL: 60,
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    // Optimize for flash gallery
-    unoptimized: false,
+    // Optimize for flash gallery - disable during build to reduce memory
+    unoptimized: process.env.NODE_ENV === 'production',
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
