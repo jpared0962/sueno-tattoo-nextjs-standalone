@@ -18,7 +18,9 @@ const missingImages = [
   'DSC04495.jpg',
   'DSC04593.jpg',
   'DSC04602.jpg',
-  'DSC04746.jpg'
+  'DSC04746.jpg',
+  'DSC04263.jpg',
+  'DSC04225.jpg'
 ];
 
 async function optimizeImage(inputPath, outputPath, targetWidth = 800) {
