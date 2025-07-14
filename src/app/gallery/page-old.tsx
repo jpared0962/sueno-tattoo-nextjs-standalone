@@ -1,14 +1,12 @@
 import { Metadata } from 'next'
-import Link from 'next/link'
 import { generateSEOMetadata, commonSEOData } from '@/components/seo/SEOHead'
 import { LocalBusinessSchema } from '@/components/seo/LocalBusinessSchema'
 import { businessInfo } from '@/data/business-info'
 import { InteractiveGallery } from '@/components/Gallery/InteractiveGallery'
 import { MasonryGallery } from '@/components/Gallery/MasonryGallery'
-import { EnhancedCard } from '@/components/UI/EnhancedCard'
-import { GlassCard, NeonCard } from '@/components/UI/CardVariations'
+import { GlassCard } from '@/components/UI/CardVariations'
 import { BeforeAfterShowcase, SocialProofBanner } from '@/components/UI/FloatingBookingButton'
-import { SEOLayout } from '@/components/layout/SEOLayout'
+import { SEOLayout } from '@/components/Layout/SEOLayout'
 
 export const metadata: Metadata = generateSEOMetadata({
   ...commonSEOData.gallery,
@@ -29,10 +27,6 @@ export const metadata: Metadata = generateSEOMetadata({
 
 export default function Gallery() {
   // Breadcrumbs for the Gallery page
-  const breadcrumbs = [
-    { name: 'Home', href: '/' },
-    { name: 'Gallery' }
-  ]
 
   // Sample gallery data - replace with real images
   const galleryImages = [
@@ -114,7 +108,7 @@ export default function Gallery() {
             Jose Portfolio
           </h1>
           <p className="text-body-xl text-crisp-white/90 max-w-3xl mx-auto mb-8">
-            Explore 100+ pieces from Jose's portfolio featuring custom designs, traditional work, 
+            Explore 100+ pieces from Jose&apos;s portfolio featuring custom designs, traditional work, 
             realism work, and transformative cover-ups from 8+ years of professional artistry.
           </p>
           
@@ -178,7 +172,7 @@ export default function Gallery() {
             Ready to Create Your Custom Tattoo?
           </h2>
           <p className="text-crisp-white/90 mb-6 max-w-2xl mx-auto">
-            Schedule a free consultation to discuss your ideas and see more of Jose's portfolio in person. 
+            Schedule a free consultation to discuss your ideas and see more of Jose&apos;s portfolio in person. 
             Every piece is uniquely designed for each client.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">

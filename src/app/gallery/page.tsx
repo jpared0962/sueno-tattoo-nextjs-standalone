@@ -1,15 +1,12 @@
 import { Metadata } from 'next'
-import Link from 'next/link'
 import Image from 'next/image'
 import { generateSEOMetadata, commonSEOData } from '@/components/seo/SEOHead'
 import { LocalBusinessSchema } from '@/components/seo/LocalBusinessSchema'
 import { businessInfo } from '@/data/business-info'
 import { InteractiveGallery } from '@/components/Gallery/InteractiveGallery'
-import { MasonryGallery } from '@/components/Gallery/MasonryGallery'
-import { EnhancedCard } from '@/components/UI/EnhancedCard'
-import { GlassCard, NeonCard } from '@/components/UI/CardVariations'
+import { GlassCard } from '@/components/UI/CardVariations'
 import { BeforeAfterShowcase, SocialProofBanner } from '@/components/UI/FloatingBookingButton'
-import { SEOLayout } from '@/components/layout/SEOLayout'
+import { SEOLayout } from '@/components/Layout/SEOLayout'
 
 export const metadata: Metadata = generateSEOMetadata({
   ...commonSEOData.gallery,
@@ -118,7 +115,7 @@ export default async function Gallery() {
             Tattoo Portfolio Gallery
           </h1>
           <p className="text-xl text-crisp-white/90 max-w-3xl mx-auto mb-8">
-            Browse {businessInfo.statistics.portfolioSize}+ professional tattoo pieces from Jose's portfolio. 
+            Browse {businessInfo.statistics.portfolioSize}+ professional tattoo pieces from Jose&apos;s portfolio. 
             Custom designs, traditional work, realism, and cover-ups serving Laurel, MD and the DMV area.
           </p>
           

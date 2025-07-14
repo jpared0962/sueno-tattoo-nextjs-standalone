@@ -5,7 +5,7 @@ import { TattooServiceSchema } from '@/components/seo/LocalBusinessSchema'
 import { businessInfo } from '@/data/business-info'
 import { tattooServices, serviceCategories } from '@/data/services'
 import { SEOOptimizedServiceCards } from '@/components/UI/SEOOptimizedServiceCards'
-import { SEOLayout } from '@/components/layout/SEOLayout'
+import { SEOLayout } from '@/components/Layout/SEOLayout'
 
 export const metadata: Metadata = generateSEOMetadata({
   ...commonSEOData.services,

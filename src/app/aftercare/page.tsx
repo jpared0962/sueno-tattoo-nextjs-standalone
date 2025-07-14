@@ -88,9 +88,9 @@ export default function AftercarePage() {
                 <h3 className="text-xl font-semibold mb-4 text-crisp-white">Duration & Care</h3>
                 <ul className="text-crisp-white/90 space-y-2">
                   <li>• <strong>Duration:</strong> Derm Shield stays in place for 3-5 days</li>
-                  <li>• <strong>Water Resistant:</strong> OK to shower, just don't touch it</li>
+                  <li>• <strong>Water Resistant:</strong> OK to shower, just don&apos;t touch it</li>
                   <li>• <strong>DO NOT:</strong> Fully submerge for first 2 weeks</li>
-                  <li>• <strong>Early Removal:</strong> OK if bandage won't stay after 2-3 days</li>
+                  <li>• <strong>Early Removal:</strong> OK if bandage won&apos;t stay after 2-3 days</li>
                 </ul>
               </div>
               
@@ -126,9 +126,9 @@ export default function AftercarePage() {
             </h2>
             
             <div className="glass-accent rounded-lg p-8 mb-8">
-              <h3 className="text-xl font-bold mb-4 text-crisp-white">⚠️ Here's what's actually happening under that bandage:</h3>
+              <h3 className="text-xl font-bold mb-4 text-crisp-white">⚠️ Here&apos;s what&apos;s actually happening under that bandage:</h3>
               <p className="text-crisp-white/90 mb-4">
-                When you see fluid accumulating under your Derm Shield, you're witnessing your body's natural healing response. This isn't a sign of infection or problems—it's exactly what should happen. Think of it as your body's own custom-made healing serum.
+                When you see fluid accumulating under your Derm Shield, you&apos;re witnessing your body&apos;s natural healing response. This isn&apos;t a sign of infection or problems—it&apos;s exactly what should happen. Think of it as your body&apos;s own custom-made healing serum.
               </p>
               
               <div className="grid md:grid-cols-2 gap-6">
@@ -136,14 +136,14 @@ export default function AftercarePage() {
                   <h4 className="text-lg font-semibold mb-3 text-gold">The fluid consists of:</h4>
                   <ul className="text-crisp-white/80 space-y-2">
                     <li>• <strong>Blood plasma:</strong> Rich in healing factors and white blood cells</li>
-                    <li>• <strong>Lymphatic fluid:</strong> Part of your body's waste removal system</li>
+                    <li>• <strong>Lymphatic fluid:</strong> Part of your body&apos;s waste removal system</li>
                     <li>• <strong>Excess ink:</strong> Not all ink stays in the dermis; some gets pushed out</li>
                     <li>• <strong>Dead white blood cells:</strong> Evidence of your immune system at work</li>
                   </ul>
                 </div>
                 
                 <div>
-                  <h4 className="text-lg font-semibold mb-3 text-gold">What You'll See:</h4>
+                  <h4 className="text-lg font-semibold mb-3 text-gold">What You&apos;ll See:</h4>
                   <ul className="text-crisp-white/80 space-y-2">
                     <li>• <strong>Day 1:</strong> Light fluid accumulation, possibly pink-tinged</li>
                     <li>• <strong>Day 2-3:</strong> Peak fluid production, darker appearance</li>
@@ -201,7 +201,7 @@ export default function AftercarePage() {
             <div className="glass-gold rounded-lg p-8 mb-8">
               <h3 className="text-xl font-semibold mb-4 text-crisp-white">Optimal Removal Conditions:</h3>
               <p className="text-crisp-white/90 mb-4">
-                The shower is your best friend for Derm Shield removal. Here's why:
+                The shower is your best friend for Derm Shield removal. Here&apos;s why:
               </p>
               <div className="grid md:grid-cols-2 gap-6">
                 <ul className="text-crisp-white/90 space-y-2">
@@ -361,7 +361,7 @@ export default function AftercarePage() {
             <div className="glass-accent rounded-lg p-8 text-center">
               <h3 className="text-2xl font-bold mb-4 text-crisp-white">Questions or Concerns?</h3>
               <p className="text-crisp-white/90 mb-6">
-                Don't hesitate to reach out! For urgent concerns outside business hours, call or text. 
+                Don&apos;t hesitate to reach out! For urgent concerns outside business hours, call or text. 
                 When in doubt, always contact your artist directly for personalized advice.
               </p>
               <div className="space-y-4">

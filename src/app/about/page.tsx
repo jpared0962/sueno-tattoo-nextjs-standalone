@@ -1,9 +1,8 @@
 import { Metadata } from 'next'
-import Link from 'next/link'
 import { generateSEOMetadata, commonSEOData } from '@/components/seo/SEOHead';
 import { LocalBusinessSchema } from '@/components/seo/LocalBusinessSchema';
 import { businessInfo } from '@/data/business-info';
-import { SEOLayout } from '@/components/layout/SEOLayout';
+import { SEOLayout } from '@/components/Layout/SEOLayout';
 
 // SEO Metadata
 export const metadata: Metadata = generateSEOMetadata({
@@ -62,7 +61,7 @@ export default function About() {
               <div className="space-y-4 md:space-y-6 text-body text-white-90 leading-relaxed">
                 <p>
                   Licensed professional with over 8 years of experience specializing in custom tattoo design. 
-                  Every piece is created for you alone — no flash, no copies. Serving Laurel, MD and Prince George's County.
+                  Every piece is created for you alone. Serving Laurel, MD and Prince George&apos;s County.
                 </p>
                 <p>
                   Jose specializes in traditional tattoos, realism work, custom tattoo design, cover-up tattoos, 
@@ -70,7 +69,7 @@ export default function About() {
                   geometric patterns, and botanical designs.
                 </p>
                 <p>
-                  "From initial concept to final art" - Jose believes in collaborative artistry, working closely 
+                  &quot;From initial concept to final art&quot; - Jose believes in collaborative artistry, working closely 
                   with each client to bring their vision to life through professional, custom tattoo work.
                 </p>
               </div>
@@ -128,9 +127,9 @@ export default function About() {
           <section className="mb-12 md:mb-16">
             <div className="glass-testimonial rounded-xl p-6 md:p-8 lg:p-10 max-w-4xl mx-auto text-center">
               <blockquote className="text-lg md:text-xl text-crisp-white/90 italic mb-4 md:mb-6 leading-relaxed">
-                "Every tattoo tells a story. My job is to make sure that story is told beautifully, 
+                &quot;Every tattoo tells a story. My job is to make sure that story is told beautifully, 
                 professionally, and with the respect it deserves. From the first consultation to the 
-                final healing check, I'm committed to creating art that you'll be proud to wear for life."
+                final healing check, I&apos;m committed to creating art that you&apos;ll be proud to wear for life.&quot;
               </blockquote>
               <cite className="text-gold font-semibold text-sm md:text-base">— Jose, Sueño Tattoo</cite>
             </div>

@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { generateSEOMetadata } from '@/components/seo/SEOHead'
-import { SEOLayout } from '@/components/layout/SEOLayout'
+import { SEOLayout } from '@/components/Layout/SEOLayout'
 import { businessInfo } from '@/data/business-info'
 import { tattooServices } from '@/data/services'
 

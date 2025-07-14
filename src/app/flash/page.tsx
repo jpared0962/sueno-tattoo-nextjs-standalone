@@ -3,7 +3,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { generateSEOMetadata } from '@/components/seo/SEOHead'
 import { LocalBusinessSchema } from '@/components/seo/LocalBusinessSchema'
-import { businessInfo } from '@/data/business-info'
 
 export const metadata: Metadata = generateSEOMetadata({
   title: 'Flash Tattoo Designs | Ready-to-Ink Art | Sueno Tattoo',
@@ -157,7 +156,7 @@ export default function Flash() {
                 { src: '/images/drawings-optimized/Skull-though-flower.jpg', alt: 'Skull through flower flash tattoo - Laurel MD', title: 'Skull Through Flower' },
                 { src: '/images/drawings-optimized/Soup-Skull.jpg', alt: 'Soup skull flash tattoo - Laurel MD', title: 'Soup Skull' },
                 { src: '/images/drawings-optimized/Travel.jpg', alt: 'Travel flash tattoo design - Laurel MD', title: 'Travel Design' },
-              ].map((flash, index) => (
+              ].map((flash) => (
                 <div key={flash.src} className="glass-card rounded-lg overflow-hidden group cursor-pointer">
                   <div className="relative aspect-square">
                     <Image
