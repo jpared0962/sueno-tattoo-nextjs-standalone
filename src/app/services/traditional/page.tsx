@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { generateSEOMetadata } from '@/components/seo/SEOHead'
 import { TattooServiceSchema } from '@/components/seo/LocalBusinessSchema'
@@ -138,6 +139,64 @@ export default function TraditionalTattoosPage() {
               </div>
             </div>
           </div>
+
+          {/* Portfolio Gallery */}
+          <section className="mb-16">
+            <h2 className="text-2xl font-bold text-center mb-8 text-crisp-white">
+              Traditional Tattoo Portfolio
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                { 
+                  src: '/images/gallery-optimized/DSC02447.jpg',
+                  alt: 'Traditional American tattoo with cartoon characters - Laurel MD',
+                  title: 'Classic Cartoon Style'
+                },
+                { 
+                  src: '/images/gallery-optimized/DSC02452.jpg',
+                  alt: 'Traditional geometric paper airplane tattoo - Laurel MD',
+                  title: 'Traditional Geometric Design'
+                },
+                { 
+                  src: '/images/gallery-optimized/DSC03838.jpg',
+                  alt: 'Traditional hot air balloon with hearts tattoo - Laurel MD',
+                  title: 'Traditional Hot Air Balloon'
+                },
+                { 
+                  src: '/images/gallery-optimized/DSC03892.jpg',
+                  alt: 'Traditional peony flowers with script tattoo - Laurel MD',
+                  title: 'Traditional Peony Script'
+                },
+                { 
+                  src: '/images/portfolio-optimized/IMG_2147-2.jpg',
+                  alt: 'Traditional American eagle chest piece tattoo - Laurel MD',
+                  title: 'Classic American Eagle'
+                },
+                { 
+                  src: '/images/gallery-optimized/DSC04008.jpg',
+                  alt: 'Traditional daisy memorial banner tattoo - Laurel MD',
+                  title: 'Memorial Banner Design'
+                }
+              ].map((image, index) => (
+                <div key={index} className="glass-card rounded-lg overflow-hidden group">
+                  <div className="relative aspect-square">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-110"
+                      loading="lazy"
+                      quality={85}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <h3 className="text-crisp-white font-semibold text-center px-4">{image.title}</h3>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
 
           {/* Process Section */}
           <section className="glass-panel p-8 rounded-lg mb-16">

@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { generateSEOMetadata } from '@/components/seo/SEOHead'
 import { TattooServiceSchema } from '@/components/seo/LocalBusinessSchema'
@@ -139,6 +140,64 @@ export default function BlackGreyTattoosPage() {
               </div>
             </div>
           </div>
+
+          {/* Portfolio Gallery */}
+          <section className="mb-16">
+            <h2 className="text-2xl font-bold text-center mb-8 text-crisp-white">
+              Black & Grey Realism Portfolio
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                { 
+                  src: '/images/gallery-optimized/DSC04002.jpg',
+                  alt: 'Black and grey realistic sunflower tattoo - Laurel MD',
+                  title: 'Realistic Sunflower'
+                },
+                { 
+                  src: '/images/gallery-optimized/DSC04447.jpg',
+                  alt: 'Black and grey realistic skull cluster tattoo - Laurel MD',
+                  title: 'Realistic Skull Cluster'
+                },
+                { 
+                  src: '/images/gallery-optimized/DSC04495.jpg',
+                  alt: 'Black and grey realistic owl portrait tattoo - Laurel MD',
+                  title: 'Realistic Owl Portrait'
+                },
+                { 
+                  src: '/images/gallery-optimized/DSC04593.jpg',
+                  alt: 'Black and grey realistic grim reaper tattoo - Laurel MD',
+                  title: 'Realistic Grim Reaper'
+                },
+                { 
+                  src: '/images/gallery-optimized/DSC04602.jpg',
+                  alt: 'Black and grey realistic wolf with Norse symbols tattoo - Laurel MD',
+                  title: 'Wolf with Norse Symbols'
+                },
+                { 
+                  src: '/images/gallery-optimized/DSC04746.jpg',
+                  alt: 'Black and grey realistic couple with grandfather clock tattoo - Laurel MD',
+                  title: 'Memorial Clock Piece'
+                }
+              ].map((image, index) => (
+                <div key={index} className="glass-card rounded-lg overflow-hidden group">
+                  <div className="relative aspect-square">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-110"
+                      loading="lazy"
+                      quality={85}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <h3 className="text-crisp-white font-semibold text-center px-4">{image.title}</h3>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
 
           {/* Process Section */}
           <section className="glass-panel p-8 rounded-lg mb-16">

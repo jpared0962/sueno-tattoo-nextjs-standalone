@@ -1,7 +1,6 @@
 import React from 'react';
+import Image from 'next/image';
 import { formatPublicId } from '../utils/cloudinary';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-// EMERGENCY DISABLED: import 'react-lazy-load-image-component/src/effects/blur.css';
 
 /**
  * CloudinaryImage - A component for displaying images from Cloudinary
@@ -76,38 +75,21 @@ const CloudinaryImage = React.forwardRef(({
   // Filter out our custom props before passing to DOM elements
   const { transformations: _, publicId: __, ...domProps } = props;
 
-  // Use either lazy loaded image or regular img tag
+  // Use Next.js Image component for better optimization
   return (
-    <>
-      {lazy ? (
-        <LazyLoadImage
-          ref={ref}
-          src={imageUrl}
-          alt={alt}
-          className={className}
-          effect="opacity"
-          onError={handleError}
-          {...domProps}
-        />
-      ) : (
-        <img 
-          ref={ref}
-          src={imageUrl} 
-          alt={alt} 
-          className={className} 
-          loading="eager"
-          onError={handleError}
-          {...domProps} 
-        />
-      )}
-      <noscript>
-        <img 
-          src={imageUrl} 
-          alt={alt} 
-          className={className}
-        />
-      </noscript>
-    </>
+    <Image
+      ref={ref}
+      src={imageUrl}
+      alt={alt}
+      className={className}
+      width={transformations.width || 800}
+      height={transformations.height || 600}
+      quality={75}
+      priority={!lazy}
+      loading={lazy ? 'lazy' : 'eager'}
+      onError={handleError}
+      {...domProps}
+    />
   );
 });
 

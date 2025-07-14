@@ -21,6 +21,8 @@ const nextConfig = {
     minimumCacheTTL: 60,
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    // Optimize for flash gallery
+    unoptimized: false,
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',

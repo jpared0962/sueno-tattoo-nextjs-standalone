@@ -29,7 +29,7 @@ export const tattooServices: TattooService[] = [
     priceRange: { min: 150, max: 500, unit: 'session' },
     duration: { min: 120, max: 480 },
     popular: true,
-    seoKeywords: ['custom tattoo dc', 'personalized tattoo design', 'unique tattoo washington'],
+    seoKeywords: ['custom tattoo dc', 'personalized tattoo design', 'unique tattoo washington', 'watercolor tattoo laurel md', 'geometric tattoo design', 'portrait tattoo artist', 'first tattoo experience', 'professional tattoo consultation', 'affordable custom tattoo', 'tattoo pricing consultation', 'tattoo artist available today'],
     imageAlt: 'Custom tattoo design consultation at Sueño Tattoo Washington DC',
     slug: 'custom-tattoos'
   },
@@ -41,7 +41,7 @@ export const tattooServices: TattooService[] = [
     priceRange: { min: 100, max: 400, unit: 'session' },
     duration: { min: 60, max: 300 },
     popular: true,
-    seoKeywords: ['traditional tattoo dc', 'american traditional northern virginia', 'old school tattoo maryland'],
+    seoKeywords: ['traditional tattoo dc', 'american traditional northern virginia', 'old school tattoo maryland', 'painless tattoo techniques', 'summer tattoo prep', 'graduation tattoo design', 'why choose sueno tattoo', 'best tattoo shop laurel md', 'vs other tattoo shops'],
     imageAlt: 'Traditional style tattoo work by Sueño Tattoo artists',
     slug: 'traditional'
   },
@@ -53,7 +53,7 @@ export const tattooServices: TattooService[] = [
     priceRange: { min: 120, max: 350, unit: 'session' },
     duration: { min: 90, max: 240 },
     popular: true,
-    seoKeywords: ['fine line tattoo dc', 'minimalist tattoo northern virginia', 'delicate tattoo maryland'],
+    seoKeywords: ['fine line tattoo dc', 'minimalist tattoo northern virginia', 'delicate tattoo maryland', 'first tattoo experience', 'small tattoo design', 'professional fine line work', 'vacation tattoo preparation', 'discrete tattoo placement'],
     imageAlt: 'Fine line tattoo artwork at Sueño Tattoo studio',
     slug: 'fine-line'
   },
@@ -65,7 +65,7 @@ export const tattooServices: TattooService[] = [
     priceRange: { min: 200, max: 800, unit: 'session' },
     duration: { min: 180, max: 600 },
     popular: true,
-    seoKeywords: ['tattoo cover up dc', 'cover up specialist northern virginia', 'tattoo fix maryland'],
+    seoKeywords: ['tattoo cover up dc', 'cover up specialist northern virginia', 'tattoo fix maryland', 'emergency tattoo consultation', 'tattoo repair service', 'regret tattoo solution', 'cover up expert laurel md', 'tattoo transformation specialist'],
     imageAlt: 'Before and after tattoo cover-up transformation',
     slug: 'cover-ups'
   },
@@ -89,7 +89,7 @@ export const tattooServices: TattooService[] = [
     priceRange: { min: 120, max: 450, unit: 'session' },
     duration: { min: 90, max: 300 },
     popular: false,
-    seoKeywords: ['black grey tattoo dc', 'monochrome tattoo northern virginia', 'realistic tattoo maryland'],
+    seoKeywords: ['black grey tattoo dc', 'monochrome tattoo northern virginia', 'realistic tattoo maryland', 'portrait tattoo specialist', 'realism tattoo artist', 'black and grey shading expert', 'professional portrait work', 'wedding tattoo commemoration'],
     imageAlt: 'Black and grey realistic tattoo artwork',
     slug: 'black-grey'
   },
@@ -131,6 +131,30 @@ export const tattooServices: TattooService[] = [
     imageAlt: 'Professional tattoo touch-up service',
     slug: 'touch-ups'
   },
+  {
+    id: 'watercolor-tattoo',
+    name: 'Watercolor Tattoos',
+    description: 'Vibrant watercolor-style tattoos with fluid colors and artistic brush stroke effects. Perfect for nature and abstract designs.',
+    category: 'specialty',
+    priceRange: { min: 200, max: 600, unit: 'session' },
+    duration: { min: 150, max: 420 },
+    popular: true,
+    seoKeywords: ['watercolor tattoo dc', 'artistic tattoo northern virginia', 'colorful tattoo maryland', 'trendy tattoo styles', 'modern tattoo techniques', 'unique color work', 'artistic watercolor design'],
+    imageAlt: 'Watercolor style tattoo with vibrant colors',
+    slug: 'watercolor-tattoos'
+  },
+  {
+    id: 'geometric-tattoo',
+    name: 'Geometric Tattoos',
+    description: 'Precision geometric designs including sacred geometry, mandala patterns, and contemporary geometric art.',
+    category: 'specialty',
+    priceRange: { min: 150, max: 500, unit: 'session' },
+    duration: { min: 120, max: 360 },
+    popular: true,
+    seoKeywords: ['geometric tattoo dc', 'mandala tattoo northern virginia', 'sacred geometry maryland', 'precision tattoo work', 'mathematical tattoo design', 'symmetrical tattoo art', 'modern geometric patterns'],
+    imageAlt: 'Geometric tattoo with precise lines and patterns',
+    slug: 'geometric-tattoos'
+  },
 
   // Consultation Services
   {
@@ -141,7 +165,7 @@ export const tattooServices: TattooService[] = [
     priceRange: { min: 0, max: 0, unit: 'fixed' },
     duration: { min: 15, max: 45 },
     popular: true,
-    seoKeywords: ['free tattoo consultation dc', 'tattoo advice northern virginia', 'tattoo planning maryland'],
+    seoKeywords: ['free tattoo consultation dc', 'tattoo advice northern virginia', 'tattoo planning maryland', 'first tattoo consultation', 'painless tattoo consultation', 'professional tattoo advice', 'tattoo for professionals', 'emergency tattoo consultation', 'tattoo anxiety help', 'tattoo planning session'],
     imageAlt: 'Free tattoo consultation with professional artist',
     slug: 'consultation'
   },
@@ -153,7 +177,7 @@ export const tattooServices: TattooService[] = [
     priceRange: { min: 50, max: 150, unit: 'session' },
     duration: { min: 60, max: 180 },
     popular: false,
-    seoKeywords: ['tattoo design service dc', 'custom artwork northern virginia', 'tattoo sketch maryland'],
+    seoKeywords: ['tattoo design service dc', 'custom artwork northern virginia', 'tattoo sketch maryland', 'wedding tattoo design', 'couple tattoo planning', 'anniversary tattoo sketch', 'graduation tattoo design', 'special occasion tattoo'],
     imageAlt: 'Tattoo design development and sketching process',
     slug: 'design-development'
   },
@@ -167,7 +191,7 @@ export const tattooServices: TattooService[] = [
     priceRange: { min: 80, max: 250, unit: 'fixed' },
     duration: { min: 30, max: 120 },
     popular: true,
-    seoKeywords: ['flash tattoo dc', 'walk in tattoo northern virginia', 'same day tattoo maryland'],
+    seoKeywords: ['flash tattoo dc', 'walk in tattoo northern virginia', 'same day tattoo maryland', 'tattoo artist available today', 'quick tattoo service', 'affordable flash designs', 'last minute tattoo appointment', 'vacation tattoo session'],
     imageAlt: 'Flash tattoo designs available for walk-ins',
     slug: 'flash-tattoos'
   },

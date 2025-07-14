@@ -102,7 +102,7 @@ export default function Home() {
               pricing="$120-200"
               delay={0}
               variant="modern"
-              onClick={() => window.location.href = '/services/traditional-tattoos'}
+              onClick={() => window.location.href = '/services/traditional'}
             />
             <VariedServiceCard
               icon="🎨"
@@ -132,7 +132,7 @@ export default function Home() {
               pricing="$150-250"
               delay={0.2}
               variant="minimal"
-              onClick={() => window.location.href = '/services/realism-work'}
+              onClick={() => window.location.href = '/services/black-grey'}
             />
           </div>
           

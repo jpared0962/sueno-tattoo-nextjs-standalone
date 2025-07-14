@@ -19,8 +19,8 @@ export const metadata: Metadata = {
     default: 'Sueno Tattoo | Professional Tattoo Artist in Laurel, MD',
     template: '%s | Sueno Tattoo'
   },
-  description: 'Professional tattoo artist Jose serving Laurel, Beltsville, College Park, Greenbelt & Prince George\'s County, MD. Custom designs, traditional work, realism work. 8+ years experience, 500+ satisfied clients.',
-  keywords: 'tattoo artist, custom tattoos, Laurel MD, Prince Georges County, traditional tattoos, realism work, professional tattoo artist',
+  description: 'Professional tattoo artist Jose serving Laurel, Beltsville, College Park, Greenbelt & Prince George\'s County, MD. Custom designs, traditional work, realism, watercolor, geometric tattoos. First tattoo friendly, painless techniques. 8+ years experience, 500+ satisfied clients.',
+  keywords: 'tattoo artist, custom tattoos, Laurel MD, Prince Georges County, traditional tattoos, realism work, professional tattoo artist, watercolor tattoo specialist, geometric tattoo design, portrait tattoo artist, first tattoo experience, painless tattoo techniques, affordable tattoo pricing, best tattoo shop laurel md, tattoo artist available today, emergency tattoo consultation, wedding tattoo design, graduation tattoo service, vacation tattoo preparation, why choose sueno tattoo, vs other tattoo shops',
   authors: [{ name: 'Jose - Sueno Tattoo' }],
   creator: 'Jose',
   publisher: 'Sueno Tattoo',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Sueno Tattoo | Professional Tattoo Artist in Laurel, MD',
-    description: 'Professional tattoo artist Jose serving Laurel, Beltsville, College Park, Greenbelt & Prince George\'s County, MD. Custom designs, traditional work, realism work.',
+    description: 'Professional tattoo artist Jose serving Laurel, Beltsville, College Park, Greenbelt & Prince George\'s County, MD. Custom designs, traditional work, realism, watercolor, geometric tattoos. First tattoo friendly.',
     url: 'https://www.suenotattoo.com',
     siteName: 'Sueno Tattoo',
     images: [

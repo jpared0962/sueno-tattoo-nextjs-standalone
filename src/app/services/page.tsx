@@ -19,7 +19,21 @@ export const metadata: Metadata = generateSEOMetadata({
     'cover up tattoo specialist',
     'professional tattoo artist services',
     'licensed tattoo studio laurel',
-    'prince georges county tattoo'
+    'prince georges county tattoo',
+    'watercolor tattoo specialist',
+    'geometric tattoo design',
+    'portrait tattoo artist',
+    'first tattoo experience',
+    'painless tattoo techniques',
+    'affordable tattoo pricing',
+    'best tattoo shop laurel md',
+    'tattoo artist available today',
+    'emergency tattoo consultation',
+    'wedding tattoo design',
+    'graduation tattoo service',
+    'vacation tattoo preparation',
+    'why choose sueno tattoo',
+    'vs other tattoo shops'
   ],
   url: '/services',
 })

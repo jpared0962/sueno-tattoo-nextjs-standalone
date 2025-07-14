@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { generateSEOMetadata, commonSEOData } from '@/components/seo/SEOHead'
 import { LocalBusinessSchema } from '@/components/seo/LocalBusinessSchema'
 import { businessInfo } from '@/data/business-info'
@@ -27,80 +28,77 @@ export const metadata: Metadata = generateSEOMetadata({
   url: '/gallery',
 })
 
-export default function Gallery() {
+export default async function Gallery() {
   // Breadcrumbs for the Gallery page
   const breadcrumbs = [
     { name: 'Home', href: '/' },
     { name: 'Gallery' }
   ]
 
-  // Sample gallery data - replace with real images
-  const galleryImages = [
-    {
-      id: '1',
-      src: '/images/gallery/DSC04519.jpg',
-      alt: 'Professional tattoo work by Jose',
-      category: 'custom',
-      title: 'Custom Dragon Design',
-      description: 'Intricate custom dragon piece with detailed shading'
-    },
-    {
-      id: '2', 
-      src: '/images/gallery/DSC04757.jpg',
-      alt: 'Traditional American tattoo by Jose',
-      category: 'traditional',
-      title: 'Classic American Eagle',
-      description: 'Bold traditional eagle with banner'
-    },
-    {
-      id: '3',
-      src: '/images/gallery/DSC04746.jpg',
-      alt: 'Realistic realism tattoo work',
-      category: 'realism',
-      title: 'Memorial Realism',
-      description: 'Lifelike black and gray realism work'
-    },
-    {
-      id: '4',
-      src: '/images/gallery/DSC04703.jpg',
-      alt: 'Custom tattoo design in Laurel MD',
-      category: 'custom',
-      title: 'Floral Mandala',
-      description: 'Geometric floral design with custom elements'
-    },
-    {
-      id: '5',
-      src: '/images/gallery/DSC04685.jpg',
-      alt: 'Professional tattoo artistry',
-      category: 'fine-line',
-      title: 'Minimalist Nature',
-      description: 'Delicate fine line botanical piece'
-    },
-    {
-      id: '6',
-      src: '/images/gallery/DSC04593.jpg',
-      alt: 'Detailed tattoo work by Jose',
-      category: 'custom',
-      title: 'Abstract Geometric',
-      description: 'Modern geometric design with color accents'
-    },
-    {
-      id: '7',
-      src: '/images/gallery/DSC04495.jpg',
-      alt: 'Traditional style tattoo Laurel MD',
-      category: 'traditional',
-      title: 'Traditional Rose',
-      description: 'Classic red rose with bold black outline'
-    },
-    {
-      id: '8',
-      src: '/images/gallery/DSC04463.jpg',
-      alt: 'Professional tattoo portfolio piece',
-      category: 'custom',
-      title: 'Watercolor Splash',
-      description: 'Vibrant watercolor style design'
+  // Import real portfolio data
+  const { portfolioData } = await import('@/data/portfolioData.js')
+  
+  // Convert portfolio data to gallery format and fix image paths
+  const galleryImages = portfolioData.map(item => {
+    // Extract filename from various path formats and ensure .jpg extension
+    let filename = item.image.replace('public/Tattoo-Images/', '').replace('public/images/gallery/', '').replace('public/images/portfolio/', '')
+    if (!filename.includes('.')) {
+      filename += '.jpg' // Add .jpg extension if missing
     }
-  ]
+    
+    // Special handling for specific file naming issues
+    const fileNameMappings = {
+      'IMG_2120-2.jpg': 'IMG_2120-2-2.jpg', // Handle double dash case
+    }
+    
+    // Apply filename mapping if needed
+    if (fileNameMappings[filename]) {
+      filename = fileNameMappings[filename]
+    }
+    
+    // Check if image exists in portfolio folder (for IMG files)
+    const isPortfolioImage = filename.startsWith('IMG_')
+    const imagePath = isPortfolioImage ? `/images/portfolio-optimized/${filename}` : `/images/gallery-optimized/${filename}`
+    
+    // Debug logging (remove in production)
+    if (item.id === 'tattoo-036') {
+      console.log('Debug tattoo-036:', {
+        originalImage: item.image,
+        filename,
+        imagePath,
+        isPortfolioImage
+      })
+    }
+    
+    return {
+      id: item.id,
+      src: imagePath,
+      alt: item.alt || `${item.title} tattoo by Jose`,
+      category: item.style,
+      title: item.title,
+      description: item.description
+    }
+  }).filter(item => {
+    // Only include images that we know exist
+    const validGalleryImages = [
+      'DSC02447.jpg', 'DSC02452.jpg', 'DSC03838.jpg', 'DSC03855.jpg', 'DSC03866.jpg', 
+      'DSC03892.jpg', 'DSC04002.jpg', 'DSC04008.jpg', 'DSC04050.jpg', 'DSC04116.jpg',
+      'DSC04149.jpg', 'DSC04161.jpg', 'DSC04178.jpg', 'DSC04225.jpg', 'DSC04263.jpg',
+      'DSC04304.jpg', 'DSC04340.jpg', 'DSC04436.jpg', 'DSC04447.jpg', 'DSC04453.jpg',
+      'DSC04463.jpg', 'DSC04484.jpg', 'DSC04493.jpg', 'DSC04495.jpg', 'DSC04507.jpg',
+      'DSC04519.jpg', 'DSC04588.jpg', 'DSC04593.jpg', 'DSC04602.jpg', 'DSC04685.jpg',
+      'DSC04703.jpg', 'DSC04730.jpg', 'DSC04746.jpg', 'DSC04757.jpg', 'DSC04805.jpg'
+    ]
+    
+    const validPortfolioImages = [
+      'IMG_2115-2.jpg', 'IMG_2116-2.jpg', 'IMG_2119-2.jpg', 'IMG_2120-2-2.jpg', 'IMG_2120-2.jpg',
+      'IMG_2121-2.jpg', 'IMG_2122-2.jpg', 'IMG_2129-2.jpg', 'IMG_2139-2.jpg', 'IMG_2140-2.jpg',
+      'IMG_2146-2.jpg', 'IMG_2147-2.jpg', 'IMG_3141_u0mjxg.jpg', 'IMG_3142_g7and1.jpg'
+    ]
+    
+    const filename = item.src.split('/').pop()
+    return validGalleryImages.includes(filename) || validPortfolioImages.includes(filename)
+  }).slice(0, 24) // Show first 24 images
 
   return (
     <>
@@ -137,69 +135,46 @@ export default function Gallery() {
           <InteractiveGallery images={galleryImages} />
         </div>
 
-        {/* Featured Recent Work */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-8 text-crisp-white">
-            Recent Work
-          </h2>
-          <MasonryGallery images={galleryImages.slice(0, 6)} />
-        </section>
-
-        {/* Style Categories */}
+        {/* Style Categories - Dynamic from actual data */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-center mb-8 text-crisp-white">
             Specialization Styles
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { 
-                style: 'Custom Designs', 
-                count: '200+', 
-                image: '/images/gallery/DSC04519.jpg',
-                description: 'Original artwork created specifically for each client'
-              },
-              { 
-                style: 'Traditional American', 
-                count: '150+', 
-                image: '/images/gallery/DSC04757.jpg',
-                description: 'Bold lines, classic imagery, timeless appeal'
-              },
-              { 
-                style: 'Realism Work', 
-                count: '100+', 
-                image: '/images/gallery/DSC04746.jpg',
-                description: 'Photorealistic detail and lifelike representation'
-              },
-              { 
-                style: 'Cover-ups', 
-                count: '80+', 
-                image: '/images/gallery/DSC04703.jpg',
-                description: 'Transforming existing tattoos into beautiful new art'
-              },
-              { 
-                style: 'Fine Line', 
-                count: '90+', 
-                image: '/images/gallery/DSC04685.jpg',
-                description: 'Delicate, precise linework for minimalist designs'
-              },
-              { 
-                style: 'Botanical', 
-                count: '120+', 
-                image: '/images/gallery/DSC04593.jpg',
-                description: 'Nature-inspired florals and organic patterns'
-              }
-            ].map((category, index) => (
-              <GlassCard key={index} className="text-center p-6">
+            {Object.entries(
+              galleryImages.reduce((acc, img) => {
+                if (!acc[img.category]) {
+                  acc[img.category] = { count: 0, image: img.src, description: '' }
+                }
+                acc[img.category].count++
+                return acc
+              }, {} as Record<string, { count: number; image: string; description: string }>)
+            ).map(([style, data]) => (
+              <GlassCard key={style} className="text-center p-6">
                 <div className="mb-4 aspect-square bg-charcoal-gray/50 rounded-lg overflow-hidden">
-                  <img 
-                    src={category.image}
-                    alt={`${category.style} tattoo examples`}
+                  <Image 
+                    src={data.image}
+                    alt={`${style} tattoo examples`}
+                    width={400}
+                    height={400}
                     className="w-full h-full object-cover"
+                    loading="lazy"
+                    quality={75}
+                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                   />
                 </div>
-                <h3 className="text-xl font-semibold text-crisp-white mb-2">{category.style}</h3>
-                <div className="text-gold font-bold text-lg mb-2">{category.count} pieces</div>
-                <p className="text-crisp-white/80 text-sm">{category.description}</p>
+                <h3 className="text-xl font-semibold text-crisp-white mb-2">
+                  {style.charAt(0).toUpperCase() + style.slice(1)}
+                </h3>
+                <div className="text-gold font-bold text-lg mb-2">{data.count} pieces</div>
+                <p className="text-crisp-white/80 text-sm">
+                  {style === 'realistic' ? 'Photorealistic detail and lifelike representation' :
+                   style === 'illustrative' ? 'Artistic interpretation with creative styling' :
+                   style === 'traditional' ? 'Bold lines, classic imagery, timeless appeal' :
+                   style === 'fine-line' ? 'Delicate, precise linework for minimalist designs' :
+                   style === 'memorial' ? 'Meaningful tribute pieces honoring loved ones' :
+                   'Professional tattoo artistry'}
+                </p>
               </GlassCard>
             ))}
           </div>
@@ -208,10 +183,10 @@ export default function Gallery() {
         {/* Before & After Showcase */}
         <section className="mb-16">
           <BeforeAfterShowcase 
-            beforeImage="/images/gallery/DSC04703.jpg"
-            afterImage="/images/gallery/DSC04519.jpg"
-            title="Cover-up Transformation"
-            description="Expert cover-up work transforming an old tattoo into beautiful new art"
+            beforeImage="/images/portfolio-optimized/IMG_3141_u0mjxg.jpg"
+            afterImage="/images/portfolio-optimized/IMG_3142_g7and1.jpg"
+            title="Phoenix Tattoo Transformation"
+            description="Expert cover-up and artistic enhancement showcasing Jose's skill in transforming existing work into stunning new art"
           />
         </section>
 

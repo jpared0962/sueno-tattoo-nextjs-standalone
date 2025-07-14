@@ -337,12 +337,13 @@ function GalleryItem({
           alt={image.alt}
           fill
           className={`
-            object-contain transition-all duration-500 group-hover:scale-105
+            object-cover transition-all duration-500 group-hover:scale-105
             ${isLoaded ? 'opacity-100' : 'opacity-0'}
           `}
           onLoad={() => setIsLoaded(true)}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           quality={85}
+          loading="lazy"
         />
         
         {/* Loading skeleton */}

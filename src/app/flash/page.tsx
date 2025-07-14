@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { generateSEOMetadata } from '@/components/seo/SEOHead'
 import { LocalBusinessSchema } from '@/components/seo/LocalBusinessSchema'
 import { businessInfo } from '@/data/business-info'
@@ -117,11 +118,76 @@ export default function Flash() {
             </div>
           </section>
 
-          {/* Flash Collection Preview */}
+          {/* Flash Sheets Gallery */}
+          <section className="mb-16">
+            <h2 className="text-3xl font-bold text-center mb-8 text-crisp-white">
+              Available Flash Sheets
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {[
+                { src: '/images/drawings-optimized/Anker.jpg', alt: 'Anchor flash tattoo design - Laurel MD', title: 'Anchor Design' },
+                { src: '/images/drawings-optimized/Bat-and-flower.jpg', alt: 'Bat and flower flash tattoo - Laurel MD', title: 'Bat & Flower' },
+                { src: '/images/drawings-optimized/Bird.jpg', alt: 'Bird flash tattoo design - Laurel MD', title: 'Bird Design' },
+                { src: '/images/drawings-optimized/Bow.jpg', alt: 'Bow flash tattoo design - Laurel MD', title: 'Bow Design' },
+                { src: '/images/drawings-optimized/Cat.jpg', alt: 'Cat flash tattoo design - Laurel MD', title: 'Cat Design' },
+                { src: '/images/drawings-optimized/Fish.jpg', alt: 'Fish flash tattoo design - Laurel MD', title: 'Fish Design' },
+                { src: '/images/drawings-optimized/Flower-23.jpg', alt: 'Flower flash tattoo design 23 - Laurel MD', title: 'Flower 23' },
+                { src: '/images/drawings-optimized/Flower-24.jpg', alt: 'Flower flash tattoo design 24 - Laurel MD', title: 'Flower 24' },
+                { src: '/images/drawings-optimized/Flower-25.jpg', alt: 'Flower flash tattoo design 25 - Laurel MD', title: 'Flower 25' },
+                { src: '/images/drawings-optimized/Flower-Snake.jpg', alt: 'Flower snake flash tattoo - Laurel MD', title: 'Flower Snake' },
+                { src: '/images/drawings-optimized/Flower-Snake-2.jpg', alt: 'Flower snake flash tattoo 2 - Laurel MD', title: 'Flower Snake 2' },
+                { src: '/images/drawings-optimized/Flower-with-stars.jpg', alt: 'Flower with stars flash tattoo - Laurel MD', title: 'Flower & Stars' },
+                { src: '/images/drawings-optimized/Flower27.jpg', alt: 'Flower flash tattoo design 27 - Laurel MD', title: 'Flower 27' },
+                { src: '/images/drawings-optimized/Frog-23.jpg', alt: 'Frog flash tattoo design 23 - Laurel MD', title: 'Frog 23' },
+                { src: '/images/drawings-optimized/Frog.jpg', alt: 'Frog flash tattoo design - Laurel MD', title: 'Frog Design' },
+                { src: '/images/drawings-optimized/Fruit.jpg', alt: 'Fruit flash tattoo design - Laurel MD', title: 'Fruit Design' },
+                { src: '/images/drawings-optimized/Hat.jpg', alt: 'Hat flash tattoo design - Laurel MD', title: 'Hat Design' },
+                { src: '/images/drawings-optimized/Heart-2.jpg', alt: 'Heart flash tattoo design 2 - Laurel MD', title: 'Heart 2' },
+                { src: '/images/drawings-optimized/Heart-Puzzle.jpg', alt: 'Heart puzzle flash tattoo - Laurel MD', title: 'Heart Puzzle' },
+                { src: '/images/drawings-optimized/Heart.jpg', alt: 'Heart flash tattoo design - Laurel MD', title: 'Heart Design' },
+                { src: '/images/drawings-optimized/Insect-1.jpg', alt: 'Insect flash tattoo design 1 - Laurel MD', title: 'Insect 1' },
+                { src: '/images/drawings-optimized/Insect-2.jpg', alt: 'Insect flash tattoo design 2 - Laurel MD', title: 'Insect 2' },
+                { src: '/images/drawings-optimized/Pod-23.jpg', alt: 'Pod flash tattoo design 23 - Laurel MD', title: 'Pod 23' },
+                { src: '/images/drawings-optimized/Rabbit.jpg', alt: 'Rabbit flash tattoo design - Laurel MD', title: 'Rabbit Design' },
+                { src: '/images/drawings-optimized/Sea-.jpg', alt: 'Sea flash tattoo design - Laurel MD', title: 'Sea Design' },
+                { src: '/images/drawings-optimized/Sea-65.jpg', alt: 'Sea flash tattoo design 65 - Laurel MD', title: 'Sea 65' },
+                { src: '/images/drawings-optimized/Skull-Book.jpg', alt: 'Skull book flash tattoo - Laurel MD', title: 'Skull Book' },
+                { src: '/images/drawings-optimized/Skull-Flower.jpg', alt: 'Skull flower flash tattoo - Laurel MD', title: 'Skull Flower' },
+                { src: '/images/drawings-optimized/Skull-surrounded-by-flower.jpg', alt: 'Skull surrounded by flowers flash tattoo - Laurel MD', title: 'Skull & Flowers' },
+                { src: '/images/drawings-optimized/Skull-though-flower.jpg', alt: 'Skull through flower flash tattoo - Laurel MD', title: 'Skull Through Flower' },
+                { src: '/images/drawings-optimized/Soup-Skull.jpg', alt: 'Soup skull flash tattoo - Laurel MD', title: 'Soup Skull' },
+                { src: '/images/drawings-optimized/Travel.jpg', alt: 'Travel flash tattoo design - Laurel MD', title: 'Travel Design' },
+              ].map((flash, index) => (
+                <div key={flash.src} className="glass-card rounded-lg overflow-hidden group cursor-pointer">
+                  <div className="relative aspect-square">
+                    <Image
+                      src={flash.src}
+                      alt={flash.alt}
+                      fill
+                      className="object-cover transition-transform duration-500 will-change-transform group-hover:scale-105"
+                      loading="lazy"
+                      quality={75}
+                      sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                      placeholder="blur"
+                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                    />
+                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                      <div className="text-center text-crisp-white">
+                        <h3 className="font-semibold text-sm mb-1">{flash.title}</h3>
+                        <p className="text-xs text-gold">Click to inquire</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Flash Collection Categories */}
           <section className="mb-16">
             <div className="glass-testimonial rounded-xl p-8 text-center">
               <h2 className="text-3xl font-bold mb-6 text-crisp-white">
-                Traditional Flash Collection
+                Flash Collection Categories
               </h2>
               <p className="text-lg text-crisp-white/90 mb-8 max-w-3xl mx-auto">
                 Our flash collection features hand-drawn traditional designs spanning classic American traditional themes. 

@@ -195,44 +195,48 @@ export function BeforeAfterShowcase({
   const [sliderPosition, setSliderPosition] = useState(50)
 
   return (
-    <motion.div
-      className="glass-card rounded-xl overflow-hidden"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-    >
-      <div className="p-6">
-        <h3 className="text-xl font-bold text-crisp-white mb-2">{title}</h3>
-        <p className="text-crisp-white/80 text-sm mb-4">{description}</p>
-        
-        {/* Image Slider */}
-        <div className="relative aspect-[4/3] rounded-lg overflow-hidden bg-charcoal-gray">
-          {/* Before Image */}
-          <div className="absolute inset-0">
-            <img
-              src={beforeImage}
-              alt="Before tattoo"
-              className="w-full h-full object-cover"
-            />
+    <div className="max-w-4xl mx-auto">
+      <motion.div
+        className="glass-card rounded-xl overflow-hidden"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="p-6">
+          <div className="text-center mb-6">
+            <h3 className="text-2xl font-bold text-crisp-white mb-2">{title}</h3>
+            <p className="text-crisp-white/80 text-sm max-w-2xl mx-auto">{description}</p>
           </div>
           
-          {/* After Image with Clip Path */}
-          <div 
-            className="absolute inset-0"
-            style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
-          >
-            <img
-              src={afterImage}
-              alt="After tattoo"
-              className="w-full h-full object-cover"
-            />
-          </div>
+          {/* Image Slider */}
+          <div className="relative aspect-[4/3] rounded-lg overflow-hidden bg-charcoal-gray mx-auto max-w-2xl">
+            {/* Before Image */}
+            <div className="absolute inset-0">
+              <img
+                src={beforeImage}
+                alt="Before tattoo"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            
+            {/* After Image with Clip Path */}
+            <div 
+              className="absolute inset-0"
+              style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
+            >
+              <img
+                src={afterImage}
+                alt="After tattoo"
+                className="w-full h-full object-contain"
+              />
+            </div>
           
           {/* Slider Handle */}
           <div 
-            className="absolute top-0 bottom-0 w-1 bg-gold cursor-ew-resize"
+            className="absolute top-0 bottom-0 w-1 bg-gold cursor-ew-resize z-10 touch-none"
             style={{ left: `${sliderPosition}%` }}
             onMouseDown={(e) => {
+              e.preventDefault()
               const rect = e.currentTarget.parentElement!.getBoundingClientRect()
               const handleMouseMove = (e: MouseEvent) => {
                 const x = e.clientX - rect.left
@@ -248,11 +252,47 @@ export function BeforeAfterShowcase({
               document.addEventListener('mousemove', handleMouseMove)
               document.addEventListener('mouseup', handleMouseUp)
             }}
+            onTouchStart={(e) => {
+              e.preventDefault()
+              const rect = e.currentTarget.parentElement!.getBoundingClientRect()
+              const handleTouchMove = (e: TouchEvent) => {
+                const touch = e.touches[0]
+                const x = touch.clientX - rect.left
+                const percentage = Math.min(Math.max((x / rect.width) * 100, 0), 100)
+                setSliderPosition(percentage)
+              }
+              
+              const handleTouchEnd = () => {
+                document.removeEventListener('touchmove', handleTouchMove)
+                document.removeEventListener('touchend', handleTouchEnd)
+              }
+              
+              document.addEventListener('touchmove', handleTouchMove, { passive: false })
+              document.addEventListener('touchend', handleTouchEnd)
+            }}
           >
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-gold rounded-full flex items-center justify-center">
-              <div className="w-2 h-2 bg-ink-black rounded-full" />
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 md:w-10 md:h-10 bg-gradient-to-br from-yellow-400 via-amber-500 to-yellow-600 rounded-full flex items-center justify-center shadow-xl border-2 border-yellow-300">
+              <div className="w-4 h-4 md:w-3 md:h-3 bg-amber-900 rounded-full" />
             </div>
           </div>
+          
+          {/* Click/Touch anywhere to slide */}
+          <div 
+            className="absolute inset-0 cursor-ew-resize touch-none"
+            onClick={(e) => {
+              const rect = e.currentTarget.getBoundingClientRect()
+              const x = e.clientX - rect.left
+              const percentage = Math.min(Math.max((x / rect.width) * 100, 0), 100)
+              setSliderPosition(percentage)
+            }}
+            onTouchStart={(e) => {
+              const rect = e.currentTarget.getBoundingClientRect()
+              const touch = e.touches[0]
+              const x = touch.clientX - rect.left
+              const percentage = Math.min(Math.max((x / rect.width) * 100, 0), 100)
+              setSliderPosition(percentage)
+            }}
+          />
           
           {/* Labels */}
           <div className="absolute top-4 left-4 bg-black/50 text-crisp-white px-2 py-1 rounded text-xs">
@@ -264,22 +304,51 @@ export function BeforeAfterShowcase({
         </div>
         
         {/* Toggle Buttons */}
-        <div className="flex space-x-2 mt-4">
+        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 mt-6 max-w-md mx-auto">
           <button
             onClick={() => setSliderPosition(0)}
-            className="flex-1 bg-charcoal-gray hover:bg-charcoal-gray/70 text-crisp-white py-2 px-4 rounded-lg text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-gold"
+            className={`flex-1 py-3 px-4 rounded-lg text-sm font-medium transition-all focus:outline-none focus:ring-2 focus:ring-gold touch-manipulation ${
+              sliderPosition < 25 
+                ? 'bg-gold text-ink-black shadow-glow-gold' 
+                : 'bg-charcoal-gray hover:bg-charcoal-gray/70 text-crisp-white'
+            }`}
           >
-            Show Before
+            <span className="hidden sm:inline">Show Before Only</span>
+            <span className="sm:hidden">Before</span>
+          </button>
+          <button
+            onClick={() => setSliderPosition(50)}
+            className={`flex-1 py-3 px-4 rounded-lg text-sm font-medium transition-all focus:outline-none focus:ring-2 focus:ring-gold touch-manipulation ${
+              sliderPosition > 25 && sliderPosition < 75 
+                ? 'bg-gold text-ink-black shadow-glow-gold' 
+                : 'bg-charcoal-gray hover:bg-charcoal-gray/70 text-crisp-white'
+            }`}
+          >
+            Compare
           </button>
           <button
             onClick={() => setSliderPosition(100)}
-            className="flex-1 bg-deep-red hover:bg-deep-red/80 text-crisp-white py-2 px-4 rounded-lg text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-gold"
+            className={`flex-1 py-3 px-4 rounded-lg text-sm font-medium transition-all focus:outline-none focus:ring-2 focus:ring-gold touch-manipulation ${
+              sliderPosition > 75 
+                ? 'bg-gold text-ink-black shadow-glow-gold' 
+                : 'bg-deep-red hover:bg-deep-red/80 text-crisp-white'
+            }`}
           >
-            Show After
+            <span className="hidden sm:inline">Show After Only</span>
+            <span className="sm:hidden">After</span>
           </button>
+        </div>
+        
+        {/* Instructions */}
+        <div className="text-center mt-4">
+          <p className="text-crisp-white/60 text-xs">
+            <span className="hidden sm:inline">Drag the slider or click anywhere on the image to compare • Use buttons for quick view</span>
+            <span className="sm:hidden">Drag slider or tap image • Use buttons for quick view</span>
+          </p>
         </div>
       </div>
     </motion.div>
+    </div>
   )
 }
 
