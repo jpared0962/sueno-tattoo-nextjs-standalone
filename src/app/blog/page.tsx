@@ -4,15 +4,15 @@ import BlogCard from '@/components/blog/BlogCard'
 import { generateBlogSchemaMarkup } from '@/components/seo/BlogSchemas'
 
 export const metadata: Metadata = {
-  title: 'Tattoo Blog | Expert Tips & Insights',
-  description: 'Discover professional tattoo advice, aftercare tips, style guides, and industry insights from Jose at Sueño Tattoo in Laurel, MD.',
-  keywords: 'tattoo blog, tattoo tips, tattoo aftercare, tattoo styles, tattoo advice, tattoo care, tattoo healing, tattoo artist blog',
+  title: 'Maryland Tattoo Blog | DMV Tattoo Artist Tips & Aftercare Guide',
+  description: 'Professional tattoo aftercare tips, custom tattoo design insights, and Maryland tattoo artist advice from Jose at Sueño Tattoo in Laurel, MD. Expert DMV tattoo guidance.',
+  keywords: 'Maryland tattoo, DMV tattoo artist, tattoo aftercare, custom tattoo design, tattoo styles, Maryland tattoo artist, Laurel tattoo shop, tattoo care tips',
   alternates: {
     canonical: '/blog',
   },
   openGraph: {
-    title: 'Tattoo Blog | Expert Tips & Insights | Sueño Tattoo',
-    description: 'Discover professional tattoo advice, aftercare tips, style guides, and industry insights from Jose at Sueño Tattoo in Laurel, MD.',
+    title: 'Maryland Tattoo Blog | DMV Tattoo Artist Tips | Sueño Tattoo',
+    description: 'Professional tattoo aftercare tips, custom tattoo design insights, and Maryland tattoo artist advice from Jose at Sueño Tattoo in Laurel, MD.',
     url: 'https://www.suenotattoo.com/blog',
     type: 'website',
     images: [
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tattoo Blog | Expert Tips & Insights | Sueño Tattoo',
-    description: 'Discover professional tattoo advice, aftercare tips, style guides, and industry insights from Jose at Sueño Tattoo in Laurel, MD.',
+    title: 'Maryland Tattoo Blog | DMV Tattoo Artist Tips | Sueño Tattoo',
+    description: 'Professional tattoo aftercare tips, custom tattoo design insights, and Maryland tattoo artist advice from Jose at Sueño Tattoo in Laurel, MD.',
     images: ['/images/logo/logo.png'],
   },
 }
@@ -49,11 +49,10 @@ export default function BlogPage() {
           {/* Header */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold text-deep-red mb-6">
-              Tattoo Blog
+              Maryland Tattoo Artist Blog: Expert Aftercare & Custom Design Tips
             </h1>
             <p className="text-xl text-warm-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Expert insights, aftercare tips, and style guides from Jose at Sueño Tattoo. 
-              Stay informed about the latest tattoo trends and best practices.
+              Professional tattoo aftercare guidance, custom tattoo design insights, and expert advice from your trusted DMV tattoo artist Jose at Sueño Tattoo in Laurel, MD.
             </p>
           </div>
 
