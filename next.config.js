@@ -6,19 +6,9 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'res.cloudinary.com',
-        port: '',
-        pathname: '/**',
-      },
-    ],
-    unoptimized: false,
-  },
+  swcMinify: true,
   poweredByHeader: false,
-  output: 'standalone',
+  output: 'standalone'
 }
 
 module.exports = nextConfig

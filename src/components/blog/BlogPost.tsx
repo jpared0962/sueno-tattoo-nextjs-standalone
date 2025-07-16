@@ -54,13 +54,15 @@ export default function BlogPost({ post }: BlogPostProps) {
             </p>
             
             <div className="flex items-center justify-center gap-4 mb-8">
-              <Image
-                src={post.authorImage}
-                alt={post.author}
-                width={48}
-                height={48}
-                className="rounded-full"
-              />
+              {post.authorImage && (
+                <Image
+                  src={post.authorImage}
+                  alt={post.author}
+                  width={48}
+                  height={48}
+                  className="rounded-full"
+                />
+              )}
               <div className="text-left">
                 <p className="font-medium text-warm-gray-900">{post.author}</p>
                 <p className="text-sm text-warm-gray-600">Professional Tattoo Artist</p>
@@ -81,15 +83,17 @@ export default function BlogPost({ post }: BlogPostProps) {
         </header>
 
         {/* Featured Image */}
-        <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden mb-12 shadow-lg">
-          <Image
-            src={post.image}
-            alt={post.title}
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
+        {post.image && (
+          <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden mb-12 shadow-lg">
+            <Image
+              src={post.image}
+              alt={post.title}
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+        )}
 
         {/* Article Content */}
         <article className="max-w-4xl mx-auto">
@@ -109,13 +113,15 @@ export default function BlogPost({ post }: BlogPostProps) {
         {/* Author Bio */}
         <div className="max-w-4xl mx-auto mt-16 p-8 bg-white rounded-2xl shadow-lg">
           <div className="flex items-center gap-6">
-            <Image
-              src={post.authorImage}
-              alt={post.author}
-              width={80}
-              height={80}
-              className="rounded-full"
-            />
+            {post.authorImage && (
+              <Image
+                src={post.authorImage}
+                alt={post.author}
+                width={80}
+                height={80}
+                className="rounded-full"
+              />
+            )}
             <div>
               <h3 className="text-xl font-bold text-deep-red mb-2">{post.author}</h3>
               <p className="text-warm-gray-700 leading-relaxed">
