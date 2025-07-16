@@ -12,6 +12,18 @@
   "categories": ["lifestyle", "business"],
   "icons": [
     {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
       "src": "/images/logo/logo.png",
       "sizes": "192x192",
       "type": "image/png",
@@ -32,7 +44,7 @@
       "url": "/book-consultation",
       "icons": [
         {
-          "src": "/images/logo/logo.png",
+          "src": "/favicon.svg",
           "sizes": "96x96"
         }
       ]
@@ -44,7 +56,7 @@
       "url": "/gallery",
       "icons": [
         {
-          "src": "/images/logo/logo.png",
+          "src": "/favicon.svg",
           "sizes": "96x96"
         }
       ]
@@ -56,7 +68,7 @@
       "url": "/contact",
       "icons": [
         {
-          "src": "/images/logo/logo.png",
+          "src": "/favicon.svg",
           "sizes": "96x96"
         }
       ]

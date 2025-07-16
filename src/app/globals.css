@@ -34,7 +34,8 @@ body {
     radial-gradient(circle at 25% 25%, rgba(212, 161, 23, 0.15) 0%, transparent 50%),
     radial-gradient(circle at 75% 75%, rgba(139, 0, 0, 0.15) 0%, transparent 50%),
     linear-gradient(135deg, var(--ink-black) 0%, #0F1415 50%, var(--ink-black) 100%);
-  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   color: var(--foreground);
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
@@ -46,7 +47,7 @@ body {
 /* Add subtle texture overlay for glassmorphic depth */
 body::before {
   content: '';
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -55,6 +56,8 @@ body::before {
     radial-gradient(circle at 20% 80%, rgba(212, 161, 23, 0.03) 0%, transparent 50%),
     radial-gradient(circle at 80% 20%, rgba(139, 0, 0, 0.03) 0%, transparent 50%),
     url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Ccircle cx='1' cy='1' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-size: 100% 100%, 100% 100%, 60px 60px;
+  background-repeat: no-repeat, no-repeat, repeat;
   pointer-events: none;
   z-index: -1;
 }
@@ -63,4 +66,73 @@ body::before {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+/* Performance optimizations based on device capabilities */
+.perf-low {
+  /* Reduce animations and effects for low-performance devices */
+  --animation-duration: 0.1s;
+  --transition-duration: 0.1s;
+}
+
+.perf-low * {
+  animation-duration: var(--animation-duration) !important;
+  transition-duration: var(--transition-duration) !important;
+}
+
+.perf-low body::before {
+  display: none; /* Remove texture overlay */
+}
+
+.perf-medium {
+  --animation-duration: 0.2s;
+  --transition-duration: 0.2s;
+}
+
+.perf-high {
+  --animation-duration: 0.3s;
+  --transition-duration: 0.3s;
+}
+
+/* Critical resource loading optimization */
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+img[loading="lazy"].loaded,
+.page-loaded img[loading="lazy"] {
+  opacity: 1;
+}
+
+/* Reduce layout shift with aspect ratio containers */
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-4-3 {
+  aspect-ratio: 4 / 3;
+}
+
+/* Performance-aware hover effects */
+@media (hover: hover) and (pointer: fine) {
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* Reduce motion for accessibility and performance */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

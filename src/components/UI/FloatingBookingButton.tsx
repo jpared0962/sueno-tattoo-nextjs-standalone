@@ -354,10 +354,10 @@ export function BeforeAfterShowcase({
 
 export function PriceTransparencyCard() {
   const priceRanges = [
-    { service: 'Small Tattoos', size: '2-4 inches', price: '$120-200', duration: '1-2 hours' },
+    { service: 'Small Tattoos', size: '2-4 inches', price: '$100-200', duration: '1-2 hours' },
     { service: 'Medium Tattoos', size: '4-6 inches', price: '$200-400', duration: '2-4 hours' },
     { service: 'Large Tattoos', size: '6+ inches', price: '$400-800+', duration: '4-8 hours' },
-    { service: 'Custom Design', size: 'Any size', price: '+$50-150', duration: '1-2 weeks' }
+    { service: 'Custom Design', size: 'Any size', price: '+$100-150', duration: '1-2 weeks' }
   ]
 
   return (

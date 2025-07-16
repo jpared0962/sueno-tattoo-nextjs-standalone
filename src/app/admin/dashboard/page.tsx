@@ -5,13 +5,17 @@ import { useRouter } from 'next/navigation';
 import { 
   Users, MessageCircle, TrendingUp, 
   Calendar, Settings,
-  BarChart3, Star, LogOut
+  BarChart3, Star, LogOut, Phone, Mail, Clock, CheckCircle
 } from 'lucide-react';
+import { supabase } from '@/lib/supabase';
 
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState('overview');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [contactSubmissions, setContactSubmissions] = useState([]);
+  const [consultationRequests, setConsultationRequests] = useState([]);
+  const [dataLoading, setDataLoading] = useState(true);
   const router = useRouter();
 
   useEffect(() => {
@@ -21,15 +25,99 @@ export default function AdminDashboard() {
     
     if (adminToken || adminBypass === 'sueno_admin_2024') {
       setIsAuthenticated(true);
+      fetchData();
     } else {
       router.push('/admin');
     }
     setLoading(false);
   }, [router]);
 
-  const handleLogout = () => {
+  const fetchData = async () => {
+    setDataLoading(true);
+    try {
+      // Fetch contact submissions
+      const { data: contacts, error: contactError } = await supabase
+        .from('contact_submissions')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+      if (contactError) {
+        console.error('Error fetching contact submissions:', contactError);
+      } else {
+        setContactSubmissions(contacts || []);
+      }
+
+      // Fetch consultation requests
+      const { data: consultations, error: consultationError } = await supabase
+        .from('consultation_requests')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+      if (consultationError) {
+        console.error('Error fetching consultation requests:', consultationError);
+      } else {
+        setConsultationRequests(consultations || []);
+      }
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    } finally {
+      setDataLoading(false);
+    }
+  };
+
+  const updateContactStatus = async (id, newStatus) => {
+    try {
+      const { error } = await supabase
+        .from('contact_submissions')
+        .update({ status: newStatus, updated_at: new Date().toISOString() })
+        .eq('id', id);
+
+      if (error) {
+        console.error('Error updating contact status:', error);
+      } else {
+        fetchData(); // Refresh data
+      }
+    } catch (error) {
+      console.error('Error updating contact status:', error);
+    }
+  };
+
+  const updateConsultationStatus = async (id, newStatus) => {
+    try {
+      const { error } = await supabase
+        .from('consultation_requests')
+        .update({ status: newStatus, updated_at: new Date().toISOString() })
+        .eq('id', id);
+
+      if (error) {
+        console.error('Error updating consultation status:', error);
+      } else {
+        fetchData(); // Refresh data
+      }
+    } catch (error) {
+      console.error('Error updating consultation status:', error);
+    }
+  };
+
+  const formatDate = (dateString) => {
+    return new Date(dateString).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+  };
+
+  const handleLogout = async () => {
+    // Clear localStorage
     localStorage.removeItem('admin_token');
     localStorage.removeItem('admin_bypass_key');
+    localStorage.removeItem('admin_user');
+    
+    // Sign out from Supabase
+    await supabase.auth.signOut();
+    
     router.push('/admin');
   };
 
@@ -76,6 +164,7 @@ export default function AdminDashboard() {
           {[
             { id: 'overview', label: 'Overview', icon: BarChart3 },
             { id: 'consultations', label: 'Consultations', icon: Calendar },
+            { id: 'contacts', label: 'Contact Forms', icon: MessageCircle },
             { id: 'reviews', label: 'Reviews', icon: Star },
             { id: 'analytics', label: 'Analytics', icon: TrendingUp },
             { id: 'settings', label: 'Settings', icon: Settings }
@@ -110,7 +199,7 @@ export default function AdminDashboard() {
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-blue-100 text-sm">Total Consultations</p>
-                      <p className="text-3xl font-bold">24</p>
+                      <p className="text-3xl font-bold">{dataLoading ? '...' : consultationRequests.length}</p>
                     </div>
                     <Calendar className="w-8 h-8 text-blue-200" />
                   </div>
@@ -119,8 +208,8 @@ export default function AdminDashboard() {
                 <div className="bg-gradient-to-r from-green-500 to-green-600 p-6 rounded-lg text-white">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-green-100 text-sm">Pending Reviews</p>
-                      <p className="text-3xl font-bold">3</p>
+                      <p className="text-green-100 text-sm">Contact Forms</p>
+                      <p className="text-3xl font-bold">{dataLoading ? '...' : contactSubmissions.length}</p>
                     </div>
                     <MessageCircle className="w-8 h-8 text-green-200" />
                   </div>
@@ -129,18 +218,18 @@ export default function AdminDashboard() {
                 <div className="bg-gradient-to-r from-purple-500 to-purple-600 p-6 rounded-lg text-white">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-purple-100 text-sm">Site Visitors</p>
-                      <p className="text-3xl font-bold">1.2k</p>
+                      <p className="text-purple-100 text-sm">Pending Consultations</p>
+                      <p className="text-3xl font-bold">{dataLoading ? '...' : consultationRequests.filter(c => c.status === 'pending').length}</p>
                     </div>
-                    <Users className="w-8 h-8 text-purple-200" />
+                    <Clock className="w-8 h-8 text-purple-200" />
                   </div>
                 </div>
                 
                 <div className="bg-gradient-to-r from-yellow-500 to-yellow-600 p-6 rounded-lg text-white">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-yellow-100 text-sm">Avg Rating</p>
-                      <p className="text-3xl font-bold">5.0</p>
+                      <p className="text-yellow-100 text-sm">Pending Contacts</p>
+                      <p className="text-3xl font-bold">{dataLoading ? '...' : contactSubmissions.filter(c => c.status === 'pending').length}</p>
                     </div>
                     <Star className="w-8 h-8 text-yellow-200" />
                   </div>
@@ -152,48 +241,55 @@ export default function AdminDashboard() {
                 <div>
                   <h3 className="text-lg font-semibold text-gray-800 mb-4">Recent Consultations</h3>
                   <div className="space-y-3">
-                    {[
-                      { name: 'Sarah Johnson', date: '2 hours ago', status: 'pending' },
-                      { name: 'Mike Chen', date: '1 day ago', status: 'confirmed' },
-                      { name: 'Emma Wilson', date: '2 days ago', status: 'completed' }
-                    ].map((consultation, index) => (
-                      <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                        <div>
-                          <p className="font-medium text-gray-800">{consultation.name}</p>
-                          <p className="text-sm text-gray-600">{consultation.date}</p>
+                    {dataLoading ? (
+                      <div className="text-center py-4">Loading...</div>
+                    ) : consultationRequests.length === 0 ? (
+                      <div className="text-center py-4 text-gray-500">No consultation requests yet</div>
+                    ) : (
+                      consultationRequests.slice(0, 3).map((consultation) => (
+                        <div key={consultation.id} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                          <div>
+                            <p className="font-medium text-gray-800">{consultation.name}</p>
+                            <p className="text-sm text-gray-600">{formatDate(consultation.created_at)}</p>
+                          </div>
+                          <span className={`px-2 py-1 text-xs rounded-full ${
+                            consultation.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
+                            consultation.status === 'confirmed' ? 'bg-blue-100 text-blue-800' :
+                            'bg-green-100 text-green-800'
+                          }`}>
+                            {consultation.status}
+                          </span>
                         </div>
-                        <span className={`px-2 py-1 text-xs rounded-full ${
-                          consultation.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
-                          consultation.status === 'confirmed' ? 'bg-blue-100 text-blue-800' :
-                          'bg-green-100 text-green-800'
-                        }`}>
-                          {consultation.status}
-                        </span>
-                      </div>
-                    ))}
+                      ))
+                    )}
                   </div>
                 </div>
                 
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-800 mb-4">Recent Reviews</h3>
+                  <h3 className="text-lg font-semibold text-gray-800 mb-4">Recent Contact Forms</h3>
                   <div className="space-y-3">
-                    {[
-                      { name: 'Alex Rodriguez', rating: 5, preview: 'Amazing work, very professional...' },
-                      { name: 'Lisa Park', rating: 5, preview: 'Jose did an incredible job on my...' },
-                      { name: 'David Kim', rating: 5, preview: 'Highly recommend! Clean shop and...' }
-                    ].map((review, index) => (
-                      <div key={index} className="p-3 bg-gray-50 rounded-lg">
-                        <div className="flex items-center justify-between mb-2">
-                          <p className="font-medium text-gray-800">{review.name}</p>
-                          <div className="flex">
-                            {Array.from({ length: review.rating }, (_, i) => (
-                              <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
-                            ))}
+                    {dataLoading ? (
+                      <div className="text-center py-4">Loading...</div>
+                    ) : contactSubmissions.length === 0 ? (
+                      <div className="text-center py-4 text-gray-500">No contact submissions yet</div>
+                    ) : (
+                      contactSubmissions.slice(0, 3).map((contact) => (
+                        <div key={contact.id} className="p-3 bg-gray-50 rounded-lg">
+                          <div className="flex items-center justify-between mb-2">
+                            <p className="font-medium text-gray-800">{contact.name}</p>
+                            <span className={`px-2 py-1 text-xs rounded-full ${
+                              contact.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
+                              contact.status === 'responded' ? 'bg-green-100 text-green-800' :
+                              'bg-gray-100 text-gray-800'
+                            }`}>
+                              {contact.status}
+                            </span>
                           </div>
+                          <p className="text-sm text-gray-600">{formatDate(contact.created_at)}</p>
+                          <p className="text-sm text-gray-600 mt-1">{contact.service_interest}</p>
                         </div>
-                        <p className="text-sm text-gray-600">{review.preview}</p>
-                      </div>
-                    ))}
+                      ))
+                    )}
                   </div>
                 </div>
               </div>
@@ -202,15 +298,178 @@ export default function AdminDashboard() {
 
           {activeTab === 'consultations' && (
             <div>
-              <h2 className="text-2xl font-bold text-gray-800 mb-6">Consultation Management</h2>
-              <p className="text-gray-600 mb-4">Manage consultation requests and appointments.</p>
-              
-              <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
-                <p className="text-blue-800">
-                  <strong>Coming Soon:</strong> Full consultation management system with booking calendar, 
-                  client communication, and appointment scheduling.
-                </p>
+              <div className="flex justify-between items-center mb-6">
+                <h2 className="text-2xl font-bold text-gray-800">Consultation Requests</h2>
+                <button 
+                  onClick={fetchData}
+                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                >
+                  Refresh
+                </button>
               </div>
+              
+              {dataLoading ? (
+                <div className="text-center py-8">Loading consultation requests...</div>
+              ) : consultationRequests.length === 0 ? (
+                <div className="text-center py-8 text-gray-500">No consultation requests yet</div>
+              ) : (
+                <div className="space-y-4">
+                  {consultationRequests.map((consultation) => (
+                    <div key={consultation.id} className="bg-gray-50 rounded-lg p-6">
+                      <div className="flex justify-between items-start mb-4">
+                        <div>
+                          <h3 className="text-lg font-semibold text-gray-800">{consultation.name}</h3>
+                          <p className="text-sm text-gray-600">{formatDate(consultation.created_at)}</p>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <span className={`px-3 py-1 text-sm rounded-full ${
+                            consultation.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
+                            consultation.status === 'confirmed' ? 'bg-blue-100 text-blue-800' :
+                            'bg-green-100 text-green-800'
+                          }`}>
+                            {consultation.status}
+                          </span>
+                          <select 
+                            value={consultation.status} 
+                            onChange={(e) => updateConsultationStatus(consultation.id, e.target.value)}
+                            className="text-sm border rounded px-2 py-1"
+                          >
+                            <option value="pending">Pending</option>
+                            <option value="confirmed">Confirmed</option>
+                            <option value="completed">Completed</option>
+                            <option value="cancelled">Cancelled</option>
+                          </select>
+                        </div>
+                      </div>
+                      
+                      <div className="grid md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                          <p className="text-sm text-gray-600"><strong>Email:</strong> {consultation.email}</p>
+                          <p className="text-sm text-gray-600"><strong>Phone:</strong> {consultation.phone}</p>
+                          <p className="text-sm text-gray-600"><strong>Size:</strong> {consultation.size || 'Not specified'}</p>
+                          <p className="text-sm text-gray-600"><strong>Placement:</strong> {consultation.placement || 'Not specified'}</p>
+                        </div>
+                        <div>
+                          <p className="text-sm text-gray-600"><strong>Timeframe:</strong> {consultation.timeframe || 'Not specified'}</p>
+                          <p className="text-sm text-gray-600"><strong>Experience:</strong> {consultation.experience || 'Not specified'}</p>
+                          <p className="text-sm text-gray-600"><strong>Budget:</strong> {consultation.budget || 'Not specified'}</p>
+                        </div>
+                      </div>
+                      
+                      <div className="mb-4">
+                        <p className="text-sm text-gray-600 mb-2"><strong>Tattoo Idea:</strong></p>
+                        <p className="text-sm text-gray-800 bg-white p-3 rounded">{consultation.tattoo_idea}</p>
+                      </div>
+                      
+                      {consultation.availability && (
+                        <div className="mb-4">
+                          <p className="text-sm text-gray-600 mb-2"><strong>Availability:</strong></p>
+                          <p className="text-sm text-gray-800 bg-white p-3 rounded">{consultation.availability}</p>
+                        </div>
+                      )}
+                      
+                      <div className="flex gap-2">
+                        <a 
+                          href={`tel:${consultation.phone}`}
+                          className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors"
+                        >
+                          <Phone className="w-4 h-4" />
+                          Call
+                        </a>
+                        <a 
+                          href={`mailto:${consultation.email}`}
+                          className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+                        >
+                          <Mail className="w-4 h-4" />
+                          Email
+                        </a>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+
+          {activeTab === 'contacts' && (
+            <div>
+              <div className="flex justify-between items-center mb-6">
+                <h2 className="text-2xl font-bold text-gray-800">Contact Form Submissions</h2>
+                <button 
+                  onClick={fetchData}
+                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                >
+                  Refresh
+                </button>
+              </div>
+              
+              {dataLoading ? (
+                <div className="text-center py-8">Loading contact submissions...</div>
+              ) : contactSubmissions.length === 0 ? (
+                <div className="text-center py-8 text-gray-500">No contact submissions yet</div>
+              ) : (
+                <div className="space-y-4">
+                  {contactSubmissions.map((contact) => (
+                    <div key={contact.id} className="bg-gray-50 rounded-lg p-6">
+                      <div className="flex justify-between items-start mb-4">
+                        <div>
+                          <h3 className="text-lg font-semibold text-gray-800">{contact.name}</h3>
+                          <p className="text-sm text-gray-600">{formatDate(contact.created_at)}</p>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <span className={`px-3 py-1 text-sm rounded-full ${
+                            contact.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
+                            contact.status === 'responded' ? 'bg-green-100 text-green-800' :
+                            'bg-gray-100 text-gray-800'
+                          }`}>
+                            {contact.status}
+                          </span>
+                          <select 
+                            value={contact.status} 
+                            onChange={(e) => updateContactStatus(contact.id, e.target.value)}
+                            className="text-sm border rounded px-2 py-1"
+                          >
+                            <option value="pending">Pending</option>
+                            <option value="responded">Responded</option>
+                            <option value="closed">Closed</option>
+                          </select>
+                        </div>
+                      </div>
+                      
+                      <div className="grid md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                          <p className="text-sm text-gray-600"><strong>Email:</strong> {contact.email}</p>
+                          <p className="text-sm text-gray-600"><strong>Phone:</strong> {contact.phone}</p>
+                          <p className="text-sm text-gray-600"><strong>Service Interest:</strong> {contact.service_interest}</p>
+                          <p className="text-sm text-gray-600"><strong>Newsletter:</strong> {contact.newsletter_signup ? 'Yes' : 'No'}</p>
+                        </div>
+                      </div>
+                      
+                      <div className="mb-4">
+                        <p className="text-sm text-gray-600 mb-2"><strong>Message:</strong></p>
+                        <p className="text-sm text-gray-800 bg-white p-3 rounded">{contact.message}</p>
+                      </div>
+                      
+                      <div className="flex gap-2">
+                        <a 
+                          href={`tel:${contact.phone}`}
+                          className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors"
+                        >
+                          <Phone className="w-4 h-4" />
+                          Call
+                        </a>
+                        <a 
+                          href={`mailto:${contact.email}`}
+                          className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+                        >
+                          <Mail className="w-4 h-4" />
+                          Email
+                        </a>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           )}
 

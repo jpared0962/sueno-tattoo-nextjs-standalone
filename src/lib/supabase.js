@@ -1,7 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = import.meta.env.NEXT_PUBLIC_SUPABASE_URL || 'https://hqnwthvicofazfdnsati.supabase.co';
-const supabaseAnonKey = import.meta.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhxbnd0aHZpY29mYXpmZG5zYXRpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTA0MzYxNTEsImV4cCI6MjA2NjAxMjE1MX0.mpTZ1hGSMS8Gl-tdNq2D5NNerVbbz-q3d3DCtcGace8';
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://hqnwthvicofazfdnsati.supabase.co';
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhxbnd0aHZpY29mYXpmZG5zYXRpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTA0MzYxNTEsImV4cCI6MjA2NjAxMjE1MX0.mpTZ1hGSMS8Gl-tdNq2D5NNerVbbz-q3d3DCtcGace8';
 
 if (!supabaseUrl || !supabaseAnonKey) {
   console.warn('Missing Supabase environment variables - some features may not work');

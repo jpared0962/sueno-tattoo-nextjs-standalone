@@ -30,7 +30,7 @@ const defaultServices: Service[] = [
       'Traditional imagery and motifs',
       'Time-tested designs that age beautifully'
     ],
-    pricing: '$120-200',
+    pricing: '$100-200',
     priceType: 'piece',
     category: 'style',
     slug: 'traditional-american-tattoos'

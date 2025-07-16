@@ -3,14 +3,15 @@ import Link from 'next/link'
 import { generateSEOMetadata } from '@/components/seo/SEOHead'
 import { LocalBusinessSchema } from '@/components/seo/LocalBusinessSchema'
 import { businessInfo } from '@/data/business-info'
+import ConsultationForm from '@/components/forms/ConsultationForm'
 
 export const metadata: Metadata = generateSEOMetadata({
-  title: `Book Free Tattoo Consultation | Jose | ${businessInfo.name}`,
+  title: `Book Free Tattoo Consultation | Jose`,
   description: `Book your free tattoo consultation with Jose in Laurel, MD. 8+ years experience, custom designs, licensed professional. Call ${businessInfo.contact.phone} or book online.`,
   keywords: [
     'book tattoo consultation laurel md',
     'free tattoo consultation maryland',
-    'jose alvarado consultation',
+    'jose consultation',
     'professional tattoo consultation',
     'custom tattoo design consultation',
     'tattoo appointment booking laurel',
@@ -144,6 +145,11 @@ export default function BookConsultation() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Consultation Form */}
+        <div className="mb-16">
+          <ConsultationForm />
         </div>
 
         {/* Consultation Benefits */}
@@ -458,7 +464,7 @@ export default function BookConsultation() {
               { icon: '🏆', title: `${businessInfo.statistics.yearsInBusiness}+ Years Experience`, description: 'Professional expertise you can trust' },
               { icon: '👥', title: `${businessInfo.statistics.totalReviews}+ Happy Clients`, description: `${businessInfo.statistics.averageRating} star average rating` },
               { icon: '🎨', title: 'Custom Artwork', description: 'Original designs for every client' },
-              { icon: '🛡️', title: 'Licensed & Insured', description: `${businessInfo.statistics.healingSuccessRate}% perfect healing rate` }
+              { icon: '🛡️', title: 'Licensed Professional', description: `${businessInfo.statistics.healingSuccessRate}% perfect healing rate` }
             ].map((feature, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl mb-3">{feature.icon}</div>

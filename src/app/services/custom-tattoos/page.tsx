@@ -1,4 +1,6 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
 import { generateSEOMetadata } from '@/components/seo/SEOHead';
 import { TattooServiceSchema } from '@/components/seo/LocalBusinessSchema';
 import { businessInfo } from '@/data/business-info';
@@ -51,12 +53,12 @@ export default function CustomTattoosPage() {
               tells your unique story.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
+              <Link 
                 href="/book-consultation" 
                 className="bg-deep-red hover:bg-deep-red/80 text-crisp-white px-8 py-4 rounded-lg font-semibold transition-colors"
               >
                 Start Your Custom Design
-              </a>
+              </Link>
               <a 
                 href={`tel:${businessInfo.contact.phone}`}
                 className="border-2 border-deep-red text-deep-red hover:bg-deep-red hover:text-crisp-white px-8 py-4 rounded-lg font-semibold transition-all"
@@ -99,6 +101,74 @@ export default function CustomTattoosPage() {
             </div>
           </section>
 
+          {/* Custom Tattoo Portfolio */}
+          <section className="max-w-6xl mx-auto mb-16">
+            <h2 className="text-3xl font-bold text-center mb-12 text-crisp-white">
+              Custom Tattoo Portfolio
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-charcoal-gray/30 rounded-lg overflow-hidden">
+                <div className="relative w-full aspect-[4/3] bg-ink-black/30">
+                  <Image
+                    src="/images/portfolio-optimized/IMG_2120-2.jpg" 
+                    alt="Custom tattoo design by Jose - Original artwork"
+                    fill
+                    className="object-cover"
+                    loading="lazy"
+                    quality={90}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                </div>
+                <div className="p-4">
+                  <h3 className="text-lg font-semibold text-crisp-white mb-2">Custom Design</h3>
+                  <p className="text-crisp-white/80 text-sm">Original artwork created specifically for client</p>
+                </div>
+              </div>
+              <div className="bg-charcoal-gray/30 rounded-lg overflow-hidden">
+                <div className="relative w-full aspect-[4/3] bg-ink-black/30">
+                  <Image
+                    src="/images/portfolio-optimized/IMG_2121-2.jpg" 
+                    alt="Custom tattoo design by Jose - Personalized artwork"
+                    fill
+                    className="object-cover"
+                    loading="lazy"
+                    quality={90}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                </div>
+                <div className="p-4">
+                  <h3 className="text-lg font-semibold text-crisp-white mb-2">Personalized Art</h3>
+                  <p className="text-crisp-white/80 text-sm">Unique design tailored to client's vision</p>
+                </div>
+              </div>
+              <div className="bg-charcoal-gray/30 rounded-lg overflow-hidden">
+                <div className="relative w-full aspect-[4/3] bg-ink-black/30">
+                  <Image
+                    src="/images/portfolio-optimized/IMG_2122-2.jpg" 
+                    alt="Custom tattoo design by Jose - Collaborative creation"
+                    fill
+                    className="object-cover"
+                    loading="lazy"
+                    quality={90}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                </div>
+                <div className="p-4">
+                  <h3 className="text-lg font-semibold text-crisp-white mb-2">Collaborative Creation</h3>
+                  <p className="text-crisp-white/80 text-sm">Result of our detailed design process</p>
+                </div>
+              </div>
+            </div>
+            <div className="text-center mt-8">
+              <Link 
+                href="/gallery"
+                className="bg-deep-red hover:bg-deep-red/80 text-crisp-white px-6 py-3 rounded-lg font-semibold transition-colors"
+              >
+                View More Custom Work
+              </Link>
+            </div>
+          </section>
+
           {/* Our Custom Design Process */}
           <section className="max-w-4xl mx-auto mb-16">
             <h2 className="text-3xl font-bold text-center mb-12 text-crisp-white">
@@ -132,7 +202,7 @@ export default function CustomTattoosPage() {
                   title: "Final Artwork",
                   description: "Once approved, I create the final detailed artwork ready for tattooing. We'll also discuss placement, sizing, and any final adjustments.",
                   duration: "2-3 days",
-                  cost: "Design fee: $50-150"
+                  cost: "Design fee: $100-150"
                 },
                 {
                   step: "5",
@@ -265,8 +335,8 @@ export default function CustomTattoosPage() {
                     <span className="text-crisp-white text-sm">✓</span>
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-2 text-crisp-white">Licensed & Insured</h3>
-                    <p className="text-crisp-white/80">Professional credentials and insurance for your peace of mind.</p>
+                    <h3 className="font-semibold mb-2 text-crisp-white">Licensed Professional</h3>
+                    <p className="text-crisp-white/80">Professional credentials and certifications for your peace of mind.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -325,18 +395,18 @@ export default function CustomTattoosPage() {
               and create something truly unique together.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
+              <Link 
                 href="/book-consultation"
                 className="bg-deep-red hover:bg-deep-red/80 text-crisp-white px-8 py-4 rounded-lg font-semibold transition-colors"
               >
                 Book Free Consultation
-              </a>
-              <a 
+              </Link>
+              <Link 
                 href="/gallery"
                 className="border-2 border-deep-red text-deep-red hover:bg-deep-red hover:text-crisp-white px-8 py-4 rounded-lg font-semibold transition-all"
               >
                 View Custom Work
-              </a>
+              </Link>
             </div>
           </section>
         </div>

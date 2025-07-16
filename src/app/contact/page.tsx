@@ -3,20 +3,44 @@ import Link from 'next/link'
 import { generateSEOMetadata, commonSEOData } from '@/components/seo/SEOHead'
 import { LocalBusinessSchema } from '@/components/seo/LocalBusinessSchema'
 import { businessInfo } from '@/data/business-info'
+import ContactForm from '@/components/forms/ContactForm'
 
 export const metadata: Metadata = generateSEOMetadata({
   ...commonSEOData.contact,
-  title: `Contact Jose | Book Free Consultation | ${businessInfo.name}`,
-  description: `Contact professional tattoo artist Jose in Laurel, MD. Free consultations, licensed & insured. Call ${businessInfo.contact.phone} or book online. Serving DMV area.`,
+  title: `Contact Jose | Book Free Consultation`,
+  description: `Contact professional tattoo artist Jose in Laurel, MD. Free consultations, licensed professional. Call (240) 758-3226 or book online. Serving DMV area.`,
   keywords: [
     'contact tattoo artist laurel md',
     'book tattoo consultation',
-    'jose alvarado contact',
+    'jose contact',
     'tattoo appointment laurel',
     'free tattoo consultation maryland',
     'professional tattoo artist contact',
     'laurel md tattoo studio phone',
-    'prince georges county tattoo booking'
+    'prince georges county tattoo booking',
+    'book tattoo appointment',
+    'schedule tattoo consultation',
+    'tattoo booking Laurel MD',
+    'same day tattoo appointment',
+    'weekend tattoo appointments',
+    'evening tattoo appointments',
+    'walk in tattoo appointments',
+    'last minute tattoo booking',
+    'tattoo artist phone number',
+    'tattoo studio contact',
+    'tattoo consultation booking',
+    'tattoo appointment scheduling',
+    'contact Jose tattoo artist',
+    'urgent tattoo appointment',
+    'emergency tattoo consultation',
+    'tattoo appointment today',
+    'quick tattoo consultation',
+    'same day tattoo booking',
+    'walk in tattoo consultation',
+    'how to book a tattoo appointment',
+    'tattoo consultation process',
+    'schedule tattoo appointment Laurel MD',
+    'contact professional tattoo artist'
   ],
   url: '/contact',
 })
@@ -26,6 +50,108 @@ export default function Contact() {
     <>
       {/* Schema Markup */}
       <LocalBusinessSchema />
+      
+      {/* Enhanced Contact Page Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "name": "Contact Jose | Professional Tattoo Artist | Sueno Tattoo Laurel, MD",
+            "description": "Contact professional tattoo artist Jose in Laurel, MD. Free consultations, licensed professional. Serving Prince George's County and DMV area.",
+            "url": "https://www.suenotattoo.com/contact",
+            "mainEntity": {
+              "@type": "LocalBusiness",
+              "name": "Sueno Tattoo",
+              "description": "Professional tattoo services specializing in custom tattoo design, traditional American tattoos, realistic tattoos, and cover-up tattoos",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Laurel",
+                "addressRegion": "MD",
+                "postalCode": "20723",
+                "addressCountry": "US"
+              },
+              "telephone": "+12407583226",
+              "email": "jpared19@outlook.com",
+              "url": "https://www.suenotattoo.com",
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Thursday", "Friday", "Saturday", "Sunday"],
+                  "opens": "12:00",
+                  "closes": "18:00"
+                }
+              ],
+              "priceRange": "$100-$800",
+              "areaServed": {
+                "@type": "Place",
+                "name": "Laurel, MD and Prince George's County, DMV area"
+              },
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Tattoo Services",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Free Consultation",
+                      "description": "Complimentary design consultation with no obligation"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Custom Tattoo Design",
+                      "description": "Original custom tattoo artwork created specifically for each client"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Traditional American Tattoos",
+                      "description": "Classic American traditional tattoos with bold lines and vibrant colors"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Realistic Tattoos",
+                      "description": "Photorealistic tattoos with incredible detail perfect for portraits"
+                    }
+                  }
+                ]
+              }
+            },
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "telephone": "+12407583226",
+                "contactType": "customer service",
+                "areaServed": "US",
+                "availableLanguage": "en",
+                "hoursAvailable": {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Thursday", "Friday", "Saturday", "Sunday"],
+                  "opens": "12:00",
+                  "closes": "18:00"
+                }
+              },
+              {
+                "@type": "ContactPoint",
+                "email": "jpared19@outlook.com",
+                "contactType": "customer service",
+                "areaServed": "US",
+                "availableLanguage": "en"
+              }
+            ]
+          })
+        }}
+      />
       
       {/* FAQ Schema Markup */}
       <script
@@ -40,7 +166,7 @@ export default function Contact() {
                 "name": "How much do tattoos cost?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Pricing varies based on size, complexity, and style. We offer transparent piece-based pricing starting at $120. All consultations are free with no obligation."
+                  "text": "Pricing varies based on size, complexity, and style. We offer transparent piece-based pricing starting at $100. All consultations are free with no obligation."
                 }
               },
               {
@@ -159,6 +285,33 @@ export default function Contact() {
             </Link>
           </div>
 
+          {/* Safety & Health Assurance */}
+          <div className="glass-panel p-8 rounded-lg mb-16">
+            <h2 className="text-2xl font-bold mb-6 text-crisp-white text-center">Safe & Sterile Tattoo Studio</h2>
+            <div className="grid md:grid-cols-4 gap-6 mb-8">
+              <div className="text-center">
+                <div className="text-3xl mb-3">🏥</div>
+                <h3 className="text-sm font-semibold text-gold mb-2">Health Department Approved</h3>
+                <p className="text-xs text-crisp-white/80">Maryland state licensed and health department approved facility</p>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl mb-3">🧪</div>
+                <h3 className="text-sm font-semibold text-gold mb-2">Bloodborne Pathogen Certified</h3>
+                <p className="text-xs text-crisp-white/80">Certified in bloodborne pathogen prevention and safety protocols</p>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl mb-3">🧽</div>
+                <h3 className="text-sm font-semibold text-gold mb-2">Sterile Equipment</h3>
+                <p className="text-xs text-crisp-white/80">All equipment sterilized with hospital-grade autoclaves</p>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl mb-3">✅</div>
+                <h3 className="text-sm font-semibold text-gold mb-2">Licensed Professional</h3>
+                <p className="text-xs text-crisp-white/80">Fully licensed professional tattoo artist in Maryland</p>
+              </div>
+            </div>
+          </div>
+          
           {/* Studio Location with Business Hours */}
           <div className="glass-panel p-8 rounded-lg mb-16">
             <h2 className="text-2xl font-bold mb-6 text-crisp-white text-center">Studio Location & Hours</h2>
@@ -259,7 +412,7 @@ export default function Contact() {
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <div className="text-center">
               <div className="text-3xl mb-3">🏆</div>
-              <h3 className="text-lg font-semibold mb-2 text-crisp-white">Licensed & Insured</h3>
+              <h3 className="text-lg font-semibold mb-2 text-crisp-white">Licensed Professional</h3>
               <p className="text-crisp-white/80">Professional artist with all required certifications</p>
             </div>
             <div className="text-center">
@@ -297,7 +450,7 @@ export default function Contact() {
               {[
                 {
                   question: "How much do tattoos cost?",
-                  answer: "Pricing varies based on size, complexity, and style. We offer transparent piece-based pricing starting at $120. All consultations are free with no obligation."
+                  answer: "Pricing varies based on size, complexity, and style. We offer transparent piece-based pricing starting at $100. All consultations are free with no obligation."
                 },
                 {
                   question: "How long does the process take?",
@@ -318,6 +471,11 @@ export default function Contact() {
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* Contact Form */}
+          <div className="mb-16">
+            <ContactForm />
           </div>
 
           {/* Enhanced CTA with Internal Linking */}

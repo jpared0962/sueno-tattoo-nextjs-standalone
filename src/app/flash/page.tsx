@@ -5,8 +5,8 @@ import { generateSEOMetadata } from '@/components/seo/SEOHead'
 import { LocalBusinessSchema } from '@/components/seo/LocalBusinessSchema'
 
 export const metadata: Metadata = generateSEOMetadata({
-  title: 'Flash Tattoo Designs | Ready-to-Ink Art | Sueno Tattoo',
-  description: 'Browse traditional flash tattoo designs ready for same-day inking. Classic American traditional flash art by professional artist Jose in Laurel, MD.',
+  title: 'Flash Tattoos | Ready-to-Ink Flash Tattoo Designs | Traditional American Flash Art | Same-Day Tattoos | Jose | Sueno Tattoo Laurel, MD',
+  description: 'Browse 38+ traditional flash tattoo designs ready for same-day inking. Classic American traditional flash art by professional artist Jose in Laurel, MD. Flash tattoos featuring bold lines, vibrant colors, and timeless designs. Walk-in friendly flash tattoo appointments available. Traditional flash sheets with roses, anchors, daggers, eagles, and classic motifs serving Prince George\'s County, Beltsville, College Park, Greenbelt, and DMV area.',
   keywords: [
     'flash tattoo art',
     'ready to tattoo designs',
@@ -15,7 +15,23 @@ export const metadata: Metadata = generateSEOMetadata({
     'same day tattoos',
     'walk in tattoos laurel md',
     'traditional american flash',
-    'classic tattoo designs'
+    'classic tattoo designs',
+    'flash tattoos laurel md',
+    'same-day flash tattoos',
+    'traditional flash art',
+    'flash tattoo designs',
+    'ready-to-ink flash tattoos',
+    'walk-in flash tattoos',
+    'jose alvarado flash art',
+    'flash tattoo sheets',
+    'traditional american flash tattoos',
+    'classic flash designs',
+    'flash tattoo portfolio',
+    'prince georges county flash tattoos',
+    'beltsville flash tattoos',
+    'college park flash tattoos',
+    'greenbelt flash tattoos',
+    'dmv flash tattoos'
   ],
   url: '/flash',
 })
@@ -59,16 +75,89 @@ export default function Flash() {
       {/* Schema Markup */}
       <LocalBusinessSchema />
       
+      {/* Enhanced Schema Markup for Flash Tattoos */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Flash Tattoos | Ready-to-Ink Flash Tattoo Designs",
+            "description": "Traditional American flash art ready for same-day inking. Browse 38+ original flash tattoo designs featuring classic imagery and timeless designs.",
+            "url": "https://www.suenotattoo.com/flash",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "Sueno Tattoo",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Laurel",
+                "addressRegion": "MD",
+                "addressCountry": "US"
+              }
+            },
+            "serviceType": "Flash Tattoos",
+            "category": "Tattoo Services",
+            "priceRange": "$150-$300",
+            "availableAtOrFrom": {
+              "@type": "Place",
+              "name": "Sueno Tattoo",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Laurel",
+                "addressRegion": "MD",
+                "addressCountry": "US"
+              }
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Flash Tattoo Designs",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Traditional American Flash Tattoos",
+                    "description": "Classic American traditional flash art with bold lines and vibrant colors"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Same-Day Flash Tattoos",
+                    "description": "Ready-to-ink flash tattoo designs available for walk-in appointments"
+                  }
+                }
+              ]
+            },
+            "serviceAudience": {
+              "@type": "Audience",
+              "audienceType": "People interested in same-day tattoos and traditional flash art",
+              "geographicArea": {
+                "@type": "Place",
+                "name": "Laurel, MD and DMV area"
+              }
+            }
+          })
+        }}
+      />
+      
       <div className="min-h-screen pb-16 md:pb-20">
         <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
           {/* Hero Section */}
           <section className="text-center mb-12 md:mb-16">
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-gold to-deep-red bg-clip-text text-transparent">
-              Flash Tattoo Designs
+              Flash Tattoos | Ready-to-Ink Flash Tattoo Designs
             </h1>
             <p className="text-lg md:text-xl lg:text-2xl text-crisp-white/90 mb-6 md:mb-8">
-              Ready-to-ink traditional flash art
+              Traditional American flash art ready for same-day inking by Jose
             </p>
+            <div className="max-w-3xl mx-auto">
+              <p className="text-crisp-white/80 mb-6">
+                Browse our collection of 38+ original flash tattoo designs featuring classic American traditional flash art. 
+                Perfect for walk-in appointments and same-day tattoos in Laurel, MD serving Prince George's County and the DMV area.
+              </p>
+            </div>
           </section>
 
           {/* Flash Info */}
@@ -77,15 +166,20 @@ export default function Flash() {
               <div className="flex items-center justify-center mb-4 md:mb-6">
                 <div className="text-4xl md:text-6xl glass-accent rounded-full p-3 md:p-4">⚡</div>
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-8 text-crisp-white">Traditional Flash Art</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-8 text-crisp-white">Traditional American Flash Art | Same-Day Flash Tattoos</h2>
               <div className="space-y-4 md:space-y-6 text-crisp-white/90 leading-relaxed text-sm md:text-base">
                 <p>
-                  Browse our collection of 38+ original flash tattoo designs ready for inking. 
-                  Classic American traditional flash art featuring bold lines, classic imagery, and timeless designs.
+                  Browse our collection of 38+ original flash tattoo designs ready for same-day inking by Jose. 
+                  Our traditional American flash art features bold lines, classic imagery, and timeless designs perfect for walk-in appointments.
                 </p>
                 <p>
-                  Flash designs include floral, gothic, animals, nautical themes, and other traditional motifs. 
-                  Perfect for walk-ins or when you want a classic tattoo design without the wait.
+                  Flash tattoo designs include floral, gothic, animals, nautical themes, and other traditional motifs. 
+                  Perfect for walk-in clients or when you want a classic flash tattoo design without the wait. 
+                  Each flash tattoo is hand-drawn using authentic traditional American flash art techniques.
+                </p>
+                <p>
+                  Our flash tattoo collection showcases ready-to-ink designs that can be completed in a single session, 
+                  making them ideal for same-day tattoos and walk-in appointments in Laurel, MD.
                 </p>
                 <div className="glass-panel rounded-lg p-4 md:p-6 mt-4 md:mt-6">
                   <div className="grid md:grid-cols-2 gap-3 md:gap-4 text-xs md:text-sm">
@@ -104,8 +198,12 @@ export default function Flash() {
           {/* Flash Features */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-center mb-12 text-crisp-white">
-              Flash Tattoo Features
+              Flash Tattoo Features | Why Choose Flash Tattoos
             </h2>
+            <p className="text-center text-crisp-white/90 max-w-2xl mx-auto mb-8">
+              Flash tattoos offer the perfect solution for same-day tattoos and walk-in appointments. 
+              Discover the benefits of choosing traditional American flash art for your next tattoo.
+            </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {flashFeatures.map((feature, index) => (
                 <div key={index} className="glass-service rounded-lg p-6">
@@ -120,8 +218,12 @@ export default function Flash() {
           {/* Flash Sheets Gallery */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-center mb-8 text-crisp-white">
-              Available Flash Sheets
+              Available Flash Tattoo Sheets | Ready-to-Ink Flash Designs
             </h2>
+            <p className="text-center text-crisp-white/90 max-w-2xl mx-auto mb-8">
+              Browse our complete collection of flash tattoo designs available for same-day inking. 
+              Each traditional American flash tattoo is hand-drawn by Jose and ready for immediate application.
+            </p>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {[
                 { src: '/images/drawings-optimized/Anker.jpg', alt: 'Anchor flash tattoo design - Laurel MD', title: 'Anchor Design' },
@@ -158,12 +260,12 @@ export default function Flash() {
                 { src: '/images/drawings-optimized/Travel.jpg', alt: 'Travel flash tattoo design - Laurel MD', title: 'Travel Design' },
               ].map((flash) => (
                 <div key={flash.src} className="glass-card rounded-lg overflow-hidden group cursor-pointer">
-                  <div className="relative aspect-square">
+                  <div className="relative w-full h-0 pb-[100%]">
                     <Image
                       src={flash.src}
                       alt={flash.alt}
                       fill
-                      className="object-cover transition-transform duration-500 will-change-transform group-hover:scale-105"
+                      className="absolute inset-0 object-cover transition-transform duration-500 will-change-transform group-hover:scale-105"
                       loading="lazy"
                       quality={75}
                       sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
@@ -186,11 +288,12 @@ export default function Flash() {
           <section className="mb-16">
             <div className="glass-testimonial rounded-xl p-8 text-center">
               <h2 className="text-3xl font-bold mb-6 text-crisp-white">
-                Flash Collection Categories
+                Flash Tattoo Collection Categories | Traditional American Flash Art Themes
               </h2>
               <p className="text-lg text-crisp-white/90 mb-8 max-w-3xl mx-auto">
-                Our flash collection features hand-drawn traditional designs spanning classic American traditional themes. 
-                Each piece is designed to be tattooed quickly while maintaining the highest quality standards.
+                Our flash tattoo collection features hand-drawn traditional designs spanning classic American traditional themes. 
+                Each flash tattoo piece is designed to be tattooed quickly while maintaining the highest quality standards. 
+                Perfect for same-day tattoos and walk-in appointments in Laurel, MD.
               </p>
               <div className="grid md:grid-cols-4 gap-4 text-sm text-crisp-white/80">
                 <div className="glass-panel rounded-lg p-4">

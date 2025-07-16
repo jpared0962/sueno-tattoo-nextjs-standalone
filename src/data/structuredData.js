@@ -129,7 +129,7 @@ export const localBusinessSchema = {
   "@id": "https://www.suenotattoo.com/#localbusiness",
   "name": "Sueno Tattoo",
   "alternateName": "Jose Alvarado Tattoo Artist",
-  "description": "Professional tattoo artist in Laurel, MD. Custom designs, 8+ years experience. Licensed and insured.",
+  "description": "Professional tattoo artist in Laurel, MD. Custom designs, 8+ years experience. Licensed professional.",
   "url": "https://www.suenotattoo.com",
   "telephone": "+12407583226",
   "email": "jpared19@outlook.com",

@@ -152,11 +152,11 @@ export function InteractiveGallery({
         </div>
       )}
 
-      {/* Gallery Grid */}
+      {/* Gallery Grid - Masonry Layout */}
       <AnimatePresence mode="wait">
         <motion.div
           key={selectedCategory}
-          className={`grid ${columnClasses[columns]} gap-4`}
+          className={`columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4`}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
@@ -313,8 +313,7 @@ function GalleryItem({
 
   return (
     <motion.div
-      className="group relative cursor-pointer overflow-hidden rounded-lg bg-charcoal-gray"
-      style={{ aspectRatio: '3/4' }} // Better ratio for tattoo photos
+      className="group relative cursor-pointer overflow-hidden rounded-lg bg-charcoal-gray mb-4 break-inside-avoid"
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.3, delay: index * 0.05 }}
@@ -331,13 +330,14 @@ function GalleryItem({
       aria-label={`View ${image.alt} in lightbox`}
     >
       {/* Main Image */}
-      <div className="relative w-full h-full">
+      <div className="relative w-full">
         <Image
           src={showBefore && image.beforeSrc ? image.beforeSrc : image.src}
           alt={image.alt}
-          fill
+          width={400}
+          height={600}
           className={`
-            object-cover transition-all duration-500 group-hover:scale-105
+            w-full h-auto object-cover transition-all duration-500 group-hover:scale-105
             ${isLoaded ? 'opacity-100' : 'opacity-0'}
           `}
           onLoad={() => setIsLoaded(true)}

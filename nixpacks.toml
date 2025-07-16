@@ -1,0 +1,11 @@
+[variables]
+NODE_ENV = 'production'
+NEXT_TELEMETRY_DISABLED = '1'
+SKIP_ENV_VALIDATION = 'true'
+NODE_OPTIONS = '--max-old-space-size=8192'
+
+[phases.build]
+cmds = ['NODE_OPTIONS="--max-old-space-size=8192" npm run build']
+
+[phases.install]
+cmds = ['npm ci --prefer-offline --no-audit']

@@ -4,17 +4,55 @@ import { LocalBusinessSchema } from '@/components/seo/LocalBusinessSchema';
 import { businessInfo } from '@/data/business-info';
 
 export const metadata: Metadata = generateSEOMetadata({
-  title: `Complete Tattoo Aftercare Guide | Jose | ${businessInfo.name} Laurel MD`,
+  title: `Complete Tattoo Aftercare Guide | Jose | Laurel MD`,
   description: `Professional tattoo aftercare guide with Derm Shield instructions, healing timeline, and expert advice from licensed tattoo artist Jose in Laurel, MD. Ensure perfect healing for your new tattoo.`,
   keywords: [
     'tattoo aftercare guide laurel md',
     'derm shield aftercare instructions',
     'tattoo healing guide maryland',
     'professional tattoo aftercare',
-    'jose alvarado aftercare advice',
+    'jose aftercare advice',
     'tattoo healing timeline dmv',
     'maryland tattoo aftercare',
-    'complete tattoo care guide'
+    'complete tattoo care guide',
+    'tattoo aftercare guide',
+    'tattoo healing process',
+    'tattoo care instructions',
+    'proper tattoo care',
+    'tattoo healing timeline',
+    'tattoo maintenance',
+    'tattoo aftercare tips',
+    'professional aftercare advice',
+    'new tattoo care',
+    'fresh tattoo aftercare',
+    'tattoo healing stages',
+    'tattoo scabbing',
+    'tattoo peeling',
+    'tattoo itching',
+    'tattoo fading',
+    'tattoo aftercare products',
+    'tattoo healing balm',
+    'tattoo moisturizer',
+    'tattoo soap',
+    'tattoo lotion',
+    'aftercare cream',
+    'healing ointment',
+    'tattoo infection signs',
+    'tattoo healing problems',
+    'tattoo not healing',
+    'tattoo aftercare mistakes',
+    'tattoo touch up needed',
+    'tattoo healing complications',
+    'how to care for a new tattoo',
+    'tattoo aftercare instructions Maryland',
+    'professional tattoo aftercare guide',
+    'what to do after getting a tattoo',
+    'safe tattoo shop',
+    'sterile tattoo studio',
+    'clean tattoo parlor',
+    'hygienic tattoo artist',
+    'health department approved',
+    'bloodborne pathogen certified'
   ],
   url: '/aftercare',
 });
@@ -45,6 +83,25 @@ export default function AftercarePage() {
               <p className="text-sm md:text-base text-crisp-white/90 leading-relaxed">
                 EXCESSIVE BODILY FLUID BUILDUP UNDER DERM SHIELD IS A NORMAL PART OF THE HEALING PROCESS!
               </p>
+            </div>
+            
+            {/* Safety & Health Assurance */}
+            <div className="grid md:grid-cols-3 gap-4 mb-8">
+              <div className="glass-card p-4 rounded-lg text-center">
+                <div className="text-2xl mb-2">🏥</div>
+                <h3 className="text-sm font-semibold text-gold mb-2">Health Department Approved</h3>
+                <p className="text-xs text-crisp-white/80">Maryland state licensed and health department approved tattoo facility</p>
+              </div>
+              <div className="glass-card p-4 rounded-lg text-center">
+                <div className="text-2xl mb-2">🩸</div>
+                <h3 className="text-sm font-semibold text-gold mb-2">Bloodborne Pathogen Certified</h3>
+                <p className="text-xs text-crisp-white/80">Certified in bloodborne pathogen prevention and sterile techniques</p>
+              </div>
+              <div className="glass-card p-4 rounded-lg text-center">
+                <div className="text-2xl mb-2">🧼</div>
+                <h3 className="text-sm font-semibold text-gold mb-2">Sterile Equipment</h3>
+                <p className="text-xs text-crisp-white/80">All equipment sterilized with hospital-grade autoclaves</p>
+              </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
               <a 

@@ -7,10 +7,10 @@ import { SEOLayout } from '@/components/Layout/SEOLayout';
 // SEO Metadata
 export const metadata: Metadata = generateSEOMetadata({
   ...commonSEOData.about,
-  title: `About Jose | Professional Tattoo Artist | ${businessInfo.name}`,
+  title: `About Jose | Professional Tattoo Artist`,
   description: `Meet Jose, licensed professional tattoo artist with 8+ years experience in Laurel, MD. Specializing in custom designs, traditional American style, and realism work. 95% perfect healing rate.`,
   keywords: [
-    'jose alvarado tattoo artist',
+    'jose tattoo artist',
     'professional tattoo artist laurel md',
     'licensed tattoo artist maryland',
     'custom tattoo artist dmv',
@@ -32,6 +32,120 @@ export default function About() {
     <>
       {/* Schema Markup */}
       <LocalBusinessSchema />
+      
+      {/* Enhanced Schema Markup for About Page */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Jose",
+            "givenName": "Jose",
+            "jobTitle": "Professional Tattoo Artist",
+            "description": "Licensed professional tattoo artist with 8+ years experience specializing in custom tattoo design, traditional American tattoos, realistic tattoos, and cover-up tattoos in Laurel, MD",
+            "url": "https://www.suenotattoo.com/about",
+            "image": "https://www.suenotattoo.com/images/logo/logo.png",
+            "worksFor": {
+              "@type": "LocalBusiness",
+              "name": "Sueno Tattoo",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Laurel",
+                "addressRegion": "MD",
+                "postalCode": "20723",
+                "addressCountry": "US"
+              },
+              "telephone": "+12407583226",
+              "email": "jpared19@outlook.com"
+            },
+            "hasCredential": [
+              {
+                "@type": "EducationalOccupationalCredential",
+                "name": "Professional Tattoo Artist License",
+                "credentialCategory": "Professional License",
+                "recognizedBy": {
+                  "@type": "Organization",
+                  "name": "Maryland State"
+                },
+                "validFrom": "2016-01-01"
+              }
+            ],
+            "knowsAbout": [
+              {
+                "@type": "Thing",
+                "name": "Custom Tattoo Design",
+                "description": "Original artwork tailored to client vision through collaborative consultation process"
+              },
+              {
+                "@type": "Thing",
+                "name": "Traditional American Tattoos",
+                "description": "Bold lines, classic imagery, and timeless designs using authentic traditional techniques"
+              },
+              {
+                "@type": "Thing",
+                "name": "Realism Work Tattoos",
+                "description": "Photorealistic detail and lifelike representation perfect for portraits and memorial pieces"
+              },
+              {
+                "@type": "Thing",
+                "name": "Cover-up Tattoos",
+                "description": "Transforming existing tattoos into new artwork through creative design solutions"
+              },
+              {
+                "@type": "Thing",
+                "name": "Spiritual & Symbolic Tattoos",
+                "description": "Meaningful designs with deep significance and personal meaning"
+              },
+              {
+                "@type": "Thing",
+                "name": "Botanical Tattoo Designs",
+                "description": "Nature-inspired florals and organic patterns with artistic detail"
+              }
+            ],
+            "memberOf": {
+              "@type": "ProfessionalService",
+              "name": "Sueno Tattoo",
+              "serviceType": "Tattoo Services",
+              "areaServed": {
+                "@type": "Place",
+                "name": "Laurel, MD and Prince George's County"
+              }
+            },
+            "workLocation": {
+              "@type": "Place",
+              "name": "Sueno Tattoo",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Laurel",
+                "addressRegion": "MD",
+                "postalCode": "20723",
+                "addressCountry": "US"
+              }
+            },
+            "alumniOf": {
+              "@type": "Organization",
+              "name": "Professional Tattoo Training"
+            },
+            "award": [
+              {
+                "@type": "Thing",
+                "name": "95% Perfect Healing Rate",
+                "description": "Exceptional client satisfaction and healing success rate"
+              },
+              {
+                "@type": "Thing",
+                "name": "500+ Satisfied Clients",
+                "description": "Proven track record of successful tattoo work"
+              }
+            ],
+            "seeks": {
+              "@type": "Thing",
+              "name": "Creating meaningful tattoo art that clients will proudly wear for life"
+            }
+          })
+        }}
+      />
       
       <SEOLayout 
         breadcrumbs={breadcrumbs}
@@ -117,7 +231,7 @@ export default function About() {
               </div>
               <div className="glass-stat rounded-xl p-6 md:p-8 text-center sm:col-span-2 lg:col-span-1">
                 <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-gold mb-3 md:mb-4">100%</div>
-                <div className="text-lg md:text-xl font-semibold text-crisp-white mb-1 md:mb-2">Licensed & Insured</div>
+                <div className="text-lg md:text-xl font-semibold text-crisp-white mb-1 md:mb-2">Licensed Professional</div>
                 <p className="text-crisp-white/70 text-xs md:text-sm">Maryland State licensed</p>
               </div>
             </div>

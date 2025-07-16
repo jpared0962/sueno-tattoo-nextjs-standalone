@@ -1,26 +1,125 @@
 import { Metadata } from 'next';
-import { generateSEOMetadata } from '@/components/seo/SEOHead';
 import { LocalBusinessSchema } from '@/components/seo/LocalBusinessSchema';
 import { businessInfo } from '@/data/business-info';
+import { generateVoiceSearchSchema, generateConversationalKeywordSchema } from '@/components/seo/VoiceSearchSchemas';
 
-export const metadata: Metadata = generateSEOMetadata({
-  title: `Tattoo FAQ | Common Questions | ${businessInfo.name} Laurel MD`,
-  description: `Frequently asked questions about tattoo services, pricing, aftercare, and booking with Jose in Laurel, MD. Get answers to common tattoo questions for DMV area clients.`,
-  keywords: [
-    'tattoo faq laurel md',
-    'tattoo questions maryland',
-    'tattoo aftercare guide',
-    'tattoo pricing questions',
-    'first tattoo questions',
-    'tattoo consultation faq',
-    'dmv tattoo questions',
-    'jose alvarado faq'
-  ],
-  url: '/faq',
-});
+export const metadata: Metadata = {
+  title: 'Tattoo FAQ | Voice Search Questions | Sueño Tattoo Laurel MD',
+  description: 'Voice search optimized FAQ about tattoos in Laurel MD. Where can I get custom tattoo designed? Who is best tattoo artist Prince Georges County? Answers to common questions.',
+  keywords: 'where can I get custom tattoo designed near me, who is best tattoo artist Prince Georges County, tattoo shops open today Laurel MD, how much does realistic portrait tattoo cost, what is best placement professional first tattoo, can you cover up 10 year old tattoo, birth flower tattoos, zodiac constellation tattoos',
+  alternates: {
+    canonical: '/faq',
+  },
+  openGraph: {
+    title: 'Tattoo FAQ | Voice Search Questions | Sueño Tattoo Laurel MD',
+    description: 'Get answers to all your tattoo questions including voice search queries. Professional tattoo artist serving Laurel, College Park, Beltsville, and DMV area.',
+    url: 'https://www.suenotattoo.com/faq',
+    type: 'website',
+  },
+};
 
 export default function FAQPage() {
   const faqCategories = [
+    {
+      title: "Voice Search Questions",
+      questions: [
+        {
+          q: "Where can I get a custom tattoo designed near me?",
+          a: "Sueño Tattoo in Laurel, MD specializes in custom tattoo designs. Jose works with you during a free consultation to create unique, personalized artwork that reflects your vision. We serve Laurel, College Park, Beltsville, Greenbelt, and the entire DMV area with easy access from Route 1 and I-95."
+        },
+        {
+          q: "Who's the best tattoo artist in Prince George's County?",
+          a: "Jose at Sueño Tattoo is a licensed professional artist with 8+ years of experience and over 500 satisfied clients. He maintains a 95% perfect healing rate and specializes in custom designs, traditional American tattoos, realistic portraits, and cover-ups. Located in Laurel, MD serving all of Prince George's County."
+        },
+        {
+          q: "Are there tattoo shops open today near Laurel MD?",
+          a: "Sueño Tattoo operates Thursday through Sunday, 12:00 PM to 6:00 PM. We offer same-day consultations and appointments when available. Call (240) 758-3226 to check current availability and book your session. Walk-ins welcome during business hours."
+        },
+        {
+          q: "How much does a realistic portrait tattoo cost?",
+          a: "Realistic portrait tattoos typically range from $300-$800 depending on size, detail level, and placement. During your free consultation, Jose will provide an accurate quote based on your specific design requirements and timeline. We offer payment plans for larger pieces."
+        },
+        {
+          q: "What's the best placement for a professional's first tattoo?",
+          a: "For professionals, ideal first tattoo placements include the upper arm, shoulder blade, chest, or ribcage - areas easily concealed by business attire. We specialize in discrete placement that maintains professional appearance while allowing personal expression, perfect for DMV federal employees and corporate workers."
+        },
+        {
+          q: "Can you cover up a 10-year-old tattoo?",
+          a: "Yes! Older tattoos are often excellent candidates for cover-ups as the ink has fully settled and faded. Jose specializes in cover-up transformations using strategic design and color theory to create beautiful new artwork over existing tattoos. Free consultations available for cover-up assessments."
+        },
+        {
+          q: "How long do fine line tattoos take to heal in Maryland?",
+          a: "Fine line tattoos typically heal in 2-3 weeks in Maryland's climate. The healing process may take slightly longer during humid summer months. We provide detailed aftercare instructions specific to Maryland's seasonal weather conditions and high humidity levels."
+        }
+      ]
+    },
+    {
+      title: "Trending & Seasonal Questions",
+      questions: [
+        {
+          q: "Do you do birth flower tattoos?",
+          a: "Yes! Birth flower tattoos are very popular at Sueño Tattoo. Jose creates beautiful, detailed botanical designs representing each month's birth flower. These make meaningful personal tattoos or gifts for loved ones. We can design them in fine line, traditional, or realistic styles."
+        },
+        {
+          q: "Can you design zodiac constellation tattoos?",
+          a: "Absolutely! Zodiac and constellation tattoos are a specialty at Sueño Tattoo. Jose creates accurate star patterns and artistic interpretations of astrological symbols, perfect for fine line or traditional style artwork. Very popular with College Park and DMV area clients."
+        },
+        {
+          q: "What about Mercury retrograde and tattoo timing?",
+          a: "While Mercury retrograde is an astrological concern for some clients, there are no medical contraindications for getting tattoos during these periods. We respect all spiritual beliefs and can schedule around your preferred timing for optimal personal energy."
+        },
+        {
+          q: "Do you create graduation tattoo designs for UMD students?",
+          a: "Yes! We love creating commemorative graduation tattoos for University of Maryland students. Popular designs include graduation dates, degree symbols, school spirit elements, Testudo references, or meaningful quotes celebrating academic achievements. Student-friendly pricing available."
+        }
+      ]
+    },
+    {
+      title: "Local & Location Questions",
+      questions: [
+        {
+          q: "Do you have tattoo shops near Laurel Lakes?",
+          a: "Sueño Tattoo is conveniently located in Laurel, MD, just minutes from Laurel Lakes. We're easily accessible via Route 1 and serve the entire Laurel Lakes community with professional tattoo services and free consultations. Plenty of free parking available."
+        },
+        {
+          q: "Is there a tattoo artist on the Route 1 corridor?",
+          a: "Yes! Sueño Tattoo is located on the Route 1 corridor in Laurel, MD, making us easily accessible for commuters traveling between Baltimore and Washington DC. We offer convenient scheduling for busy professionals and weekend appointments."
+        },
+        {
+          q: "Are you a licensed tattoo artist in Prince George's County?",
+          a: "Absolutely. Jose holds a current Maryland Body Art Practitioner License and maintains all required certifications including bloodborne pathogen training and CPR certification. Our studio meets all Prince George's County health and safety regulations."
+        },
+        {
+          q: "Can I get tattoos near I-95 in Maryland?",
+          a: "Yes! Sueño Tattoo is conveniently located just off I-95 in Laurel, MD. Perfect for travelers and commuters along the I-95 corridor between Baltimore and Washington DC. Easy access with free parking and professional service."
+        }
+      ]
+    },
+    {
+      title: "Problem Solution Questions",
+      questions: [
+        {
+          q: "Can you fix a bad tattoo from another artist?",
+          a: "Cover-ups and tattoo corrections are a specialty at Sueño Tattoo. Jose has extensive experience transforming poorly executed tattoos into beautiful artwork using advanced color theory and creative design solutions. Free consultations available to assess your tattoo."
+        },
+        {
+          q: "Do you offer discrete tattoo placement for federal employees?",
+          a: "Yes! We understand the unique needs of DMV federal employees and specialize in discrete tattoo placement that maintains professional appearance. Popular areas include upper arms, back, and areas easily covered by business attire. Security clearance considerations respected."
+        },
+        {
+          q: "Are your prices student-friendly for college students?",
+          a: "We offer competitive pricing and understand college budgets. University of Maryland students should mention their student status during consultation. We also offer payment plans for larger pieces to make quality tattoos more accessible to students."
+        },
+        {
+          q: "What if my tattoo isn't healing properly in Maryland weather?",
+          a: "Maryland's humidity can affect healing, but we provide detailed climate-specific aftercare instructions. If you have concerns about healing, contact us immediately for guidance. We offer free aftercare consultations for all clients and stand behind our work."
+        },
+        {
+          q: "Do you provide professional tattoo touch-up services?",
+          a: "Yes! We offer professional touch-up services for existing tattoos. Touch-ups for work done at Sueño Tattoo are often complimentary within the first year. For tattoos from other artists, we provide assessment and touch-up services as needed."
+        }
+      ]
+    },
     {
       title: "Booking & Consultation",
       questions: [
@@ -136,8 +235,8 @@ export default function FAQPage() {
       title: "Health & Safety",
       questions: [
         {
-          q: "Are you licensed and insured?",
-          a: "Yes, we're fully licensed by Maryland state and carry comprehensive insurance. We meet or exceed all health department requirements and maintain strict safety protocols."
+          q: "Are you licensed?",
+          a: "Yes, we're fully licensed by Maryland state. We meet or exceed all health department requirements and maintain strict safety protocols."
         },
         {
           q: "What safety measures do you follow?",
@@ -217,10 +316,35 @@ export default function FAQPage() {
     }
   ];
 
+  // Flatten all questions for schema generation
+  const allFAQs = faqCategories.flatMap(category => 
+    category.questions.map(q => ({
+      question: q.q,
+      answer: q.a,
+      category: category.title
+    }))
+  )
+
   return (
     <>
       {/* Schema Markup */}
       <LocalBusinessSchema />
+      
+      {/* Voice Search Optimized FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateVoiceSearchSchema(allFAQs))
+        }}
+      />
+
+      {/* Conversational Keywords Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateConversationalKeywordSchema())
+        }}
+      />
 
       <div className="min-h-screen pb-16">
         <div className="container mx-auto px-4">

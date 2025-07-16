@@ -153,11 +153,6 @@ export default function TraditionalTattoosPage() {
                   title: 'Classic Cartoon Style'
                 },
                 { 
-                  src: '/images/gallery-optimized/DSC02452.jpg',
-                  alt: 'Traditional geometric paper airplane tattoo - Laurel MD',
-                  title: 'Traditional Geometric Design'
-                },
-                { 
                   src: '/images/gallery-optimized/DSC03838.jpg',
                   alt: 'Traditional hot air balloon with hearts tattoo - Laurel MD',
                   title: 'Traditional Hot Air Balloon'
@@ -179,12 +174,12 @@ export default function TraditionalTattoosPage() {
                 }
               ].map((image, index) => (
                 <div key={index} className="glass-card rounded-lg overflow-hidden group">
-                  <div className="relative aspect-square">
+                  <div className="relative w-full h-80 bg-ink-black/30">
                     <Image
                       src={image.src}
                       alt={image.alt}
                       fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-110"
+                      className="absolute inset-0 object-contain transition-transform duration-300 group-hover:scale-105"
                       loading="lazy"
                       quality={85}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

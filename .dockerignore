@@ -15,5 +15,4 @@ yarn-error.log*
 .idea
 *.swp
 *.swo
-scripts/optimize-*.js
 temp-clone

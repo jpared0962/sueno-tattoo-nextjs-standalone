@@ -205,6 +205,76 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
+  // Trending content pages
+  const trendingPages = [
+    {
+      url: `${baseUrl}/services/birth-flower-tattoos`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/services/zodiac-constellation-tattoos`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    },
+  ]
+
+  // Hyperlocal location pages
+  const hyperlocalPages = [
+    {
+      url: `${baseUrl}/locations/laurel-lakes`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/locations/route-1-corridor`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+  ]
+
+  // Service + Location combination pages
+  const serviceLocationCombos = [
+    {
+      url: `${baseUrl}/locations/college-park/tattoo-cover-ups`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/locations/beltsville/small-tattoos`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/locations/greenbelt/realistic-portraits`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+  ]
+
+  // Demographic-specific service pages
+  const demographicPages = [
+    {
+      url: `${baseUrl}/services/student-tattoos`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/services/professional-tattoos`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+  ]
+
   // Blog pages (if blog content exists)
   const blogPages = [
     {
@@ -233,6 +303,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...regionPages,
     ...locationPages,
     ...serviceLocationPages,
+    ...trendingPages,
+    ...hyperlocalPages,
+    ...serviceLocationCombos,
+    ...demographicPages,
     ...flashPages,
     ...galleryPages,
     ...aftercarePages,

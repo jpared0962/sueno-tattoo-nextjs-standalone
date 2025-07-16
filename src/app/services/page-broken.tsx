@@ -73,7 +73,7 @@ export default function Services() {
                 "name": "How much do tattoos cost?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Our tattoo pricing varies by size, complexity, and style. Small tattoos start at $120, medium pieces range from $200-600, and larger custom work can be $600+. We provide transparent estimates during your free consultation."
+                  "text": "Our tattoo pricing varies by size, complexity, and style. Small tattoos start at $100, medium pieces range from $200-600, and larger custom work can be $600+. We provide transparent estimates during your free consultation."
                 }
               },
               {
@@ -249,7 +249,7 @@ export default function Services() {
                 How much do tattoos cost?
               </h3>
               <p className="text-crisp-white/90">
-                Our tattoo pricing varies by size, complexity, and style. Small tattoos start at $120, 
+                Our tattoo pricing varies by size, complexity, and style. Small tattoos start at $100, 
                 medium pieces range from $200-600, and larger custom work can be $600+. We provide 
                 transparent estimates during your free consultation.
               </p>

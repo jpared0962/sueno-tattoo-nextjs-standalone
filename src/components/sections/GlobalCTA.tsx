@@ -91,7 +91,7 @@ export function GlobalCTA({
       
       {/* Trust signals */}
       <div className="flex justify-center gap-8 mt-8 text-sm text-crisp-white/70">
-        <span>🏆 Licensed & Insured</span>
+        <span>🏆 Licensed Professional</span>
         <span>⭐ {businessInfo.statistics.averageRating} Star Rating</span>
         <span>🎨 {businessInfo.statistics.yearsInBusiness}+ Years Experience</span>
       </div>

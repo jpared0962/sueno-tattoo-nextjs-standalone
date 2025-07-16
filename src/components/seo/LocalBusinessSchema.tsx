@@ -19,17 +19,18 @@ export function LocalBusinessSchema({
   
   const baseSchema = {
     "@context": "https://schema.org",
-    "@type": ["TattooShop", "LocalBusiness", "HealthAndBeautyBusiness"],
+    "@type": "LocalBusiness",
     "name": businessInfo.name,
+    "alternateName": "Jose's Tattoo Studio",
+    "slogan": "Where Dreams Become Art",
     "legalName": businessInfo.classification.businessType === 'LLC' ? 
       `${businessInfo.name} LLC` : businessInfo.name,
     "description": businessInfo.description,
     "url": businessInfo.contact.website,
-    "logo": `${businessInfo.contact.website}/images/logo/sueño-tattoo-logo.png`,
+    "logo": `${businessInfo.contact.website}/images/logo/logo.png`,
     "image": [
-      `${businessInfo.contact.website}/images/seo/tattoo-studio-interior.jpg`,
-      `${businessInfo.contact.website}/images/seo/tattoo-artist-work.jpg`,
-      `${businessInfo.contact.website}/images/seo/custom-tattoo-designs.jpg`
+      `${businessInfo.contact.website}/images/logo/logo.png`,
+      `${businessInfo.contact.website}/images/seo/sueño-tattoo-og-image.jpg`
     ],
     
     // Contact Information
@@ -100,7 +101,7 @@ export function LocalBusinessSchema({
     "currenciesAccepted": "USD",
     
     // Price Range
-    "priceRange": `$${businessInfo.pricing.minimumCharge} - $${businessInfo.pricing.hourlyRate * 4}`,
+    "priceRange": "$100-$800",
     
     // Service Areas
     "areaServed": businessInfo.serviceAreas.map(area => ({
@@ -176,6 +177,38 @@ export function LocalBusinessSchema({
       "Body Art",
       "Skin Art",
       "Tattoo Consultation"
+    ],
+    
+    // Founder/Owner
+    "founder": {
+      "@type": "Person",
+      "name": "Jose",
+      "jobTitle": "Professional Tattoo Artist",
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Professional Tattoo Artist License",
+        "credentialCategory": "Professional License",
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "Maryland State"
+        }
+      }
+    },
+    
+    // Aggregate Rating
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "59",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    
+    // Awards/Recognition
+    "awards": [
+      "95% Perfect Healing Rate",
+      "500+ Satisfied Clients",
+      "Licensed Professional"
     ],
     
     // Accessibility

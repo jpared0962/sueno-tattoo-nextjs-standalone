@@ -9,7 +9,7 @@ import { SEOLayout } from '@/components/Layout/SEOLayout'
 
 export const metadata: Metadata = generateSEOMetadata({
   ...commonSEOData.services,
-  title: `Professional Tattoo Services Laurel MD | Jose Alvarado | ${businessInfo.name}`,
+  title: `Professional Tattoo Services Laurel MD | Jose`,
   description: `Comprehensive tattoo services in Laurel, MD. Custom designs, traditional American style, realism work, cover-ups. Licensed professional with 8+ years experience. Call ${businessInfo.contact.phone}`,
   keywords: [
     'tattoo services laurel md',
@@ -87,7 +87,7 @@ export default function Services() {
                 "name": "How much do tattoos cost?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Our tattoo pricing varies by size, complexity, and style. Small tattoos start at $120, medium pieces range from $200-600, and larger custom work can be $600+. We provide transparent estimates during your free consultation."
+                  "text": "Our tattoo pricing varies by size, complexity, and style. Small tattoos start at $100, medium pieces range from $200-600, and larger custom work can be $600+. We provide transparent estimates during your free consultation."
                 }
               },
               {
@@ -96,6 +96,38 @@ export default function Services() {
                 "acceptedAnswer": {
                   "@type": "Answer",
                   "text": "Yes! All consultations are completely free with no obligation. We'll discuss your ideas, show you our portfolio, and provide honest advice about design, placement, and pricing."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What's the best tattoo style for beginners?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "For first-time tattoo clients, we recommend small fine line tattoos, simple traditional designs, or minimalist symbols. These styles are less intimidating, heal faster, and are perfect for testing your tattoo experience before committing to larger pieces."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can you cover up my old tattoo?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, we specialize in tattoo cover-ups! Most tattoos can be covered with the right design approach. During consultation, we'll assess your existing tattoo and create a custom design that completely conceals it while creating beautiful new artwork."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does a tattoo take to heal?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Most tattoos heal in 2-4 weeks with proper aftercare. Small tattoos typically heal faster, while larger pieces may take up to 6 weeks. We provide detailed aftercare instructions and premium healing products to ensure optimal results."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you work with walk-in clients?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We welcome walk-ins during business hours (Thursday-Sunday, 12PM-6PM) for consultations and small tattoos. For larger pieces or specific appointment times, we recommend booking in advance to guarantee availability."
                 }
               },
               {
@@ -220,7 +252,7 @@ export default function Services() {
                 How much do tattoos cost?
               </h3>
               <p className="text-crisp-white/90">
-                Our tattoo pricing varies by size, complexity, and style. Small tattoos start at $120, 
+                Our tattoo pricing varies by size, complexity, and style. Small tattoos start at $100, 
                 medium pieces range from $200-600, and larger custom work can be $600+. We provide 
                 transparent estimates during your free consultation.
               </p>

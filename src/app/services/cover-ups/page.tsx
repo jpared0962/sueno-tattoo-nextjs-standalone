@@ -45,6 +45,67 @@ export default function CoverUpTattoosPage() {
         keywords={service.seoKeywords}
       />
 
+      {/* Voice Search FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Can any tattoo be covered up?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Most tattoos can be covered up successfully! The key factors are the size, darkness, and density of the existing tattoo. Very dark, large, or densely packed tattoos may require laser lightening first, but we can cover the majority of unwanted tattoos with creative design solutions."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much does it cost to cover up a tattoo?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Cover-up tattoos typically cost 20-50% more than regular tattoos due to the complexity and design work required. Pricing depends on the existing tattoo size and the new design complexity. We provide detailed quotes during your free consultation."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will you be able to see my old tattoo after the cover-up?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "When done properly, a cover-up tattoo should completely conceal the original tattoo. We use strategic design placement, darker colors, and expert techniques to ensure the old tattoo is not visible through the new artwork."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does a cover-up tattoo take?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Cover-up tattoos often require multiple sessions and take longer than regular tattoos due to the complexity. Simple cover-ups may take 2-4 hours, while complex pieces can require 6-12 hours across multiple appointments."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What should I bring to a cover-up consultation?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Bring photos of your existing tattoo from multiple angles, any reference images for your desired new design, and be prepared to discuss why you want the cover-up. This helps us create the best possible solution for your specific situation."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need to wait before getting a cover-up?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "If your existing tattoo is fully healed (at least 4-6 weeks old), we can start the cover-up process immediately. Fresh tattoos need to be completely healed before any cover-up work can begin."
+                }
+              }
+            ]
+          })
+        }}
+      />
+
       <div className="min-h-screen pb-20 px-4">
         <div className="max-w-4xl mx-auto">
           {/* Breadcrumb Navigation */}
@@ -140,63 +201,6 @@ export default function CoverUpTattoosPage() {
             </div>
           </div>
 
-          {/* Portfolio Gallery */}
-          <section className="mb-16">
-            <h2 className="text-2xl font-bold text-center mb-8 text-crisp-white">
-              Cover-Up & Transformation Portfolio
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {[
-                { 
-                  src: '/images/portfolio/IMG_3142_g7and1.jpg',
-                  alt: 'Cover-up tattoo transformation before - Laurel MD',
-                  title: 'Phoenix Transformation Before'
-                },
-                { 
-                  src: '/images/portfolio/IMG_3141_u0mjxg.jpg',
-                  alt: 'Cover-up tattoo transformation after - Laurel MD',
-                  title: 'Phoenix Transformation After'
-                },
-                { 
-                  src: '/images/gallery-optimized/DSC04447.jpg',
-                  alt: 'Dark cover-up tattoo with skull cluster - Laurel MD',
-                  title: 'Dark Cover-Up Design'
-                },
-                { 
-                  src: '/images/gallery-optimized/DSC04703.jpg',
-                  alt: 'Family cover-up tattoo design - Laurel MD',
-                  title: 'Family Heart Cover-Up'
-                },
-                { 
-                  src: '/images/gallery-optimized/DSC04730.jpg',
-                  alt: 'Romantic cover-up tattoo design - Laurel MD',
-                  title: 'Romantic Cover-Up'
-                },
-                { 
-                  src: '/images/gallery-optimized/DSC04463.jpg',
-                  alt: 'Detailed cover-up tattoo with moth design - Laurel MD',
-                  title: 'Detailed Moth Cover-Up'
-                }
-              ].map((image, index) => (
-                <div key={index} className="glass-card rounded-lg overflow-hidden group">
-                  <div className="relative aspect-square">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-110"
-                      loading="lazy"
-                      quality={85}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <h3 className="text-crisp-white font-semibold text-center px-4">{image.title}</h3>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
 
           {/* Process Section */}
           <section className="glass-panel p-8 rounded-lg mb-16">

@@ -38,7 +38,7 @@ export function GlobalSchemas() {
                 "closes": "18:00"
               }
             ],
-            "priceRange": "$120-250",
+            "priceRange": "$100-$250",
             "currenciesAccepted": "USD",
             "paymentAccepted": "Cash, Credit Card",
             "areaServed": [

@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+Allow: /services/
+Allow: /gallery/
+Allow: /contact/
+Allow: /book-consultation/
+Allow: /flash/
+
+# Disallow admin and sensitive areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /temp/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://www.suenotattoo.com/sitemap.xml
+
+# Crawl delay to be respectful
+Crawl-delay: 1

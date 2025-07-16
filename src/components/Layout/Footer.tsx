@@ -43,7 +43,7 @@ export default function Footer() {
 
             {/* Trust Signals */}
             <div className="flex gap-6 text-sm">
-              <span className="glass-accent px-3 py-1 rounded-full text-gold">Licensed & Insured</span>
+              <span className="glass-accent px-3 py-1 rounded-full text-gold">Licensed Professional</span>
               <span className="glass-accent px-3 py-1 rounded-full text-gold">8+ Years Experience</span>
             </div>
           </div>
@@ -61,8 +61,14 @@ export default function Footer() {
                 <Link href="/services/traditional" className="block text-crisp-white/80 hover:text-gold transition-colors">
                   Traditional American
                 </Link>
-                <Link href="/services/realism-work" className="block text-crisp-white/80 hover:text-gold transition-colors">
-                  Realism Work
+                <Link href="/services/black-grey" className="block text-crisp-white/80 hover:text-gold transition-colors">
+                  Black & Grey
+                </Link>
+                <Link href="/services/flash-tattoos" className="block text-crisp-white/80 hover:text-gold transition-colors">
+                  Flash Tattoos
+                </Link>
+                <Link href="/services/neo-traditional" className="block text-crisp-white/80 hover:text-gold transition-colors">
+                  Neo-Traditional
                 </Link>
                 <Link href="/services/cover-ups" className="block text-crisp-white/80 hover:text-gold transition-colors">
                   Cover-ups
@@ -118,6 +124,9 @@ export default function Footer() {
             </Link>
             <Link href="/contact" className="text-crisp-white/60 hover:text-gold transition-colors">
               Contact
+            </Link>
+            <Link href="/admin" className="text-crisp-white/40 hover:text-crisp-white/60 transition-colors" title="Admin Access">
+              Admin
             </Link>
           </div>
         </div>

@@ -180,12 +180,12 @@ export default function BlackGreyTattoosPage() {
                 }
               ].map((image, index) => (
                 <div key={index} className="glass-card rounded-lg overflow-hidden group">
-                  <div className="relative aspect-square">
+                  <div className="relative w-full h-80 bg-ink-black/30">
                     <Image
                       src={image.src}
                       alt={image.alt}
                       fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-110"
+                      className="absolute inset-0 object-contain transition-transform duration-300 group-hover:scale-105"
                       loading="lazy"
                       quality={85}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

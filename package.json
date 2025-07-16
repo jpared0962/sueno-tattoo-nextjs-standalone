@@ -4,14 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "NODE_OPTIONS='--max-old-space-size=4096' next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "optimize-images": "node scripts/optimize-images.js",
     "optimize-gallery": "node scripts/optimize-gallery-images.js",
-    "railway-build": "NODE_OPTIONS='--max-old-space-size=4096' next build"
+    "local-build": "NODE_OPTIONS='--max-old-space-size=4096' next build"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.6.1",
     "@supabase/supabase-js": "^2.51.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "autoprefixer": "^10.4.21",
