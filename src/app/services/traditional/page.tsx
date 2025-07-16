@@ -148,16 +148,6 @@ export default function TraditionalTattoosPage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
                 { 
-                  src: '/images/gallery-optimized/DSC02447.jpg',
-                  alt: 'Traditional American tattoo with cartoon characters - Laurel MD',
-                  title: 'Classic Cartoon Style'
-                },
-                { 
-                  src: '/images/gallery-optimized/DSC03838.jpg',
-                  alt: 'Traditional hot air balloon with hearts tattoo - Laurel MD',
-                  title: 'Traditional Hot Air Balloon'
-                },
-                { 
                   src: '/images/gallery-optimized/DSC03892.jpg',
                   alt: 'Traditional peony flowers with script tattoo - Laurel MD',
                   title: 'Traditional Peony Script'
