@@ -278,7 +278,7 @@ export const generateGalleryStructuredData = (tattoos = [], galleryUrl = '') => 
     '@context': 'https://schema.org',
     '@type': 'ImageGallery',
     name: 'Sueno Tattoo Photo Gallery',
-    description: `Pro tattoo photos showing ${tattoos.length} custom designs by Jose Alvarado`,
+    description: `Pro tattoo photos showing ${tattoos.length} custom designs by Jose`,
     url: galleryUrl || 'https://www.suenotattoo.com/gallery',
     numberOfItems: tattoos.length,
     dateModified: new Date().toISOString(),
@@ -290,7 +290,7 @@ export const generateGalleryStructuredData = (tattoos = [], galleryUrl = '') => 
       thumbnailUrl: tattoo.image, // Thumbnail URL (same for now)
       creator: {
         '@type': 'Person',
-        name: 'Jose Alvarado'
+        name: 'Jose'
       }
     }))
   };

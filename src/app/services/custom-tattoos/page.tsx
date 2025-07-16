@@ -9,8 +9,8 @@ import { getServiceBySlug } from '@/data/services';
 const service = getServiceBySlug('custom-tattoos');
 
 export const metadata: Metadata = generateSEOMetadata({
-  title: `Custom Tattoo Designs Laurel MD | Original Artwork | Jose Alvarado`,
-  description: `Custom tattoo designs in Laurel, MD. Original artwork created specifically for you by Jose Alvarado. 8+ years experience, collaborative design process. Free consultations. Call ${businessInfo.contact.phone}`,
+  title: `Custom Tattoo Designs Laurel MD | Original Artwork | Jose`,
+  description: `Custom tattoo designs in Laurel, MD. Original artwork created specifically for you by Jose. 8+ years experience, collaborative design process. Free consultations. Call ${businessInfo.contact.phone}`,
   keywords: [
     'custom tattoo design laurel md',
     'original tattoo artwork',
@@ -48,7 +48,7 @@ export default function CustomTattoosPage() {
               Custom Tattoo Designs in Laurel, MD
             </h1>
             <p className="text-xl text-crisp-white/80 mb-8 max-w-3xl mx-auto">
-              Experience the art of personalized tattooing with Jose Alvarado. Every design is 
+              Experience the art of personalized tattooing with Jose. Every design is 
               created specifically for you - no flash, no copies, just original artwork that 
               tells your unique story.
             </p>

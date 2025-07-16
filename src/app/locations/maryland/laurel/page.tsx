@@ -5,8 +5,8 @@ import { businessInfo } from '@/data/business-info';
 
 // SEO Metadata for Laurel, MD location page
 export const metadata: Metadata = generateSEOMetadata({
-  title: `Professional Tattoo Artist Laurel MD | Jose Alvarado | Custom Tattoos`,
-  description: `Top-rated tattoo artist in Laurel, Maryland. Jose Alvarado specializes in custom designs, traditional American style, realism work. Licensed & insured. Call ${businessInfo.contact.phone}`,
+  title: `Professional Tattoo Artist Laurel MD | Jose | Custom Tattoos`,
+  description: `Top-rated tattoo artist in Laurel, Maryland. Jose specializes in custom designs, traditional American style, realism work. Licensed & insured. Call ${businessInfo.contact.phone}`,
   keywords: [
     'tattoo artist laurel md',
     'custom tattoos laurel maryland',
@@ -35,7 +35,7 @@ export default function LaurelMDPage() {
               Professional Tattoo Artist in Laurel, MD
             </h1>
             <p className="text-xl text-crisp-white/80 mb-8 max-w-3xl mx-auto">
-              Jose Alvarado brings 8+ years of professional tattoo artistry to Laurel, Maryland. 
+              Jose brings 8+ years of professional tattoo artistry to Laurel, Maryland. 
               Specializing in custom original designs, traditional American style, and realism work 
               with a 95% perfect healing rate.
             </p>
@@ -230,7 +230,7 @@ export default function LaurelMDPage() {
               Ready to Get Your Custom Tattoo in Laurel, MD?
             </h2>
             <p className="text-crisp-white/80 mb-6">
-              Book your free consultation with Jose Alvarado and start creating your perfect tattoo today.
+              Book your free consultation with Jose and start creating your perfect tattoo today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 

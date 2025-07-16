@@ -4,8 +4,8 @@ import { LocalBusinessSchema } from '@/components/seo/LocalBusinessSchema';
 import { businessInfo } from '@/data/business-info';
 
 export const metadata: Metadata = generateSEOMetadata({
-  title: `Professional Tattoo Artist Northern Virginia | Jose Alvarado | ${businessInfo.name}`,
-  description: `Expert tattoo services for Northern Virginia clients. Jose Alvarado specializes in custom designs, traditional American style, realism work. Based in nearby Laurel, MD serving DMV area.`,
+  title: `Professional Tattoo Artist Northern Virginia | Jose | ${businessInfo.name}`,
+  description: `Expert tattoo services for Northern Virginia clients. Jose specializes in custom designs, traditional American style, realism work. Based in nearby Laurel, MD serving DMV area.`,
   keywords: [
     'tattoo artist northern virginia',
     'custom tattoos nova',
@@ -33,7 +33,7 @@ export default function NorthernVirginiaPage() {
               Professional Tattoo Artist Serving Northern Virginia
             </h1>
             <p className="text-xl text-crisp-white/80 mb-8 max-w-3xl mx-auto">
-              Jose Alvarado brings 8+ years of professional tattoo artistry to Northern Virginia clients. 
+              Jose brings 8+ years of professional tattoo artistry to Northern Virginia clients. 
               Conveniently located in nearby Laurel, MD with easy access for Arlington, Alexandria, 
               Fairfax, and all NoVA communities seeking custom original designs.
             </p>
@@ -245,7 +245,7 @@ export default function NorthernVirginiaPage() {
               Ready to Get Your Tattoo Near Northern Virginia?
             </h2>
             <p className="text-crisp-white/80 mb-6">
-              Book your free consultation with Jose Alvarado. Easy access from all Northern Virginia 
+              Book your free consultation with Jose. Easy access from all Northern Virginia 
               communities with professional quality and competitive pricing.
             </p>
             <div className="grid grid-cols-1 gap-4 mb-6">

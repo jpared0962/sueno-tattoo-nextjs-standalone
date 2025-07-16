@@ -4,8 +4,8 @@ import { LocalBusinessSchema } from '@/components/seo/LocalBusinessSchema';
 import { businessInfo } from '@/data/business-info';
 
 export const metadata: Metadata = generateSEOMetadata({
-  title: `Professional Tattoo Artist Washington DC | Jose Alvarado | ${businessInfo.name}`,
-  description: `Expert tattoo services for Washington DC clients. Jose Alvarado specializes in custom designs, traditional American style, realism work. Based in nearby Laurel, MD serving DMV area.`,
+  title: `Professional Tattoo Artist Washington DC | Jose | ${businessInfo.name}`,
+  description: `Expert tattoo services for Washington DC clients. Jose specializes in custom designs, traditional American style, realism work. Based in nearby Laurel, MD serving DMV area.`,
   keywords: [
     'tattoo artist washington dc',
     'custom tattoos dc',
@@ -33,7 +33,7 @@ export default function WashingtonDCPage() {
               Professional Tattoo Artist Serving Washington DC
             </h1>
             <p className="text-xl text-crisp-white/80 mb-8 max-w-3xl mx-auto">
-              Jose Alvarado brings 8+ years of professional tattoo artistry to Washington DC clients. 
+              Jose brings 8+ years of professional tattoo artistry to Washington DC clients. 
               Conveniently located in nearby Laurel, MD with easy Metro access for DC residents seeking 
               custom original designs and traditional American style work.
             </p>
@@ -228,7 +228,7 @@ export default function WashingtonDCPage() {
               Ready to Get Your Tattoo Near DC?
             </h2>
             <p className="text-crisp-white/80 mb-6">
-              Book your free consultation with Jose Alvarado. Easy access from Washington DC 
+              Book your free consultation with Jose. Easy access from Washington DC 
               with professional quality and personalized service.
             </p>
             <div className="grid grid-cols-1 gap-4 mb-6">

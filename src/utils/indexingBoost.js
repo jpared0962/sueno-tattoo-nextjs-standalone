@@ -26,7 +26,7 @@ export class IndexingBooster {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Sueno Tattoo",
-      "alternateName": "Jose Alvarado Tattoo Artist",
+      "alternateName": "Jose Tattoo Artist",
       "url": this.baseUrl,
       "description": "Professional tattoo artist in Laurel, MD specializing in custom designs, traditional tattoos, and realistic artwork",
       "inLanguage": "en-US",

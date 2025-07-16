@@ -259,7 +259,7 @@ export default function Home() {
             <Link 
               href="/book-consultation"
               className="bg-deep-red hover:bg-deep-red/80 text-crisp-white px-8 py-4 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-glow-red animate-fade-in focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-ink-black"
-              aria-label="Book a free tattoo consultation with Jose Alvarado"
+              aria-label="Book a free tattoo consultation with Jose"
             >
               Book Free Consult
             </Link>

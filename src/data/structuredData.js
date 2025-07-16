@@ -6,14 +6,14 @@ export const generatePortfolioImageSchemas = () => {
   return portfolioData.map((tattoo) => ({
     "@type": "ImageObject",
     "name": tattoo.title,
-    "description": `${tattoo.description} Professional ${tattoo.style} tattoo work by Jose Alvarado at Sueno Tattoo in Laurel, MD. ${tattoo.size.charAt(0).toUpperCase() + tattoo.size.slice(1)} size tattoo completed in ${tattoo.duration}.`,
-    "alternateName": tattoo.alt || `${tattoo.title} tattoo by Jose Alvarado`,
+    "description": `${tattoo.description} Professional ${tattoo.style} tattoo work by Jose at Sueno Tattoo in Laurel, MD. ${tattoo.size.charAt(0).toUpperCase() + tattoo.size.slice(1)} size tattoo completed in ${tattoo.duration}.`,
+    "alternateName": tattoo.alt || `${tattoo.title} tattoo by Jose`,
     "url": `https://www.suenotattoo.com/gallery#${tattoo.id}`,
     "contentUrl": `https://res.cloudinary.com/dwgkw4zfd/image/upload/w_800,h_600,c_fill,q_auto:good/${tattoo.image.replace('public/Tattoo-Images/', '')}.jpg`,
     "thumbnailUrl": `https://res.cloudinary.com/dwgkw4zfd/image/upload/w_300,h_300,c_fill,q_auto:good/${tattoo.image.replace('public/Tattoo-Images/', '')}.jpg`,
     "creator": {
       "@type": "Person",
-      "name": "Jose Alvarado",
+      "name": "Jose",
       "jobTitle": "Professional Tattoo Artist"
     },
     "copyrightHolder": {
@@ -22,7 +22,7 @@ export const generatePortfolioImageSchemas = () => {
     },
     "license": "https://www.suenotattoo.com/terms",
     "acquireLicensePage": "https://www.suenotattoo.com/contact",
-    "creditText": "Photo by Jose Alvarado, Sueno Tattoo",
+    "creditText": "Photo by Jose, Sueno Tattoo",
     "keywords": tattoo.tags.join(', '),
     "genre": tattoo.style,
     "artMedium": "Tattoo",
@@ -61,14 +61,14 @@ export const generateIndividualImageSchema = (tattooId) => {
     "@context": "https://schema.org",
     "@type": "ImageObject",
     "name": tattoo.title,
-    "description": `${tattoo.description} Professional ${tattoo.style} tattoo work by Jose Alvarado at Sueno Tattoo in Laurel, MD. ${tattoo.size.charAt(0).toUpperCase() + tattoo.size.slice(1)} size tattoo completed in ${tattoo.duration}.`,
-    "alternateName": tattoo.alt || `${tattoo.title} tattoo by Jose Alvarado`,
+    "description": `${tattoo.description} Professional ${tattoo.style} tattoo work by Jose at Sueno Tattoo in Laurel, MD. ${tattoo.size.charAt(0).toUpperCase() + tattoo.size.slice(1)} size tattoo completed in ${tattoo.duration}.`,
+    "alternateName": tattoo.alt || `${tattoo.title} tattoo by Jose`,
     "url": `https://www.suenotattoo.com/gallery#${tattoo.id}`,
     "contentUrl": `https://res.cloudinary.com/dwgkw4zfd/image/upload/w_1200,h_900,c_fill,q_auto:good/${tattoo.image.replace('public/Tattoo-Images/', '')}.jpg`,
     "thumbnailUrl": `https://res.cloudinary.com/dwgkw4zfd/image/upload/w_300,h_300,c_fill,q_auto:good/${tattoo.image.replace('public/Tattoo-Images/', '')}.jpg`,
     "creator": {
       "@type": "Person",
-      "name": "Jose Alvarado",
+      "name": "Jose",
       "jobTitle": "Professional Tattoo Artist",
       "worksFor": {
         "@type": "Organization",
@@ -82,7 +82,7 @@ export const generateIndividualImageSchema = (tattooId) => {
     },
     "license": "https://www.suenotattoo.com/terms",
     "acquireLicensePage": "https://www.suenotattoo.com/contact",
-    "creditText": "Photo by Jose Alvarado, Sueno Tattoo",
+    "creditText": "Photo by Jose, Sueno Tattoo",
     "keywords": tattoo.tags.join(', '),
     "genre": tattoo.style,
     "artMedium": "Tattoo",
@@ -128,7 +128,7 @@ export const localBusinessSchema = {
   "@type": "LocalBusiness",
   "@id": "https://www.suenotattoo.com/#localbusiness",
   "name": "Sueno Tattoo",
-  "alternateName": "Jose Alvarado Tattoo Artist",
+  "alternateName": "Jose Tattoo Artist",
   "description": "Professional tattoo artist in Laurel, MD. Custom designs, 8+ years experience. Licensed professional.",
   "url": "https://www.suenotattoo.com",
   "telephone": "+12407583226",
@@ -200,7 +200,7 @@ export const baseBusinessSchema = {
   "@type": ["TattooParlor", "LocalBusiness", "HealthAndBeautyBusiness"],
   "@id": "https://www.suenotattoo.com/#business",
   "name": "Sueno Tattoo",
-  "alternateName": ["Jose Alvarado Tattoo Artist", "Sueno Tattoo Studio"],
+  "alternateName": ["Jose Tattoo Artist", "Sueno Tattoo Studio"],
   "description": "Independent professional tattoo artist specializing in custom designs, traditional tattoos, realistic artwork, and cover-ups in Laurel, MD. Licensed artist with 8+ years experience serving Prince George's County and DMV area.",
   "url": "https://www.suenotattoo.com",
   "telephone": "+12407583226",
@@ -306,7 +306,7 @@ export const baseBusinessSchema = {
   },
   "founder": {
     "@type": "Person",
-    "name": "Jose Alvarado",
+    "name": "Jose",
     "jobTitle": "Professional Tattoo Artist",
     "description": "Licensed tattoo artist with 8+ years experience specializing in custom artwork"
   }
@@ -499,10 +499,10 @@ export const galleryPageSchema = {
   "@context": "https://schema.org",
   "@type": "ImageGallery",
   "name": "Sueno Tattoo Portfolio Gallery",
-  "description": "Professional tattoo portfolio showcasing original artwork, traditional tattoos, realistic portraits, and cover-ups by Jose Alvarado in Laurel, MD. Over 45 completed tattoo pieces featuring diverse styles including realistic, illustrative, traditional, and bespoke designs.",
+  "description": "Professional tattoo portfolio showcasing original artwork, traditional tattoos, realistic portraits, and cover-ups by Jose in Laurel, MD. Over 45 completed tattoo pieces featuring diverse styles including realistic, illustrative, traditional, and bespoke designs.",
   "creator": {
     "@type": "Person",
-    "name": "Jose Alvarado",
+    "name": "Jose",
     "jobTitle": "Professional Tattoo Artist",
     "worksFor": baseBusinessSchema
   },
@@ -518,7 +518,7 @@ export const galleryPageSchema = {
     }))
   },
   "associatedMedia": generatePortfolioImageSchemas(),
-  "keywords": "tattoo portfolio, custom tattoos, realistic tattoos, traditional tattoos, cover-up tattoos, tattoo gallery, Jose Alvarado, Sueno Tattoo, Laurel MD",
+  "keywords": "tattoo portfolio, custom tattoos, realistic tattoos, traditional tattoos, cover-up tattoos, tattoo gallery, Jose, Sueno Tattoo, Laurel MD",
   "genre": ["Body Art", "Tattoo Art", "Custom Artwork"],
   "audience": {
     "@type": "Audience",
@@ -636,7 +636,7 @@ export const aboutPageSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   "@id": "https://www.suenotattoo.com/about#jose-alvarado",
-  "name": "Jose Alvarado",
+  "name": "Jose",
   "alternateName": "Jose - Sueno Tattoo Artist",
   "jobTitle": "Professional Tattoo Artist",
   "worksFor": baseBusinessSchema,
@@ -811,7 +811,7 @@ export const aftercarePageSchema = {
   ],
   "author": {
     "@type": "Person",
-    "name": "Jose Alvarado",
+    "name": "Jose",
     "jobTitle": "Professional Tattoo Artist"
   }
 };
@@ -819,11 +819,11 @@ export const aftercarePageSchema = {
 export const flashGallerySchema = {
   "@context": "https://schema.org",
   "@type": "ImageGallery",
-  "name": "Flash Tattoo Designs by Jose Alvarado | Sueno Tattoo",
-  "description": "Browse 38+ original flash tattoo designs ready for inking. Classic American traditional flash art including floral, gothic, animals, nautical themes by professional artist Jose Alvarado in Laurel, MD.",
+  "name": "Flash Tattoo Designs by Jose | Sueno Tattoo",
+  "description": "Browse 38+ original flash tattoo designs ready for inking. Classic American traditional flash art including floral, gothic, animals, nautical themes by professional artist Jose in Laurel, MD.",
   "creator": {
     "@type": "Person",
-    "name": "Jose Alvarado",
+    "name": "Jose",
     "jobTitle": "Professional Tattoo Artist",
     "worksFor": baseBusinessSchema
   },
@@ -841,7 +841,7 @@ export const flashGallerySchema = {
           "name": "Traditional Flash Tattoo Designs",
           "description": "Original American traditional flash art featuring bold lines, classic imagery, and timeless designs ready for tattooing",
           "url": "https://www.suenotattoo.com/flash",
-          "creator": "Jose Alvarado",
+          "creator": "Jose",
           "copyrightHolder": "Sueno Tattoo",
           "contentLocation": "Laurel, MD",
           "artMedium": "Flash Art",
@@ -852,7 +852,7 @@ export const flashGallerySchema = {
       }
     ]
   },
-  "keywords": "flash tattoo art, ready to tattoo designs, flash sheets, traditional flash, custom flash art, original tattoo designs, Jose Alvarado flash, Sueno Tattoo flash, Laurel MD flash tattoos",
+  "keywords": "flash tattoo art, ready to tattoo designs, flash sheets, traditional flash, custom flash art, original tattoo designs, Jose flash, Sueno Tattoo flash, Laurel MD flash tattoos",
   "genre": ["Flash Art", "Traditional Tattoo Art", "Ready-to-Ink Designs"],
   "audience": {
     "@type": "Audience",

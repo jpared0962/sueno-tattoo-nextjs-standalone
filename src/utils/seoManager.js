@@ -179,7 +179,7 @@ export const getStructuredData = (pathname) => {
       return {
         ...baseData,
         "@type": ["TattooShop", "Person"],
-        "name": "Jose Alvarado",
+        "name": "Jose",
         "jobTitle": "Professional Tattoo Artist",
         "worksFor": {
           "@type": "TattooShop",
