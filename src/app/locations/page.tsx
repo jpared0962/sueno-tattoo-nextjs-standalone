@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { generateSEOMetadata } from '@/components/seo/SEOHead'
 import { LocalBusinessSchema } from '@/components/seo/LocalBusinessSchema'
 import { businessInfo } from '@/data/business-info'
+import { SEOLayout } from '@/components/Layout/SEOLayout'
 
 export const metadata: Metadata = generateSEOMetadata({
   title: 'Service Locations | Professional Tattoo Artist DMV Area',
@@ -23,6 +24,11 @@ export const metadata: Metadata = generateSEOMetadata({
 })
 
 export default function LocationsPage() {
+  const breadcrumbs = [
+    { name: 'Home', href: '/' },
+    { name: 'Locations' }
+  ]
+
   const serviceAreas = [
     {
       region: 'Washington DC',
@@ -60,31 +66,23 @@ export default function LocationsPage() {
     <>
       <LocalBusinessSchema />
       
-      <div className="min-h-screen pb-16 md:pb-20">
-        <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
-          
-          {/* Breadcrumb Navigation */}
-          <nav className="mb-8" aria-label="Breadcrumb">
-            <ol className="flex space-x-2 text-sm text-crisp-white/70">
-              <li>
-                <Link href="/" className="hover:text-gold transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li className="before:content-['/'] before:mr-2">
-                <span aria-current="page" className="text-crisp-white">Locations</span>
-              </li>
-            </ol>
-          </nav>
-
-          {/* Hero Section */}
-          <section className="text-center mb-12 md:mb-16">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-gold to-deep-red bg-clip-text text-transparent">
-              Service Locations
-            </h1>
-            <p className="text-lg md:text-xl lg:text-2xl text-crisp-white/90 mb-6 md:mb-8">
-              Professional tattoo services serving the entire DMV area
-            </p>
+      <SEOLayout 
+        breadcrumbs={breadcrumbs}
+        showCTA={true}
+        ctaVariant="contact"
+        ctaTitle="Ready to Schedule Your Tattoo?"
+        ctaDescription="Contact us today to book your consultation. Serving the entire DMV area."
+      >
+        <div className="min-h-screen pb-16 md:pb-20">
+          <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+            {/* Hero Section */}
+            <section className="text-center mb-12 md:mb-16">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-gold to-deep-red bg-clip-text text-transparent">
+                Service Locations
+              </h1>
+              <p className="text-lg md:text-xl lg:text-2xl text-crisp-white/90 mb-6 md:mb-8">
+                Professional tattoo services serving the entire DMV area
+              </p>
             <div className="max-w-3xl mx-auto">
               <p className="text-crisp-white/80 mb-6">
                 Located in Laurel, MD with convenient access to Washington DC, Northern Virginia, and Maryland. 
@@ -222,6 +220,7 @@ export default function LocationsPage() {
           </section>
         </div>
       </div>
+      </SEOLayout>
     </>
   )
 }
