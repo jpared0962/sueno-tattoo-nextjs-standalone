@@ -4,6 +4,7 @@ import { generateSEOMetadata } from '@/components/seo/SEOHead'
 import { LocalBusinessSchema } from '@/components/seo/LocalBusinessSchema'
 import { businessInfo } from '@/data/business-info'
 import ConsultationForm from '@/components/forms/ConsultationForm'
+import AppointmentBookingSchema from '@/components/seo/AppointmentBookingSchema'
 
 export const metadata: Metadata = generateSEOMetadata({
   title: `Book Free Tattoo Consultation | Jose`,
@@ -27,50 +28,9 @@ export default function BookConsultation() {
       {/* Schema Markup */}
       <LocalBusinessSchema />
       
-      {/* Consultation Service Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "serviceType": "Tattoo Consultation",
-            "name": "Free Tattoo Consultation",
-            "description": "Complimentary tattoo design consultation to discuss your ideas, see our portfolio, and get expert advice.",
-            "provider": {
-              "@type": "LocalBusiness",
-              "name": businessInfo.name,
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": businessInfo.location.streetAddress,
-                "addressLocality": businessInfo.location.city,
-                "addressRegion": businessInfo.location.state,
-                "postalCode": businessInfo.location.zipCode,
-                "addressCountry": "US"
-              },
-              "telephone": businessInfo.contact.phone,
-              "email": businessInfo.contact.email
-            },
-            "offers": {
-              "@type": "Offer",
-              "price": "0",
-              "priceCurrency": "USD",
-              "name": "Free Tattoo Consultation",
-              "description": "No-cost consultation with professional tattoo artist",
-              "availability": "https://schema.org/InStock"
-            },
-            "areaServed": [
-              "Laurel, MD",
-              "Beltsville, MD", 
-              "College Park, MD",
-              "Greenbelt, MD",
-              "Prince George's County, MD",
-              "DMV Area"
-            ]
-          })
-        }}
-      />
-
+      {/* Comprehensive Appointment Booking Schema */}
+      <AppointmentBookingSchema schemas={['reservation', 'schedule', 'consultation', 'process']} />
+      
       {/* Breadcrumb Schema */}
       <script
         type="application/ld+json"

@@ -6,6 +6,7 @@ import { businessInfo } from '@/data/business-info'
 import { tattooServices, serviceCategories } from '@/data/services'
 import { SEOOptimizedServiceCards } from '@/components/UI/SEOOptimizedServiceCards'
 import { SEOLayout } from '@/components/Layout/SEOLayout'
+import AppointmentBookingSchema from '@/components/seo/AppointmentBookingSchema'
 
 export const metadata: Metadata = generateSEOMetadata({
   ...commonSEOData.services,
@@ -62,6 +63,9 @@ export default function Services() {
 
   return (
     <>
+      {/* Appointment Booking Schema */}
+      <AppointmentBookingSchema schemas={['consultation', 'process']} />
+      
       {/* Schema Markup for ALL Services */}
       {tattooServices.map(service => (
         <TattooServiceSchema
@@ -161,10 +165,10 @@ export default function Services() {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-crisp-white">
-            Professional Tattoo Services in Laurel, MD
+            Professional Maryland Tattoo Services | DMV Tattoo Artist in Laurel, MD
           </h1>
           <p className="text-xl text-crisp-white/90 max-w-3xl mx-auto mb-8">
-            From custom designs to traditional work, we offer comprehensive tattoo services 
+            From custom designs to traditional work, we offer comprehensive Maryland tattoo services 
             with 8+ years of professional experience serving Laurel, MD and the greater DMV area 
             including Prince George's County, Beltsville, College Park, and Greenbelt.
           </p>
@@ -198,7 +202,7 @@ export default function Services() {
               { step: '1', title: 'Consultation', description: 'Free consultation to discuss your vision and ideas' },
               { step: '2', title: 'Design', description: 'Custom artwork creation and revision process' },
               { step: '3', title: 'Appointment', description: 'Professional tattooing in a clean, safe environment' },
-              { step: '4', title: 'Aftercare', description: 'Comprehensive healing guidance and support' }
+              { step: '4', title: 'Tattoo Aftercare', description: 'Comprehensive tattoo aftercare guidance and healing support' }
             ].map((phase) => (
               <div key={phase.step} className="text-center">
                 <div className="w-12 h-12 bg-deep-red rounded-full flex items-center justify-center text-crisp-white font-bold text-xl mx-auto mb-4">
@@ -211,10 +215,44 @@ export default function Services() {
           </div>
         </div>
 
+        {/* Tattoo Aftercare Section */}
+        <section className="glass-panel p-8 rounded-lg mb-16">
+          <h2 className="text-2xl font-bold text-center mb-6 text-crisp-white">
+            Professional Tattoo Aftercare Services
+          </h2>
+          <p className="text-center text-crisp-white/90 mb-8 max-w-3xl mx-auto">
+            As your trusted DMV tattoo artist, we provide comprehensive tattoo aftercare guidance to ensure optimal healing 
+            and long-lasting results for all our Maryland tattoo clients.
+          </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="text-4xl mb-4">📋</div>
+              <h3 className="text-lg font-semibold text-crisp-white mb-3">Detailed Aftercare Instructions</h3>
+              <p className="text-crisp-white/80 text-sm">
+                Receive personalized tattoo aftercare instructions tailored to your specific tattoo and Maryland's climate conditions.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl mb-4">📞</div>
+              <h3 className="text-lg font-semibold text-crisp-white mb-3">Follow-Up Support</h3>
+              <p className="text-crisp-white/80 text-sm">
+                24/7 access to tattoo aftercare support and guidance throughout your healing process.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl mb-4">🏥</div>
+              <h3 className="text-lg font-semibold text-crisp-white mb-3">Healing Monitoring</h3>
+              <p className="text-crisp-white/80 text-sm">
+                Professional monitoring of your tattoo healing progress with expert tattoo aftercare advice.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Local SEO Section */}
         <section className="glass-panel p-8 rounded-lg mb-16">
           <h2 className="text-2xl font-bold text-center mb-6 text-crisp-white">
-            Serving Laurel, MD and Surrounding Communities
+            Premier Maryland Tattoo Studio Serving Laurel, MD and Surrounding Communities
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div>
@@ -229,12 +267,12 @@ export default function Services() {
               </ul>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-crisp-white mb-4">Why Choose Local</h3>
+              <h3 className="text-lg font-semibold text-crisp-white mb-4">Why Choose Your Local DMV Tattoo Artist</h3>
               <ul className="space-y-2 text-crisp-white/90">
                 <li>• Licensed Maryland tattoo professional</li>
-                <li>• 8+ years serving the DMV community</li>
+                <li>• 8+ years serving the DMV community as a trusted DMV tattoo artist</li>
                 <li>• Personal, boutique-style service</li>
-                <li>• Deep understanding of local preferences</li>
+                <li>• Deep understanding of local Maryland tattoo preferences</li>
                 <li>• Convenient location for multiple consultations</li>
               </ul>
             </div>
@@ -244,17 +282,17 @@ export default function Services() {
         {/* FAQ Section */}
         <section className="glass-card p-8 rounded-lg mb-16">
           <h2 className="text-2xl font-bold text-center mb-8 text-crisp-white">
-            Frequently Asked Questions About Our Services
+            Frequently Asked Questions About Our Maryland Tattoo Services
           </h2>
           <div className="space-y-6">
             <div className="border-b border-crisp-white/10 pb-4">
               <h3 className="text-lg font-semibold text-crisp-white mb-2">
-                How much do tattoos cost?
+                How much do Maryland tattoos cost?
               </h3>
               <p className="text-crisp-white/90">
-                Our tattoo pricing varies by size, complexity, and style. Small tattoos start at $100, 
+                Our Maryland tattoo pricing varies by size, complexity, and style. Small tattoos start at $100, 
                 medium pieces range from $200-600, and larger custom work can be $600+. We provide 
-                transparent estimates during your free consultation.
+                transparent estimates during your free consultation as your local DMV tattoo artist.
               </p>
             </div>
             <div className="border-b border-crisp-white/10 pb-4">
@@ -266,6 +304,16 @@ export default function Services() {
                 show you our portfolio, and provide honest advice about design, placement, and pricing. 
                 Learn more about our <Link href="/book-consultation" className="text-gold hover:underline">consultation process</Link> or 
                 call <a href={`tel:${businessInfo.contact.phone}`} className="text-gold hover:underline">{businessInfo.contact.phone}</a> to schedule.
+              </p>
+            </div>
+            <div className="border-b border-crisp-white/10 pb-4">
+              <h3 className="text-lg font-semibold text-crisp-white mb-2">
+                What tattoo aftercare do you provide?
+              </h3>
+              <p className="text-crisp-white/90">
+                We provide comprehensive tattoo aftercare instructions and support throughout your healing process. 
+                Our tattoo aftercare guidance includes detailed care instructions, recommended products, and 24/7 
+                support for any healing questions. Proper tattoo aftercare is essential for optimal results.
               </p>
             </div>
             <div className="border-b border-crisp-white/10 pb-4">
@@ -285,8 +333,8 @@ export default function Services() {
               <p className="text-crisp-white/90">
                 All our services include the consultation, custom design work, professional tattooing, 
                 aftercare instructions, and follow-up support. We also provide comprehensive 
-                <Link href="/aftercare" className="text-gold hover:underline ml-1">aftercare guidance</Link> 
-                to ensure optimal healing.
+                <Link href="/aftercare" className="text-gold hover:underline ml-1">tattoo aftercare guidance</Link> 
+                to ensure optimal healing for all our Maryland tattoo clients.
               </p>
             </div>
           </div>

@@ -8,6 +8,7 @@ import { ServiceCard, TestimonialCard, EnhancedCard } from '@/components/UI/Enha
 import { VariedTestimonialCard, VariedServiceCard } from '@/components/UI/CardVariations';
 import { SocialProofBanner, PriceTransparencyCard, FloatingBookingButton } from '@/components/UI/FloatingBookingButton';
 import { featuredReviews, reviewStats } from '@/data/reviews';
+import AppointmentBookingSchema from '@/components/seo/AppointmentBookingSchema';
 
 // Note: SEO metadata moved to layout.tsx since this is now a client component
 
@@ -29,6 +30,9 @@ export default function Home() {
         reviews={schemaReviews}
         services={serviceNames}
       />
+      
+      {/* Appointment Booking Schema */}
+      <AppointmentBookingSchema schemas={['reservation', 'schedule']} />
       
       {/* Enhanced Schema Markup for Home Page */}
       <script
@@ -417,6 +421,269 @@ export default function Home() {
                 <h4 className="font-medium text-gold mb-3">Flash Tattoos & Cover-Up Tattoos</h4>
                 <p className="text-crisp-white/80">Ready-to-ink flash tattoos for same-day appointments, plus expert cover-up tattoos that transform unwanted ink into beautiful new art.</p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Traditional Tattoo Placement Guide */}
+      <section className="py-20 px-4" aria-labelledby="placement-guide-heading">
+        <div className="max-w-6xl mx-auto">
+          <h2 id="placement-guide-heading" className="text-display-lg text-center mb-8 text-crisp-white">
+            American Traditional Tattoo Placement Guide | Professional Advice
+          </h2>
+          <p className="text-center text-crisp-white/80 mb-12 max-w-3xl mx-auto">
+            Expert guidance on optimal placement for American traditional tattoos. Jose's 8+ years of experience 
+            helps you choose the perfect location for your tattoo's size, style, and personal lifestyle.
+          </p>
+          
+          <div className="grid lg:grid-cols-2 gap-12 mb-12">
+            {/* Classic Placement Areas */}
+            <div className="glass-card p-8 rounded-lg">
+              <h3 className="text-2xl font-bold text-gold mb-6 text-center">Classic Traditional Placement Areas</h3>
+              <div className="space-y-6">
+                <div className="border-b border-crisp-white/10 pb-4">
+                  <h4 className="font-semibold text-crisp-white mb-2 flex items-center">
+                    <span className="text-2xl mr-3">💪</span>
+                    Upper Arm & Shoulder
+                  </h4>
+                  <p className="text-crisp-white/80 text-sm mb-2">
+                    Perfect for medium to large traditional pieces. Easy to conceal for work, great canvas for bold designs.
+                  </p>
+                  <div className="text-xs text-crisp-white/60">
+                    Best for: Eagles, panthers, roses • Size: 4-8 inches • Professional friendly
+                  </div>
+                </div>
+                
+                <div className="border-b border-crisp-white/10 pb-4">
+                  <h4 className="font-semibold text-crisp-white mb-2 flex items-center">
+                    <span className="text-2xl mr-3">🦾</span>
+                    Forearm
+                  </h4>
+                  <p className="text-crisp-white/80 text-sm mb-2">
+                    Ideal for showcasing traditional artwork. Natural flow with arm movement, excellent visibility.
+                  </p>
+                  <div className="text-xs text-crisp-white/60">
+                    Best for: Daggers, anchors, banners • Size: 3-6 inches • Always visible
+                  </div>
+                </div>
+                
+                <div className="border-b border-crisp-white/10 pb-4">
+                  <h4 className="font-semibold text-crisp-white mb-2 flex items-center">
+                    <span className="text-2xl mr-3">👤</span>
+                    Chest
+                  </h4>
+                  <p className="text-crisp-white/80 text-sm mb-2">
+                    Premium canvas for large traditional pieces. Symmetrical placement options, easy to conceal.
+                  </p>
+                  <div className="text-xs text-crisp-white/60">
+                    Best for: Large eagles, ships, memorial pieces • Size: 6-12 inches • Completely concealable
+                  </div>
+                </div>
+                
+                <div className="border-b border-crisp-white/10 pb-4">
+                  <h4 className="font-semibold text-crisp-white mb-2 flex items-center">
+                    <span className="text-2xl mr-3">🦵</span>
+                    Thigh
+                  </h4>
+                  <p className="text-crisp-white/80 text-sm mb-2">
+                    Large flat surface ideal for detailed traditional work. Minimal distortion, easy healing.
+                  </p>
+                  <div className="text-xs text-crisp-white/60">
+                    Best for: Pin-ups, large florals, complex scenes • Size: 6-10 inches • Easily concealed
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 className="font-semibold text-crisp-white mb-2 flex items-center">
+                    <span className="text-2xl mr-3">🔙</span>
+                    Back & Shoulder Blade
+                  </h4>
+                  <p className="text-crisp-white/80 text-sm mb-2">
+                    Premium real estate for statement pieces. Natural canvas shape, professional-friendly.
+                  </p>
+                  <div className="text-xs text-crisp-white/60">
+                    Best for: Large traditional scenes, portraits • Size: 8-16 inches • Work appropriate
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Size & Professional Considerations */}
+            <div className="glass-card p-8 rounded-lg">
+              <h3 className="text-2xl font-bold text-gold mb-6 text-center">Size & Professional Considerations</h3>
+              <div className="space-y-6">
+                <div className="bg-charcoal-gray/20 p-4 rounded-lg">
+                  <h4 className="font-semibold text-gold mb-3">Small Traditional Tattoos (2-4 inches)</h4>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <p className="text-crisp-white/90 font-medium mb-2">Best Placements:</p>
+                      <ul className="text-crisp-white/70 space-y-1">
+                        <li>• Wrist & ankle</li>
+                        <li>• Behind ear</li>
+                        <li>• Inner arm</li>
+                        <li>• Calf</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="text-crisp-white/90 font-medium mb-2">Perfect For:</p>
+                      <ul className="text-crisp-white/70 space-y-1">
+                        <li>• First tattoos</li>
+                        <li>• Simple symbols</li>
+                        <li>• Flash designs</li>
+                        <li>• Budget-friendly</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-charcoal-gray/20 p-4 rounded-lg">
+                  <h4 className="font-semibold text-gold mb-3">Medium Traditional Tattoos (4-8 inches)</h4>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <p className="text-crisp-white/90 font-medium mb-2">Best Placements:</p>
+                      <ul className="text-crisp-white/70 space-y-1">
+                        <li>• Upper arm</li>
+                        <li>• Forearm</li>
+                        <li>• Shoulder</li>
+                        <li>• Calf</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="text-crisp-white/90 font-medium mb-2">Perfect For:</p>
+                      <ul className="text-crisp-white/70 space-y-1">
+                        <li>• Detailed designs</li>
+                        <li>• Traditional imagery</li>
+                        <li>• Memorial pieces</li>
+                        <li>• Statement tattoos</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-charcoal-gray/20 p-4 rounded-lg">
+                  <h4 className="font-semibold text-gold mb-3">Large Traditional Tattoos (8+ inches)</h4>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <p className="text-crisp-white/90 font-medium mb-2">Best Placements:</p>
+                      <ul className="text-crisp-white/70 space-y-1">
+                        <li>• Back</li>
+                        <li>• Chest</li>
+                        <li>• Thigh</li>
+                        <li>• Full sleeve</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="text-crisp-white/90 font-medium mb-2">Perfect For:</p>
+                      <ul className="text-crisp-white/70 space-y-1">
+                        <li>• Complex scenes</li>
+                        <li>• Multiple sessions</li>
+                        <li>• Portfolio pieces</li>
+                        <li>• Serious collectors</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Professional & Lifestyle Considerations */}
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="glass-accent p-6 rounded-lg text-center">
+              <div className="text-4xl mb-4">👔</div>
+              <h4 className="text-lg font-semibold text-gold mb-3">Professional-Friendly Placements</h4>
+              <p className="text-crisp-white/80 text-sm mb-4">
+                Easily concealed areas perfect for government workers, corporate professionals, and those requiring discrete tattoos.
+              </p>
+              <div className="text-xs text-crisp-white/60">
+                Upper arm, chest, back, thigh - hidden under business attire
+              </div>
+            </div>
+            
+            <div className="glass-accent p-6 rounded-lg text-center">
+              <div className="text-4xl mb-4">👁️</div>
+              <h4 className="text-lg font-semibold text-gold mb-3">Visible Showcase Areas</h4>
+              <p className="text-crisp-white/80 text-sm mb-4">
+                Perfect for those who want to display their traditional tattoo artwork and don't have workplace restrictions.
+              </p>
+              <div className="text-xs text-crisp-white/60">
+                Forearm, hand, neck, calf - always visible statement pieces
+              </div>
+            </div>
+            
+            <div className="glass-accent p-6 rounded-lg text-center">
+              <div className="text-4xl mb-4">⏰</div>
+              <h4 className="text-lg font-semibold text-gold mb-3">Aging & Longevity</h4>
+              <p className="text-crisp-white/80 text-sm mb-4">
+                Strategic placement ensures your traditional tattoo ages beautifully with minimal distortion over time.
+              </p>
+              <div className="text-xs text-crisp-white/60">
+                Areas with stable skin and muscle structure for lasting quality
+              </div>
+            </div>
+          </div>
+          
+          {/* Traditional Tattoo Building Tips */}
+          <div className="glass-panel p-8 rounded-lg mb-12">
+            <h3 className="text-2xl font-bold text-center mb-8 text-crisp-white">
+              Building Your Traditional Tattoo Collection
+            </h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="text-center">
+                <div className="text-3xl mb-3">🔄</div>
+                <h4 className="font-semibold text-crisp-white mb-2">Sleeve Progression</h4>
+                <p className="text-crisp-white/80 text-xs">
+                  Start with upper arm, add forearm pieces, connect with flowing elements for cohesive traditional sleeve.
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl mb-3">🎨</div>
+                <h4 className="font-semibold text-crisp-white mb-2">Theme Consistency</h4>
+                <p className="text-crisp-white/80 text-xs">
+                  Maintain traditional color palette and imagery themes across multiple pieces for unified collection.
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl mb-3">⚖️</div>
+                <h4 className="font-semibold text-crisp-white mb-2">Body Balance</h4>
+                <p className="text-crisp-white/80 text-xs">
+                  Consider visual weight distribution - balance large pieces across different body areas for symmetry.
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl mb-3">📅</div>
+                <h4 className="font-semibold text-crisp-white mb-2">Session Planning</h4>
+                <p className="text-crisp-white/80 text-xs">
+                  Large traditional pieces may require multiple sessions - plan placement for healing between appointments.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="text-center">
+            <h3 className="text-xl font-semibold text-crisp-white mb-4">
+              Ready to Plan Your Perfect Traditional Tattoo Placement?
+            </h3>
+            <p className="text-crisp-white/80 mb-8 max-w-2xl mx-auto">
+              Get expert placement advice during your free consultation. Jose will help you choose the optimal location 
+              based on your design, lifestyle, and future tattoo goals.
+            </p>
+            <div className="flex gap-4 justify-center items-center flex-wrap">
+              <Link 
+                href="/book-consultation"
+                className="bg-deep-red hover:bg-deep-red/80 text-crisp-white px-8 py-4 rounded-lg font-semibold transition-colors inline-block"
+                aria-label="Book consultation for tattoo placement advice"
+              >
+                Get Placement Consultation
+              </Link>
+              <Link 
+                href="/gallery"
+                className="border-2 border-gold text-gold hover:bg-gold hover:text-ink-black px-8 py-4 rounded-lg font-semibold transition-all inline-block"
+                aria-label="View traditional tattoo placement examples"
+              >
+                View Placement Examples
+              </Link>
             </div>
           </div>
         </div>

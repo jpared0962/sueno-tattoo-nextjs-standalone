@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { generateSEOMetadata } from '@/components/seo/SEOHead';
 import { LocalBusinessSchema } from '@/components/seo/LocalBusinessSchema';
 import { businessInfo } from '@/data/business-info';
+import { aftercareFAQSchema, aftercarePageSchema } from '@/data/structuredData';
 
 export const metadata: Metadata = generateSEOMetadata({
   title: `Complete Tattoo Aftercare Guide | Jose | Laurel MD`,
@@ -62,6 +63,22 @@ export default function AftercarePage() {
     <>
       {/* Schema Markup */}
       <LocalBusinessSchema />
+      
+      {/* Aftercare FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(aftercareFAQSchema)
+        }}
+      />
+      
+      {/* Aftercare HowTo Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(aftercarePageSchema)
+        }}
+      />
 
       <div className="min-h-screen pb-16 md:pb-20">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
