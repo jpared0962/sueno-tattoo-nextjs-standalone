@@ -880,7 +880,7 @@ export default function Home() {
                     </div>
                     <div className="bg-deep-red/20 rounded-lg p-3 border border-deep-red/30">
                       <p className="text-crisp-white text-sm">
-                        <strong>$50 deposit required</strong> to book appointments. 
+                        <strong>$100 deposit required</strong> to book appointments. 
                         Remaining balance due day of session.
                       </p>
                     </div>
@@ -1246,7 +1246,7 @@ export default function Home() {
                   <p className="text-crisp-white/90 mb-3">Call (240) 758-3226 or walk-in for consultations</p>
                   
                   <h4 className="text-gold text-sm font-medium mb-2">Tattoo appointment Maryland:</h4>
-                  <p className="text-crisp-white/90 mb-3">$50 deposit required to secure your appointment</p>
+                  <p className="text-crisp-white/90 mb-3">$100 deposit required to secure your appointment</p>
                 </div>
                 <div>
                   <h4 className="text-gold text-sm font-medium mb-2">Schedule tattoo session:</h4>
