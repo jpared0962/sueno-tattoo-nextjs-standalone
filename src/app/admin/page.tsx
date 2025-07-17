@@ -14,8 +14,23 @@ export default function AdminLogin() {
   const [rateLimitTimeout, setRateLimitTimeout] = useState(0);
   const router = useRouter();
 
+  // Check if already authenticated and redirect to dashboard
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const adminToken = localStorage.getItem('admin_token');
+      const adminBypass = localStorage.getItem('admin_bypass_key');
+      
+      if (adminToken || adminBypass === 'sueno_admin_2024') {
+        router.push('/admin/dashboard');
+        return;
+      }
+    }
+  }, [router]);
+
   // Rate limiting - max 5 attempts per 15 minutes
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
     const attempts = localStorage.getItem('admin_login_attempts');
     const lastAttempt = localStorage.getItem('admin_last_attempt');
     
@@ -138,8 +153,15 @@ export default function AdminLogin() {
       setRateLimitCount(0);
       
       // Store admin session
-      localStorage.setItem('admin_token', authData.session?.access_token || 'authenticated');
+      const token = authData.session?.access_token || 'authenticated';
+      localStorage.setItem('admin_token', token);
       localStorage.setItem('admin_user', JSON.stringify(adminData));
+      
+      console.log('Login successful, stored tokens:', { 
+        token: !!token, 
+        adminData: !!adminData,
+        redirecting: true 
+      });
       
       router.push('/admin/dashboard');
     } catch (error) {

@@ -19,9 +19,16 @@ export default function AdminDashboard() {
   const router = useRouter();
 
   useEffect(() => {
-    // Check authentication
+    // Check authentication - only run on client side
+    if (typeof window === 'undefined') {
+      setLoading(false);
+      return;
+    }
+    
     const adminToken = localStorage.getItem('admin_token');
     const adminBypass = localStorage.getItem('admin_bypass_key');
+    
+    console.log('Dashboard auth check:', { adminToken: !!adminToken, adminBypass: adminBypass === 'sueno_admin_2024' });
     
     if (adminToken || adminBypass === 'sueno_admin_2024') {
       setIsAuthenticated(true);
