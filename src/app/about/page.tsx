@@ -174,17 +174,16 @@ export default function About() {
               <h2 className="text-display-lg text-white text-center mb-6 md:mb-8">About Jose</h2>
               <div className="space-y-4 md:space-y-6 text-body text-white-90 leading-relaxed">
                 <p>
-                  Licensed professional with over 8 years of experience specializing in custom tattoo design. 
-                  Every piece is created for you alone. Serving Laurel, MD and Prince George&apos;s County.
+                  Licensed professional with over 8 years of experience in custom tattoo design. 
+                  Every piece is created just for you. Serving Laurel, MD and Prince George's County.
                 </p>
                 <p>
-                  Jose specializes in traditional tattoos, realism work, custom tattoo design, cover-up tattoos, 
-                  spiritual & symbolic art, fine line tattoos, neo-traditional style, Japanese-inspired tattoos, 
-                  geometric patterns, and botanical designs.
+                  Jose specializes in traditional tattoos, realistic work, and custom designs. 
+                  He also creates cover-ups, spiritual art, fine line work, and botanical tattoos.
                 </p>
                 <p>
-                  &quot;From initial concept to final art&quot; - Jose believes in collaborative artistry, working closely 
-                  with each client to bring their vision to life through professional, custom tattoo work.
+                  "From initial concept to final art" - Jose believes in working closely with each client. 
+                  He helps bring your vision to life through professional custom tattoo work.
                 </p>
               </div>
             </div>
@@ -197,12 +196,12 @@ export default function About() {
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
               {[
-                { icon: '⚡', title: 'Traditional American', desc: 'Bold lines, classic imagery, timeless designs' },
-                { icon: '👤', title: 'Realism Work', desc: 'Photorealistic detail and lifelike representation' },
-                { icon: '🎨', title: 'Custom Designs', desc: 'Original artwork tailored to your vision' },
-                { icon: '🔄', title: 'Cover-ups', desc: 'Transforming existing tattoos into new art' },
-                { icon: '🕊️', title: 'Spiritual & Symbolic', desc: 'Meaningful designs with deep significance' },
-                { icon: '🌸', title: 'Botanical Designs', desc: 'Nature-inspired florals and organic patterns' }
+                { icon: '⚡', title: 'Traditional American', desc: 'Bold lines and classic designs that never go out of style' },
+                { icon: '👤', title: 'Realism Work', desc: 'Lifelike detail that looks incredibly real' },
+                { icon: '🎨', title: 'Custom Designs', desc: 'Original artwork created just for you' },
+                { icon: '🔄', title: 'Cover-ups', desc: 'Turning old tattoos into beautiful new designs' },
+                { icon: '🕊️', title: 'Spiritual & Symbolic', desc: 'Meaningful designs that matter to you' },
+                { icon: '🌸', title: 'Botanical Designs', desc: 'Beautiful flowers and nature-inspired art' }
               ].map((specialization, index) => (
                 <div key={index} className="glass-service rounded-lg p-4 md:p-6 text-center">
                   <div className="text-3xl md:text-4xl mb-3 md:mb-4">{specialization.icon}</div>
@@ -241,9 +240,8 @@ export default function About() {
           <section className="mb-12 md:mb-16">
             <div className="glass-testimonial rounded-xl p-6 md:p-8 lg:p-10 max-w-4xl mx-auto text-center">
               <blockquote className="text-lg md:text-xl text-crisp-white/90 italic mb-4 md:mb-6 leading-relaxed">
-                &quot;Every tattoo tells a story. My job is to make sure that story is told beautifully, 
-                professionally, and with the respect it deserves. From the first consultation to the 
-                final healing check, I&apos;m committed to creating art that you&apos;ll be proud to wear for life.&quot;
+                &quot;Every tattoo tells a story. My job is to make sure that story is told beautifully and professionally. 
+                From the first consultation to the final healing check, I create art you'll be proud to wear for life.&quot;
               </blockquote>
               <cite className="text-gold font-semibold text-sm md:text-base">— Jose, Sueño Tattoo</cite>
             </div>
