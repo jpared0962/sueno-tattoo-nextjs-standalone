@@ -107,6 +107,51 @@ export default function BookConsultation() {
           </div>
         </div>
 
+        {/* How the Booking Process Works */}
+        <div className="glass-card p-8 rounded-lg mb-8">
+          <h2 className="text-2xl font-bold mb-6 text-crisp-white text-center">
+            How Our Consultation Booking Works
+          </h2>
+          <div className="max-w-3xl mx-auto">
+            <p className="text-crisp-white/90 text-center mb-6 text-lg">
+              Ready to get started? Fill out our detailed consultation form below to share your tattoo vision with us. 
+              Once completed, if we have available slots that match your preferences, you'll gain access to book your consultation directly!
+            </p>
+            
+            <div className="grid md:grid-cols-3 gap-6 text-center">
+              <div className="flex flex-col items-center">
+                <div className="w-12 h-12 bg-deep-red rounded-full flex items-center justify-center text-crisp-white font-bold text-lg mb-3">
+                  1
+                </div>
+                <h3 className="font-semibold text-crisp-white mb-2">Complete Your Profile</h3>
+                <p className="text-crisp-white/80 text-sm">Share your tattoo ideas, preferences, and timeline to help us understand your vision</p>
+              </div>
+              
+              <div className="flex flex-col items-center">
+                <div className="w-12 h-12 bg-deep-red rounded-full flex items-center justify-center text-crisp-white font-bold text-lg mb-3">
+                  2
+                </div>
+                <h3 className="font-semibold text-crisp-white mb-2">Unlock Booking Access</h3>
+                <p className="text-crisp-white/80 text-sm">If slots are available for your timeline, you'll get instant access to our booking system</p>
+              </div>
+              
+              <div className="flex flex-col items-center">
+                <div className="w-12 h-12 bg-deep-red rounded-full flex items-center justify-center text-crisp-white font-bold text-lg mb-3">
+                  3
+                </div>
+                <h3 className="font-semibold text-crisp-white mb-2">Secure Your Appointment</h3>
+                <p className="text-crisp-white/80 text-sm">Choose your preferred time and confirm your free consultation with Jose</p>
+              </div>
+            </div>
+            
+            <div className="mt-6 p-4 bg-gradient-to-r from-gold/10 to-deep-red/10 border border-gold/30 rounded-lg">
+              <p className="text-crisp-white/90 text-center text-sm">
+                <strong className="text-gold">🎁 Bonus:</strong> Detailed forms help us prepare better for your consultation and often unlock same-day booking opportunities when our schedule allows!
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Consultation Form */}
         <div className="mb-16">
           <ConsultationForm />
