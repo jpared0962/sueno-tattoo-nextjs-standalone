@@ -144,7 +144,7 @@ export const getStructuredData = (pathname) => {
       "addressRegion": "MD",
       "addressCountry": "US"
     },
-    "telephone": "+1-XXX-XXX-XXXX",
+    "telephone": "+12407583226",
     "priceRange": "$$",
     "image": config.image,
     "sameAs": [

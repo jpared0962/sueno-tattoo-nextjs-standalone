@@ -200,7 +200,7 @@ export default function ConsultationForm() {
             onChange={handleChange}
             required
             className="w-full px-4 py-3 bg-charcoal-gray/30 border border-crisp-white/20 rounded-lg text-crisp-white placeholder-crisp-white/50 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/50"
-            placeholder="(240) 555-0123"
+            placeholder="(240) 758-3226"
           />
         </div>
 

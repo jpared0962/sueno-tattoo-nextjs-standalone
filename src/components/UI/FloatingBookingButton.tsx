@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Calendar, X, Phone, MessageCircle } from 'lucide-react'
+import { businessInfo } from '@/data/business-info'
 
 export function FloatingBookingButton() {
   const [isVisible, setIsVisible] = useState(false)
@@ -41,13 +42,13 @@ export function FloatingBookingButton() {
     {
       icon: Phone,
       label: 'Call Now',
-      href: 'tel:+1234567890',
+      href: `tel:${businessInfo.contact.phone}`,
       color: 'bg-gold hover:bg-gold/80 text-ink-black'
     },
     {
       icon: MessageCircle,
       label: 'Text Us',
-      href: 'sms:+1234567890',
+      href: `sms:${businessInfo.contact.phone}`,
       color: 'bg-charcoal-gray hover:bg-charcoal-gray/80'
     }
   ]

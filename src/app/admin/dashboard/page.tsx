@@ -142,32 +142,32 @@ export default function AdminDashboard() {
 
   return (
     <>
-      <main className="sueno-main-area">
-        <div className="sueno-content-wrapper" style={{ paddingTop: '120px' }}>
+      <main className="min-h-screen bg-ink-black">
+        <div className="pt-20 px-4 pb-8">
           {/* Header */}
-          <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="flex justify-between items-start mb-8">
-          <div>
-            <h1 className="text-4xl font-bold text-gray-800 mb-2">
-              Admin Dashboard
-            </h1>
-            <p className="text-xl text-gray-600">
-              Manage consultations, reviews, and site analytics
-            </p>
-          </div>
-          <div className="flex items-center gap-4">
-            <button
-              onClick={handleLogout}
-              className="flex items-center gap-2 px-4 py-2 bg-red-900 text-white rounded-lg hover:bg-red-800 transition-colors"
-            >
-              <LogOut className="w-4 h-4" />
-              Logout
-            </button>
-          </div>
-        </div>
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col sm:flex-row justify-between items-start mb-8 gap-4">
+              <div>
+                <h1 className="text-4xl font-bold text-crisp-white mb-2">
+                  Admin Dashboard
+                </h1>
+                <p className="text-xl text-crisp-white/80">
+                  Manage consultations, reviews, and site analytics
+                </p>
+              </div>
+              <div className="flex items-center gap-4">
+                <button
+                  onClick={handleLogout}
+                  className="flex items-center gap-2 px-4 py-2 bg-deep-red text-crisp-white rounded-lg hover:bg-deep-red/80 transition-colors"
+                >
+                  <LogOut className="w-4 h-4" />
+                  Logout
+                </button>
+              </div>
+            </div>
 
-        {/* Tab Navigation */}
-        <div className="flex gap-2 mb-8 p-2 bg-white rounded-lg shadow-sm border">
+            {/* Tab Navigation */}
+            <div className="flex gap-2 mb-8 p-2 glass-card rounded-lg overflow-x-auto">
           {[
             { id: 'overview', label: 'Overview', icon: BarChart3 },
             { id: 'consultations', label: 'Consultations', icon: Calendar },
@@ -181,10 +181,10 @@ export default function AdminDashboard() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center gap-2 px-4 py-3 rounded-md font-medium transition-all ${
+                className={`flex items-center gap-2 px-4 py-3 rounded-md font-medium transition-all whitespace-nowrap ${
                   activeTab === tab.id
-                    ? 'bg-red-900 text-white'
-                    : 'text-gray-600 hover:bg-gray-100'
+                    ? 'bg-deep-red text-crisp-white'
+                    : 'text-crisp-white/80 hover:bg-charcoal-gray/50'
                 }`}
               >
                 <Icon className="w-4 h-4" />
@@ -194,51 +194,51 @@ export default function AdminDashboard() {
           })}
         </div>
 
-        {/* Tab Content */}
-        <div className="bg-white rounded-lg shadow-lg p-6">
+            {/* Tab Content */}
+            <div className="glass-card rounded-lg p-6">
           {activeTab === 'overview' && (
             <div>
-              <h2 className="text-2xl font-bold text-gray-800 mb-6">Dashboard Overview</h2>
+              <h2 className="text-2xl font-bold text-crisp-white mb-6">Dashboard Overview</h2>
               
               {/* Stats Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-6 rounded-lg text-white">
+                <div className="glass-panel p-6 rounded-lg">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-blue-100 text-sm">Total Consultations</p>
-                      <p className="text-3xl font-bold">{dataLoading ? '...' : consultationRequests.length}</p>
+                      <p className="text-crisp-white/70 text-sm">Total Consultations</p>
+                      <p className="text-3xl font-bold text-crisp-white">{dataLoading ? '...' : consultationRequests.length}</p>
                     </div>
-                    <Calendar className="w-8 h-8 text-blue-200" />
+                    <Calendar className="w-8 h-8 text-gold" />
                   </div>
                 </div>
                 
-                <div className="bg-gradient-to-r from-green-500 to-green-600 p-6 rounded-lg text-white">
+                <div className="glass-panel p-6 rounded-lg">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-green-100 text-sm">Contact Forms</p>
-                      <p className="text-3xl font-bold">{dataLoading ? '...' : contactSubmissions.length}</p>
+                      <p className="text-crisp-white/70 text-sm">Contact Forms</p>
+                      <p className="text-3xl font-bold text-crisp-white">{dataLoading ? '...' : contactSubmissions.length}</p>
                     </div>
-                    <MessageCircle className="w-8 h-8 text-green-200" />
+                    <MessageCircle className="w-8 h-8 text-gold" />
                   </div>
                 </div>
                 
-                <div className="bg-gradient-to-r from-purple-500 to-purple-600 p-6 rounded-lg text-white">
+                <div className="glass-panel p-6 rounded-lg">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-purple-100 text-sm">Pending Consultations</p>
-                      <p className="text-3xl font-bold">{dataLoading ? '...' : consultationRequests.filter(c => c.status === 'pending').length}</p>
+                      <p className="text-crisp-white/70 text-sm">Pending Consultations</p>
+                      <p className="text-3xl font-bold text-crisp-white">{dataLoading ? '...' : consultationRequests.filter(c => c.status === 'pending').length}</p>
                     </div>
-                    <Clock className="w-8 h-8 text-purple-200" />
+                    <Clock className="w-8 h-8 text-gold" />
                   </div>
                 </div>
                 
-                <div className="bg-gradient-to-r from-yellow-500 to-yellow-600 p-6 rounded-lg text-white">
+                <div className="glass-panel p-6 rounded-lg">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-yellow-100 text-sm">Pending Contacts</p>
-                      <p className="text-3xl font-bold">{dataLoading ? '...' : contactSubmissions.filter(c => c.status === 'pending').length}</p>
+                      <p className="text-crisp-white/70 text-sm">Pending Contacts</p>
+                      <p className="text-3xl font-bold text-crisp-white">{dataLoading ? '...' : contactSubmissions.filter(c => c.status === 'pending').length}</p>
                     </div>
-                    <Star className="w-8 h-8 text-yellow-200" />
+                    <Star className="w-8 h-8 text-gold" />
                   </div>
                 </div>
               </div>
@@ -246,23 +246,23 @@ export default function AdminDashboard() {
               {/* Recent Activity */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-800 mb-4">Recent Consultations</h3>
+                  <h3 className="text-lg font-semibold text-crisp-white mb-4">Recent Consultations</h3>
                   <div className="space-y-3">
                     {dataLoading ? (
-                      <div className="text-center py-4">Loading...</div>
+                      <div className="text-center py-4 text-crisp-white/70">Loading...</div>
                     ) : consultationRequests.length === 0 ? (
-                      <div className="text-center py-4 text-gray-500">No consultation requests yet</div>
+                      <div className="text-center py-4 text-crisp-white/70">No consultation requests yet</div>
                     ) : (
                       consultationRequests.slice(0, 3).map((consultation) => (
-                        <div key={consultation.id} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                        <div key={consultation.id} className="flex items-center justify-between p-3 glass-panel rounded-lg">
                           <div>
-                            <p className="font-medium text-gray-800">{consultation.name}</p>
-                            <p className="text-sm text-gray-600">{formatDate(consultation.created_at)}</p>
+                            <p className="font-medium text-crisp-white">{consultation.name}</p>
+                            <p className="text-sm text-crisp-white/70">{formatDate(consultation.created_at)}</p>
                           </div>
                           <span className={`px-2 py-1 text-xs rounded-full ${
-                            consultation.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
-                            consultation.status === 'confirmed' ? 'bg-blue-100 text-blue-800' :
-                            'bg-green-100 text-green-800'
+                            consultation.status === 'pending' ? 'bg-gold/20 text-gold' :
+                            consultation.status === 'confirmed' ? 'bg-blue-500/20 text-blue-400' :
+                            'bg-green-500/20 text-green-400'
                           }`}>
                             {consultation.status}
                           </span>
@@ -273,27 +273,27 @@ export default function AdminDashboard() {
                 </div>
                 
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-800 mb-4">Recent Contact Forms</h3>
+                  <h3 className="text-lg font-semibold text-crisp-white mb-4">Recent Contact Forms</h3>
                   <div className="space-y-3">
                     {dataLoading ? (
-                      <div className="text-center py-4">Loading...</div>
+                      <div className="text-center py-4 text-crisp-white/70">Loading...</div>
                     ) : contactSubmissions.length === 0 ? (
-                      <div className="text-center py-4 text-gray-500">No contact submissions yet</div>
+                      <div className="text-center py-4 text-crisp-white/70">No contact submissions yet</div>
                     ) : (
                       contactSubmissions.slice(0, 3).map((contact) => (
-                        <div key={contact.id} className="p-3 bg-gray-50 rounded-lg">
+                        <div key={contact.id} className="p-3 glass-panel rounded-lg">
                           <div className="flex items-center justify-between mb-2">
-                            <p className="font-medium text-gray-800">{contact.name}</p>
+                            <p className="font-medium text-crisp-white">{contact.name}</p>
                             <span className={`px-2 py-1 text-xs rounded-full ${
-                              contact.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
-                              contact.status === 'responded' ? 'bg-green-100 text-green-800' :
-                              'bg-gray-100 text-gray-800'
+                              contact.status === 'pending' ? 'bg-gold/20 text-gold' :
+                              contact.status === 'responded' ? 'bg-green-500/20 text-green-400' :
+                              'bg-charcoal-gray/50 text-crisp-white/70'
                             }`}>
                               {contact.status}
                             </span>
                           </div>
-                          <p className="text-sm text-gray-600">{formatDate(contact.created_at)}</p>
-                          <p className="text-sm text-gray-600 mt-1">{contact.service_interest}</p>
+                          <p className="text-sm text-crisp-white/70">{formatDate(contact.created_at)}</p>
+                          <p className="text-sm text-crisp-white/70 mt-1">{contact.service_interest}</p>
                         </div>
                       ))
                     )}
@@ -306,40 +306,40 @@ export default function AdminDashboard() {
           {activeTab === 'consultations' && (
             <div>
               <div className="flex justify-between items-center mb-6">
-                <h2 className="text-2xl font-bold text-gray-800">Consultation Requests</h2>
+                <h2 className="text-2xl font-bold text-crisp-white">Consultation Requests</h2>
                 <button 
                   onClick={fetchData}
-                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                  className="px-4 py-2 bg-gold text-ink-black rounded-lg hover:bg-gold/80 transition-colors font-medium"
                 >
                   Refresh
                 </button>
               </div>
               
               {dataLoading ? (
-                <div className="text-center py-8">Loading consultation requests...</div>
+                <div className="text-center py-8 text-crisp-white/70">Loading consultation requests...</div>
               ) : consultationRequests.length === 0 ? (
-                <div className="text-center py-8 text-gray-500">No consultation requests yet</div>
+                <div className="text-center py-8 text-crisp-white/70">No consultation requests yet</div>
               ) : (
                 <div className="space-y-4">
                   {consultationRequests.map((consultation) => (
-                    <div key={consultation.id} className="bg-gray-50 rounded-lg p-6">
+                    <div key={consultation.id} className="glass-panel rounded-lg p-6">
                       <div className="flex justify-between items-start mb-4">
                         <div>
-                          <h3 className="text-lg font-semibold text-gray-800">{consultation.name}</h3>
-                          <p className="text-sm text-gray-600">{formatDate(consultation.created_at)}</p>
+                          <h3 className="text-lg font-semibold text-crisp-white">{consultation.name}</h3>
+                          <p className="text-sm text-crisp-white/70">{formatDate(consultation.created_at)}</p>
                         </div>
                         <div className="flex items-center gap-2">
                           <span className={`px-3 py-1 text-sm rounded-full ${
-                            consultation.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
-                            consultation.status === 'confirmed' ? 'bg-blue-100 text-blue-800' :
-                            'bg-green-100 text-green-800'
+                            consultation.status === 'pending' ? 'bg-gold/20 text-gold' :
+                            consultation.status === 'confirmed' ? 'bg-blue-500/20 text-blue-400' :
+                            'bg-green-500/20 text-green-400'
                           }`}>
                             {consultation.status}
                           </span>
                           <select 
                             value={consultation.status} 
                             onChange={(e) => updateConsultationStatus(consultation.id, e.target.value)}
-                            className="text-sm border rounded px-2 py-1"
+                            className="text-sm bg-charcoal-gray/50 border border-crisp-white/20 rounded px-2 py-1 text-crisp-white"
                           >
                             <option value="pending">Pending</option>
                             <option value="confirmed">Confirmed</option>
@@ -351,27 +351,27 @@ export default function AdminDashboard() {
                       
                       <div className="grid md:grid-cols-2 gap-4 mb-4">
                         <div>
-                          <p className="text-sm text-gray-600"><strong>Email:</strong> {consultation.email}</p>
-                          <p className="text-sm text-gray-600"><strong>Phone:</strong> {consultation.phone}</p>
-                          <p className="text-sm text-gray-600"><strong>Size:</strong> {consultation.size || 'Not specified'}</p>
-                          <p className="text-sm text-gray-600"><strong>Placement:</strong> {consultation.placement || 'Not specified'}</p>
+                          <p className="text-sm text-crisp-white/80"><strong className="text-crisp-white">Email:</strong> {consultation.email}</p>
+                          <p className="text-sm text-crisp-white/80"><strong className="text-crisp-white">Phone:</strong> {consultation.phone}</p>
+                          <p className="text-sm text-crisp-white/80"><strong className="text-crisp-white">Size:</strong> {consultation.size || 'Not specified'}</p>
+                          <p className="text-sm text-crisp-white/80"><strong className="text-crisp-white">Placement:</strong> {consultation.placement || 'Not specified'}</p>
                         </div>
                         <div>
-                          <p className="text-sm text-gray-600"><strong>Timeframe:</strong> {consultation.timeframe || 'Not specified'}</p>
-                          <p className="text-sm text-gray-600"><strong>Experience:</strong> {consultation.experience || 'Not specified'}</p>
-                          <p className="text-sm text-gray-600"><strong>Budget:</strong> {consultation.budget || 'Not specified'}</p>
+                          <p className="text-sm text-crisp-white/80"><strong className="text-crisp-white">Timeframe:</strong> {consultation.timeframe || 'Not specified'}</p>
+                          <p className="text-sm text-crisp-white/80"><strong className="text-crisp-white">Experience:</strong> {consultation.experience || 'Not specified'}</p>
+                          <p className="text-sm text-crisp-white/80"><strong className="text-crisp-white">Budget:</strong> {consultation.budget || 'Not specified'}</p>
                         </div>
                       </div>
                       
                       <div className="mb-4">
-                        <p className="text-sm text-gray-600 mb-2"><strong>Tattoo Idea:</strong></p>
-                        <p className="text-sm text-gray-800 bg-white p-3 rounded">{consultation.tattoo_idea}</p>
+                        <p className="text-sm text-crisp-white/80 mb-2"><strong className="text-crisp-white">Tattoo Idea:</strong></p>
+                        <p className="text-sm text-crisp-white bg-charcoal-gray/50 p-3 rounded">{consultation.tattoo_idea}</p>
                       </div>
                       
                       {consultation.availability && (
                         <div className="mb-4">
-                          <p className="text-sm text-gray-600 mb-2"><strong>Availability:</strong></p>
-                          <p className="text-sm text-gray-800 bg-white p-3 rounded">{consultation.availability}</p>
+                          <p className="text-sm text-crisp-white/80 mb-2"><strong className="text-crisp-white">Availability:</strong></p>
+                          <p className="text-sm text-crisp-white bg-charcoal-gray/50 p-3 rounded">{consultation.availability}</p>
                         </div>
                       )}
                       
@@ -385,7 +385,7 @@ export default function AdminDashboard() {
                         </a>
                         <a 
                           href={`mailto:${consultation.email}`}
-                          className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+                          className="flex items-center gap-2 px-4 py-2 bg-gold text-ink-black rounded hover:bg-gold/80 transition-colors"
                         >
                           <Mail className="w-4 h-4" />
                           Email
