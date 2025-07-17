@@ -41,8 +41,6 @@ export default function TattooConsultation() {
         serviceName="Tattoo Consultation"
         description="Free professional tattoo consultation including design planning, placement advice, pricing estimates, and tattoo preparation guidance."
         priceRange={{ min: 0, max: 0 }}
-        duration={{ min: 30, max: 60 }}
-        keywords={['tattoo consultation', 'free consultation', 'tattoo planning', 'design consultation']}
       />
 
       <SEOLayout 

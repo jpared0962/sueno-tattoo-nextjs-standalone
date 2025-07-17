@@ -209,11 +209,6 @@ export function LocalBusinessSchema({
       "95% Perfect Healing Rate",
       "500+ Satisfied Clients",
       "Licensed Professional"
-    ],
-    
-    // Accessibility
-    "hasAccessibilityFeature": [
-      "wheelchairAccessible" // [ACCESSIBILITY_PLACEHOLDER]
     ]
   };
 
@@ -264,15 +259,11 @@ export function LocalBusinessSchema({
 export function TattooServiceSchema({ 
   serviceName, 
   description, 
-  priceRange,
-  duration,
-  keywords = []
+  priceRange
 }: {
   serviceName: string;
   description: string;
   priceRange: { min: number; max: number };
-  duration?: { min: number; max: number };
-  keywords?: string[];
 }) {
   const schema = {
     "@context": "https://schema.org",
@@ -280,7 +271,7 @@ export function TattooServiceSchema({
     "name": serviceName,
     "description": description,
     "provider": {
-      "@type": "TattooShop",
+      "@type": "TattooParlor",
       "name": businessInfo.name,
       "url": businessInfo.contact.website,
       "address": {
@@ -306,14 +297,6 @@ export function TattooServiceSchema({
       "name": area
     }))
   };
-
-  if (duration) {
-    schema["duration"] = `PT${duration.min}M`;
-  }
-
-  if (keywords.length > 0) {
-    schema["keywords"] = keywords.join(", ");
-  }
 
   return (
     <script

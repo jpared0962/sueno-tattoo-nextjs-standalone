@@ -41,8 +41,6 @@ export default function WatercolorTattoos() {
         serviceName="Watercolor Tattoos"
         description="Vibrant watercolor-style tattoos with fluid colors and artistic brush stroke effects. Perfect for nature and abstract designs."
         priceRange={{ min: 200, max: 600 }}
-        duration={{ min: 150, max: 420 }}
-        keywords={['watercolor tattoos', 'artistic tattoos', 'colorful tattoos', 'watercolor tattoo services']}
       />
 
       <SEOLayout 

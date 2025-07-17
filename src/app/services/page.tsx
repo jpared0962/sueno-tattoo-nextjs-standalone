@@ -73,8 +73,6 @@ export default function Services() {
           serviceName={service.name}
           description={service.description}
           priceRange={service.priceRange}
-          duration={service.duration}
-          keywords={service.seoKeywords}
         />
       ))}
 

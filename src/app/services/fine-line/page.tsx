@@ -41,8 +41,6 @@ export default function FineLineTattoosPage() {
         serviceName={service.name}
         description={service.description}
         priceRange={service.priceRange}
-        duration={service.duration}
-        keywords={service.seoKeywords}
       />
 
       <div className="min-h-screen pb-20 px-4">

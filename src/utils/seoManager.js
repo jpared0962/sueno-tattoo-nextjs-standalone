@@ -134,7 +134,7 @@ export const getStructuredData = (pathname) => {
   
   const baseData = {
     "@context": "https://schema.org",
-    "@type": "TattooShop",
+    "@type": "TattooParlor",
     "name": "Sueno Tattoo",
     "url": "https://www.suenotattoo.com",
     "description": "Professional tattoo artist in Laurel, MD specializing in custom designs, traditional work, and realistic portraits.",
@@ -158,7 +158,7 @@ export const getStructuredData = (pathname) => {
     case 'services':
       return {
         ...baseData,
-        "@type": ["TattooShop", "Service"],
+        "@type": ["TattooParlor", "Service"],
         "serviceType": [
           "Custom Tattoo Design",
           "Traditional Tattoos",
@@ -171,18 +171,18 @@ export const getStructuredData = (pathname) => {
     case 'gallery':
       return {
         ...baseData,
-        "@type": ["TattooShop", "ImageGallery"],
+        "@type": ["TattooParlor", "ImageGallery"],
         "contentLocation": "Laurel, MD"
       };
       
     case 'about':
       return {
         ...baseData,
-        "@type": ["TattooShop", "Person"],
+        "@type": ["TattooParlor", "Person"],
         "name": "Jose",
         "jobTitle": "Professional Tattoo Artist",
         "worksFor": {
-          "@type": "TattooShop",
+          "@type": "TattooParlor",
           "name": "Sueno Tattoo"
         },
         "yearsOfExperience": "8+"

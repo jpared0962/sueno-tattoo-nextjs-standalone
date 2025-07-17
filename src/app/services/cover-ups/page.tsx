@@ -41,8 +41,6 @@ export default function CoverUpTattoosPage() {
         serviceName={service.name}
         description={service.description}
         priceRange={service.priceRange}
-        duration={service.duration}
-        keywords={service.seoKeywords}
       />
 
       {/* Voice Search FAQ Schema */}

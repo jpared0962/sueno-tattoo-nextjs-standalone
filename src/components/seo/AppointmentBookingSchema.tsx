@@ -6,7 +6,7 @@ import { businessInfo } from '@/data/business-info'
 // Action Schema for booking appointments (shows "Book Appointment" in search results)
 export const reservationActionSchema = {
   "@context": "https://schema.org",
-  "@type": "ReservationAction",
+  "@type": "ReserveAction",
   "agent": {
     "@type": "Organization",
     "name": businessInfo.name,

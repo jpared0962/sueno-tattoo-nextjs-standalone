@@ -67,8 +67,6 @@ export default function NeoTraditionalPage() {
         serviceName={service.name}
         description={service.description}
         priceRange={service.priceRange}
-        duration={service.duration}
-        keywords={service.seoKeywords}
       />
       
       <div className="min-h-screen pb-16 md:pb-20">
