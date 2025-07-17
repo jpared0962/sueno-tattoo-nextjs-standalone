@@ -195,29 +195,33 @@ export function LocalBusinessSchema({
       }
     },
     
-    // Aggregate Rating
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "59",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
-    
     // Awards/Recognition
     "awards": [
       "95% Perfect Healing Rate",
       "500+ Satisfied Clients",
       "Licensed Professional"
-    ]
+    ],
+    
+    // Legal and Licensing Information
+    "acquireLicensePage": `${businessInfo.contact.website}/about`,
+    "copyrightNotice": `© ${new Date().getFullYear()} ${businessInfo.name}. All rights reserved.`,
+    "license": "Licensed Professional Tattoo Artist - Maryland State",
+    "creditText": `Professional tattoo services by ${businessInfo.name}`,
+    
+    // Creator Information
+    "creator": {
+      "@type": "Person",
+      "name": "Jose",
+      "jobTitle": "Professional Tattoo Artist & Founder"
+    }
   };
 
-  // Add reviews if provided
+  // Add reviews and aggregate rating
   if (reviews.length > 0) {
     const aggregateRating = {
       "@type": "AggregateRating",
       "ratingValue": (reviews.reduce((sum, review) => sum + review.rating, 0) / reviews.length).toFixed(1),
-      "reviewCount": reviews.length,
+      "reviewCount": reviews.length.toString(),
       "bestRating": "5",
       "worstRating": "1"
     };
@@ -240,6 +244,15 @@ export function LocalBusinessSchema({
 
     baseSchema["aggregateRating"] = aggregateRating;
     baseSchema["review"] = reviewSchemas;
+  } else {
+    // Default aggregate rating when no reviews provided
+    baseSchema["aggregateRating"] = {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "59",
+      "bestRating": "5",
+      "worstRating": "1"
+    };
   }
 
   // Merge with additional data
@@ -295,7 +308,17 @@ export function TattooServiceSchema({
     "areaServed": businessInfo.serviceAreas.map(area => ({
       "@type": "State",
       "name": area
-    }))
+    })),
+    
+    // Service Legal and Credit Information
+    "license": "Licensed Professional Tattoo Service - Maryland State",
+    "creditText": `Professional ${serviceName.toLowerCase()} by ${businessInfo.name}`,
+    "copyrightNotice": `© ${new Date().getFullYear()} ${businessInfo.name}. All rights reserved.`,
+    "creator": {
+      "@type": "Person",
+      "name": "Jose",
+      "jobTitle": "Professional Tattoo Artist"
+    }
   };
 
   return (
