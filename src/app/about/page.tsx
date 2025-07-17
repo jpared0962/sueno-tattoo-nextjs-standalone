@@ -158,7 +158,7 @@ export default function About() {
           {/* Hero Section */}
           <section className="text-center mb-12 md:mb-16">
             <h1 className="text-hero text-white mb-4 md:mb-6 bg-gradient-to-r from-gold to-deep-red bg-clip-text text-transparent">
-              Meet Jose
+              Meet Jose - Professional Tattoo Artist in Laurel, MD
             </h1>
             <p className="text-body-xl text-white-90 mb-6 md:mb-8 max-w-4xl mx-auto">
               Professional Tattoo Artist with 8+ Years Experience

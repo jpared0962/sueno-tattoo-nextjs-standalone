@@ -173,7 +173,7 @@ export default function BirthFlowerTattoosPage() {
           {/* Header */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold text-deep-red mb-6">
-              Birth Flower Tattoos
+              Birth Flower Tattoos | Professional Tattoo Artist Laurel, MD
             </h1>
             <p className="text-xl text-warm-gray-700 max-w-4xl mx-auto leading-relaxed mb-8">
               Celebrate your birth month with a beautiful botanical tattoo. Each month has its own unique flower 

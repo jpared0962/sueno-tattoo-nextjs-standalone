@@ -1,9 +1,11 @@
 /**
  * @fileoverview Real User Monitoring (RUM) with Web Vitals
  * Tracks Core Web Vitals and custom performance metrics
+ * Note: Web Vitals disabled in production due to stability issues
  */
 
-import { onCLS, onFID, onFCP, onLCP, onTTFB } from 'web-vitals';
+// Temporarily disabled web-vitals import due to production issues
+// import { onCLS, onFID, onFCP, onLCP, onTTFB } from 'web-vitals';
 
 class PerformanceMonitor {
   constructor() {
@@ -50,8 +52,19 @@ class PerformanceMonitor {
 
   /**
    * Track Core Web Vitals metrics
+   * Temporarily disabled due to production stability issues
    */
   trackWebVitals() {
+    // Web Vitals tracking disabled in production
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Web Vitals tracking disabled in production');
+      return;
+    }
+    
+    // Development-only web vitals tracking would go here
+    // Currently commented out to prevent production issues
+    
+    /*
     // Cumulative Layout Shift
     onCLS((metric) => {
       this.recordMetric('CLS', metric.value, {
@@ -89,6 +102,7 @@ class PerformanceMonitor {
         rating: metric.rating
       });
     });
+    */
   }
 
   /**

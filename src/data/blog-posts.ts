@@ -25,110 +25,198 @@ export const blogPosts: BlogPost[] = [
     content: `
 # Maryland Tattoo Aftercare Guide: Expert Tips from DMV Tattoo Artist
 
-Getting a new tattoo is exciting! But proper tattoo aftercare is crucial for healing. As your trusted Maryland tattoo artist, I'll guide you through essential aftercare tips. This guide is specifically designed for Maryland's unique climate conditions.
+Getting a new tattoo is exciting! But proper aftercare is crucial for healing. 
 
-**Why Maryland tattoo aftercare matters:** Our humid summers and dry winters create unique challenges for tattoo healing. Follow these expert tips from your DMV tattoo artist.
+As your trusted Maryland tattoo artist, I'll guide you through essential aftercare tips. This guide is designed for Maryland's unique climate.
+
+## Why Maryland Tattoo Aftercare Matters
+
+Our climate creates unique challenges:
+- **Humid summers** slow healing
+- **Dry winters** crack skin
+- **Weather changes** affect recovery
+
+Follow these expert tips from your DMV tattoo artist.
 
 ## Immediate Aftercare (First 24-48 Hours)
 
 ### The First Few Hours
-- Keep your bandage on for 2-4 hours after leaving my studio
-- Remove the bandage gently with clean hands
-- Always wash your hands before touching your new tattoo
-- Clean your tattoo gently with lukewarm water and mild soap
+**Keep it simple:**
+- Keep bandage on for 2-4 hours
+- Remove gently with clean hands
+- Wash hands before touching tattoo
+- Clean with lukewarm water and mild soap
 
-### First Wash
+### First Wash Steps
+**Easy 5-step process:**
 1. Use lukewarm water (not hot or cold)
-2. Apply a small amount of fragrance-free, antibacterial soap
-3. Gently clean with your palm - no washcloths or scrubbing
-4. Pat dry with a clean paper towel or air dry
-5. Apply a thin layer of recommended aftercare ointment
+2. Apply fragrance-free, antibacterial soap
+3. Clean gently with your palm only
+4. Pat dry with clean paper towel
+5. Apply thin layer of aftercare ointment
+
+**Important:** No washcloths or scrubbing!
 
 ## Days 3-14: The Healing Process
 
 ### Daily Care Routine
-- Clean your tattoo 2-3 times daily with lukewarm water and mild soap
-- Apply a thin layer of fragrance-free moisturizer
-- Don't soak your tattoo (no baths, swimming, or hot tubs)
-- Keep the tattoo out of direct sunlight
+**Do this every day:**
+- Clean tattoo 2-3 times daily
+- Use lukewarm water and mild soap
+- Apply thin layer of fragrance-free moisturizer
+- Keep out of direct sunlight
+
+**Don't do this:**
+- No baths, swimming, or hot tubs
+- No soaking the tattoo
+- No direct sun exposure
 
 ### What to Expect
-- **Days 3-5**: Mild swelling and redness are normal
-- **Days 7-10**: Scabbing and peeling will begin
-- **Days 10-14**: Most surface healing should be complete
+**Days 3-5:**
+- Mild swelling is normal
+- Some redness is expected
 
-## Maryland Climate Considerations
+**Days 7-10:**
+- Scabbing begins
+- Peeling starts
 
-### Humidity Management
-Maryland's humidity can affect healing:
-- Use a dehumidifier in your bedroom if necessary
-- Avoid excessive sweating during workouts
-- Change clothes if they become damp from sweat
+**Days 10-14:**
+- Most surface healing done
+- Tattoo looks better
+
+## Maryland Climate Tips
+
+### Fighting Humidity
+Maryland's humidity slows healing:
+
+**At home:**
+- Use dehumidifier in bedroom
+- Keep room cool and dry
+- Change damp clothes quickly
+
+**During exercise:**
+- Avoid excessive sweating
+- Shower immediately after workouts
+- Wear breathable fabrics
 
 ### Seasonal Care
-- **Summer**: Extra protection from sun and chlorine
-- **Winter**: Combat dry indoor air with proper moisturizing
-- **Spring/Fall**: Be mindful of allergens that may irritate healing skin
+**Summer:**
+- Extra sun protection needed
+- Avoid chlorine pools
+- Stay hydrated
+
+**Winter:**
+- Combat dry indoor air
+- Moisturize more often
+- Use humidifier if needed
+
+**Spring/Fall:**
+- Watch for allergens
+- Pollen can irritate healing skin
+- Keep area clean
 
 ## Long-term Tattoo Care
 
 ### Sun Protection
-- Always use SPF 30+ sunscreen on healed tattoos
-- Limit direct sun exposure, especially during peak hours
-- Consider UV-protective clothing for extensive tattoo coverage
+**Always protect your tattoo:**
+- Use SPF 30+ sunscreen
+- Limit direct sun exposure
+- Avoid peak sun hours (10am-4pm)
+- Consider UV-protective clothing
 
-### Moisturizing
-- Use fragrance-free, hypoallergenic moisturizers
-- Apply daily to keep skin healthy and colors vibrant
-- Avoid products with alcohol or harsh chemicals
+### Daily Moisturizing
+**Keep skin healthy:**
+- Use fragrance-free moisturizers
+- Apply daily for vibrant colors
+- Avoid alcohol-based products
+- Choose hypoallergenic options
 
-## Signs of Infection
+## Warning Signs: When to Get Help
 
-Contact your tattoo artist or healthcare provider if you notice:
-- Excessive redness spreading beyond the tattoo
+**Call your tattoo artist or doctor if you see:**
+
+**Infection signs:**
+- Excessive redness spreading
 - Pus or unusual discharge
-- Red streaks extending from the tattoo
-- Fever or feeling unwell
-- Severe pain that worsens after the first few days
+- Red streaks from tattoo
+- Fever or feeling sick
+- Severe pain that gets worse
+
+**Get help immediately if:**
+- Fever develops
+- Red streaks appear
+- Pus is present
+- Pain increases after day 3
 
 ## Recommended Products
 
-### Cleansers
+### Best Cleansers
+**Gentle options:**
 - Cetaphil Gentle Skin Cleanser
 - Neutrogena Ultra Gentle Daily Cleanser
 - Dove Sensitive Skin Body Wash
 
-### Moisturizers
+### Best Moisturizers
+**For healing:**
 - Aquaphor Healing Ointment (first few days)
 - Cetaphil Daily Facial Moisturizer
-- Eucerin Daily Protection Moisturizing Face Lotion
+- Eucerin Daily Protection Lotion
 
-### Sunscreens
-- EltaMD UV Clear Broad-Spectrum SPF 46
-- Neutrogena Ultra Sheer Dry-Touch Sunscreen
+### Best Sunscreens
+**High protection:**
+- EltaMD UV Clear SPF 46
+- Neutrogena Ultra Sheer Dry-Touch
 - CeraVe Hydrating Sunscreen SPF 30
 
-## Common Mistakes to Avoid
+## 5 Common Mistakes to Avoid
 
-1. **Over-washing**: Cleaning too frequently can irritate the skin
-2. **Picking at scabs**: Let them fall off naturally
-3. **Using too much ointment**: A thin layer is sufficient
-4. **Exposing to sun**: UV rays can fade and damage healing tattoos
-5. **Swimming too soon**: Wait at least 2 weeks before swimming
+**Don't make these errors:**
+
+1. **Over-washing**
+   - Cleaning too much irritates skin
+   - Stick to 2-3 times daily
+
+2. **Picking at scabs**
+   - Let them fall off naturally
+   - Picking causes scarring
+
+3. **Using too much ointment**
+   - Thin layer is enough
+   - Too much clogs pores
+
+4. **Sun exposure**
+   - UV rays fade and damage tattoos
+   - Always use sunscreen
+
+5. **Swimming too soon**
+   - Wait at least 2 weeks
+   - Chlorine and bacteria are harmful
 
 ## When to Contact Your Artist
 
-Reach out to Sueño Tattoo if you have:
-- Questions about the healing process
-- Concerns about how your tattoo looks
+**Reach out to Sueño Tattoo if you have:**
+- Questions about healing process
+- Concerns about how tattoo looks
 - Need touch-up recommendations
-- Want advice on long-term care
+- Want long-term care advice
 
-## Conclusion
+**We're here to help!**
 
-Proper aftercare is an investment in your tattoo's longevity and appearance. By following these guidelines and adapting to Maryland's climate, you'll ensure your new ink heals beautifully and remains vibrant for years to come.
+## Final Thoughts
 
-Remember, every person heals differently, so don't be alarmed if your experience varies slightly from others. When in doubt, contact your tattoo artist for personalized advice.
+**Key takeaways:**
+- Proper aftercare protects your investment
+- Maryland's climate needs special attention
+- Simple steps lead to great results
+- When in doubt, ask for help
+
+**Remember:**
+- Everyone heals differently
+- Don't panic if your experience varies
+- Contact your artist with questions
+- Good aftercare = beautiful tattoo
+
+**Your tattoo will heal beautifully if you follow these simple steps!**
 
 ---
 

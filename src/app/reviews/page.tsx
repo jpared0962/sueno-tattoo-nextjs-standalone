@@ -502,7 +502,7 @@ export default function ReviewsPage() {
           {/* Hero Section */}
           <section className="max-w-4xl mx-auto text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-crisp-white">
-              Client Reviews & Testimonials
+              Client Reviews & Testimonials | Professional Tattoo Artist Laurel, MD
             </h1>
             <p className="text-xl text-crisp-white/80 mb-8 max-w-3xl mx-auto">
               Read what our satisfied clients have to say about their tattoo experience 

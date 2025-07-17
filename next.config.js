@@ -7,7 +7,8 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   poweredByHeader: false,
-  output: 'standalone'
+  // Remove standalone output for now
+  // output: 'standalone'
 }
 
 module.exports = nextConfig

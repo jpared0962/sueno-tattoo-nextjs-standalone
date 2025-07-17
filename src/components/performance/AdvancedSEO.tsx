@@ -27,14 +27,21 @@ export function AdvancedSEO({
     }
 
     // Performance optimizations
-    if (enableWebVitals) {
-      // Report Web Vitals
+    // Temporarily disable web-vitals due to production issues
+    if (enableWebVitals && process.env.NODE_ENV === 'development') {
+      // Only enable web-vitals in development
       import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
-        getCLS(console.log)
-        getFID(console.log)
-        getFCP(console.log)
-        getLCP(console.log)
-        getTTFB(console.log)
+        try {
+          getCLS(console.log)
+          getFID(console.log)
+          getFCP(console.log)
+          getLCP(console.log)
+          getTTFB(console.log)
+        } catch (error) {
+          console.warn('Web Vitals error:', error)
+        }
+      }).catch(error => {
+        console.warn('Failed to load web-vitals:', error)
       })
     }
 

@@ -11,11 +11,6 @@
     "startCommand": "npm start",
     "healthcheckPath": "/",
     "sleepApplication": false,
-    "multiRegionConfig": {
-      "us-east4-eqdc4a": {
-        "numReplicas": 1
-      }
-    },
     "restartPolicyType": "ON_FAILURE",
     "healthcheckTimeout": 300,
     "restartPolicyMaxRetries": 3

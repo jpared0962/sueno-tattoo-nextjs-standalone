@@ -244,7 +244,7 @@ export default function Home() {
         
         <div className="relative z-10 max-w-4xl mx-auto">
           <h1 id="hero-heading" className="text-hero text-gold animate-fade-in">
-            Jose - Professional Tattoo Artist
+            Jose - Professional DMV Tattoo Artist | Maryland Tattoo Artist
           </h1>
           <h2 className="text-display-md mb-8 text-crisp-white animate-slide-up">
             Sueño Tattoo | Laurel, MD | 8+ Years Experience
@@ -417,6 +417,51 @@ export default function Home() {
                 <h4 className="font-medium text-gold mb-3">Flash Tattoos & Cover-Up Tattoos</h4>
                 <p className="text-crisp-white/80">Ready-to-ink flash tattoos for same-day appointments, plus expert cover-up tattoos that transform unwanted ink into beautiful new art.</p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Professional Care Section */}
+      <section className="py-20 px-4 bg-charcoal-gray/10" aria-labelledby="professional-care-heading">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 id="professional-care-heading" className="text-display-lg mb-8 text-crisp-white">
+            Complete Professional Care by Your DMV Tattoo Artist
+          </h2>
+          <p className="text-body-lg mb-12 text-crisp-white/90 max-w-2xl mx-auto leading-relaxed">
+            From consultation to healing, receive comprehensive support throughout your tattoo journey with expert Maryland tattoo aftercare guidance.
+          </p>
+          
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="glass-card p-6 rounded-lg text-center">
+              <div className="text-4xl mb-4">🎨</div>
+              <h3 className="text-xl font-semibold text-crisp-white mb-3">Custom Design</h3>
+              <p className="text-crisp-white/80 text-sm">
+                Personalized consultation and original artwork creation for your unique vision.
+              </p>
+            </div>
+            
+            <div className="glass-card p-6 rounded-lg text-center">
+              <div className="text-4xl mb-4">🏥</div>
+              <h3 className="text-xl font-semibold text-crisp-white mb-3">Professional Tattooing</h3>
+              <p className="text-crisp-white/80 text-sm">
+                Licensed facility with sterile techniques and 8+ years of expertise.
+              </p>
+            </div>
+            
+            <div className="glass-card p-6 rounded-lg text-center">
+              <div className="text-4xl mb-4">🔄</div>
+              <h3 className="text-xl font-semibold text-crisp-white mb-3">Tattoo Aftercare</h3>
+              <p className="text-crisp-white/80 text-sm">
+                Comprehensive healing support and Maryland-specific aftercare guidance.
+              </p>
+              <Link 
+                href="/aftercare" 
+                className="text-gold hover:text-gold/80 text-sm font-medium mt-2 inline-block"
+                aria-label="Complete tattoo aftercare guide"
+              >
+                Complete Guide →
+              </Link>
             </div>
           </div>
         </div>
