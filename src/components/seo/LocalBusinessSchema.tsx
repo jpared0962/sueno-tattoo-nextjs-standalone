@@ -104,22 +104,31 @@ export function LocalBusinessSchema({
     "priceRange": "$100-$800",
     
     // Service Areas
-    "areaServed": businessInfo.serviceAreas.map(area => ({
-      "@type": "State",
-      "name": area
-    })),
+    "areaServed": businessInfo.serviceAreas.map(area => {
+      // Check if it's a state or other geographic area
+      if (area.includes('MD') || area.includes('Virginia') || area.includes('DC')) {
+        return {
+          "@type": "State",
+          "name": area
+        };
+      } else {
+        return {
+          "@type": "City",
+          "name": area
+        };
+      }
+    }),
     
     // Services Offered
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Tattoo Services",
-      "itemListElement": services.length > 0 ? services.map((service, index) => ({
+      "itemListElement": services.length > 0 ? services.map((service) => ({
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
           "name": service
-        },
-        "position": index + 1
+        }
       })) : [
         {
           "@type": "Offer",
@@ -305,10 +314,20 @@ export function TattooServiceSchema({
     },
     "serviceType": "Body Art Service",
     "category": "Tattoo Service",
-    "areaServed": businessInfo.serviceAreas.map(area => ({
-      "@type": "State",
-      "name": area
-    })),
+    "areaServed": businessInfo.serviceAreas.map(area => {
+      // Check if it's a state or other geographic area
+      if (area.includes('MD') || area.includes('Virginia') || area.includes('DC')) {
+        return {
+          "@type": "State",
+          "name": area
+        };
+      } else {
+        return {
+          "@type": "City",
+          "name": area
+        };
+      }
+    }),
     
     // Service Legal and Credit Information
     "license": "Licensed Professional Tattoo Service - Maryland State",
