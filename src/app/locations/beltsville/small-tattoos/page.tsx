@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { SEOLayout } from '@/components/Layout/SEOLayout'
 
 export const metadata: Metadata = {
   title: 'Small Tattoos Beltsville MD | Minimalist Tattoo Artist | First Tattoo Beltsville | Sueño Tattoo',
@@ -26,8 +27,22 @@ export const metadata: Metadata = {
 }
 
 export default function BeltsvilleSmallTattoosPage() {
+  const breadcrumbs = [
+    { name: 'Home', href: '/' },
+    { name: 'Locations', href: '/locations' },
+    { name: 'Beltsville', href: '/locations/beltsville' },
+    { name: 'Small Tattoos' }
+  ]
+
   return (
     <>
+      <SEOLayout 
+        breadcrumbs={breadcrumbs}
+        showCTA={true}
+        ctaVariant="services"
+        ctaTitle="Ready for Your Small Tattoo?"
+        ctaDescription="Book your consultation for minimalist and small tattoo designs in Beltsville."
+      >
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -351,6 +366,7 @@ export default function BeltsvilleSmallTattoosPage() {
           </div>
         </div>
       </div>
+      </SEOLayout>
     </>
   )
 }

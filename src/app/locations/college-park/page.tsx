@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { tattooServices } from '@/data/services'
 import { generateLocationSchema } from '@/components/seo/LocationSchemas'
+import { SEOLayout } from '@/components/Layout/SEOLayout'
 
 export const metadata: Metadata = {
   title: 'Professional Tattoo Artist College Park MD | Sueño Tattoo Near UMD',
@@ -28,6 +29,12 @@ export const metadata: Metadata = {
 }
 
 export default function CollegeParkPage() {
+  const breadcrumbs = [
+    { name: 'Home', href: '/' },
+    { name: 'Locations', href: '/locations' },
+    { name: 'College Park' }
+  ]
+
   return (
     <>
       <script
@@ -45,23 +52,15 @@ export default function CollegeParkPage() {
         }}
       />
       
-      <div className="min-h-screen bg-gradient-to-br from-crisp-white via-warm-gray-50 to-muted-gold-50">
-        <div className="container mx-auto px-4 py-16">
-          {/* Breadcrumb */}
-          <nav className="mb-8" aria-label="Breadcrumb">
-            <ol className="flex items-center space-x-2 text-sm text-warm-gray-600">
-              <li><Link href="/" className="hover:text-deep-red transition-colors">Home</Link></li>
-              <li className="flex items-center">
-                <span className="mx-2">/</span>
-                <Link href="/locations" className="hover:text-deep-red transition-colors">Locations</Link>
-              </li>
-              <li className="flex items-center">
-                <span className="mx-2">/</span>
-                <span className="text-warm-gray-900 font-medium">College Park</span>
-              </li>
-            </ol>
-          </nav>
-
+      <SEOLayout 
+        breadcrumbs={breadcrumbs}
+        showCTA={true}
+        ctaVariant="contact"
+        ctaTitle="Ready to Get Your College Park Tattoo?"
+        ctaDescription="Book your free consultation today. Student-friendly pricing and flexible scheduling available."
+      >
+        <div className="min-h-screen bg-gradient-to-br from-crisp-white via-warm-gray-50 to-muted-gold-50">
+          <div className="container mx-auto px-4 py-16">
           {/* Hero Section */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold text-deep-red mb-6">
@@ -343,6 +342,7 @@ export default function CollegeParkPage() {
           </div>
         </div>
       </div>
+      </SEOLayout>
     </>
   )
 }

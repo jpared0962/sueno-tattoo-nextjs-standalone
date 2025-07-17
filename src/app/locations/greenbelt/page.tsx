@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { tattooServices } from '@/data/services'
 import { generateLocationSchema } from '@/components/seo/LocationSchemas'
+import { SEOLayout } from '@/components/Layout/SEOLayout'
 
 export const metadata: Metadata = {
   title: 'Tattoo Artist Greenbelt MD | Professional Tattoo Studio | Sueño Tattoo',

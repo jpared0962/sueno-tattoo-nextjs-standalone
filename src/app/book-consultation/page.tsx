@@ -5,6 +5,7 @@ import { LocalBusinessSchema } from '@/components/seo/LocalBusinessSchema'
 import { businessInfo } from '@/data/business-info'
 import ConsultationForm from '@/components/forms/ConsultationForm'
 import AppointmentBookingSchema from '@/components/seo/AppointmentBookingSchema'
+import { SEOLayout } from '@/components/Layout/SEOLayout'
 
 export const metadata: Metadata = generateSEOMetadata({
   title: `Book Free Tattoo Consultation | Jose`,
@@ -23,6 +24,11 @@ export const metadata: Metadata = generateSEOMetadata({
 })
 
 export default function BookConsultation() {
+  const breadcrumbs = [
+    { name: 'Home', href: '/' },
+    { name: 'Book Consultation' }
+  ]
+
   return (
     <>
       {/* Schema Markup */}
@@ -31,49 +37,14 @@ export default function BookConsultation() {
       {/* Comprehensive Appointment Booking Schema */}
       <AppointmentBookingSchema schemas={['reservation', 'schedule', 'consultation', 'process']} />
       
-      {/* Breadcrumb Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": `${process.env.NEXT_PUBLIC_SITE_URL || 'https://suenotattoo.com'}`
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Book Consultation",
-                "item": `${process.env.NEXT_PUBLIC_SITE_URL || 'https://suenotattoo.com'}/book-consultation`
-              }
-            ]
-          })
-        }}
-      />
-      
-    <div className="min-h-screen pb-20 px-4">
-      <div className="max-w-4xl mx-auto">
-        {/* Breadcrumb Navigation */}
-        <nav className="mb-8" aria-label="Breadcrumb">
-          <ol className="flex space-x-2 text-sm text-crisp-white/70">
-            <li>
-              <Link href="/" className="hover:text-gold transition-colors">
-                Home
-              </Link>
-            </li>
-            <li className="before:content-['/'] before:mr-2">
-              <span aria-current="page" className="text-crisp-white">Book Consultation</span>
-            </li>
-          </ol>
-        </nav>
-
-        {/* Header */}
-        <div className="text-center mb-16">
+      <SEOLayout 
+        breadcrumbs={breadcrumbs}
+        showCTA={false}
+      >
+        <div className="min-h-screen pb-20 px-4">
+          <div className="max-w-4xl mx-auto">
+            {/* Header */}
+            <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-crisp-white">
             Book Your Free Consultation in Laurel, MD
           </h1>
@@ -481,6 +452,7 @@ export default function BookConsultation() {
         </div>
       </div>
     </div>
+    </SEOLayout>
     </>
   )
 }
