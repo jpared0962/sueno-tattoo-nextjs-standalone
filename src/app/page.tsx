@@ -38,7 +38,7 @@ export default function Home() {
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
             "name": "Sueno Tattoo | Professional Tattoo Artist Jose",
-            "description": "Professional tattoo artist Jose specializing in custom tattoo design, traditional American tattoos, realistic tattoos, fine line tattoos, minimalist tattoos, geometric tattoos, watercolor tattoos, flash tattoos, neo traditional tattoos, and cover-up tattoos in Laurel, MD. Serving Prince George's County and DMV area.",
+            "description": "Professional tattoo artist Jose specializing in custom tattoo design, American traditional tattoos, realistic tattoos, fine line tattoos, minimalist tattoos, geometric tattoos, watercolor tattoos, flash tattoos, neo traditional tattoos, and cover-up tattoos in Laurel, MD. Serving Prince George's County and DMV area.",
             "url": "https://www.suenotattoo.com",
             "image": "https://www.suenotattoo.com/images/logo/logo.png",
             "priceRange": "$100-$800",
@@ -182,7 +182,7 @@ export default function Home() {
                 "name": "Who is the best tattoo artist near me?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Jose at Sueño Tattoo in Laurel, MD is a professional tattoo artist with 8+ years of experience, specializing in custom designs, traditional American tattoos, and cover-ups. Located conveniently between Baltimore and Washington DC, serving the entire DMV area."
+                  "text": "Jose at Sueño Tattoo in Laurel, MD is a professional tattoo artist with 8+ years of experience, specializing in custom designs, American traditional tattoos, and cover-ups. Located conveniently between Baltimore and Washington DC, serving the entire DMV area."
                 }
               },
               {
@@ -250,7 +250,7 @@ export default function Home() {
             Sueño Tattoo | Laurel, MD | 8+ Years Experience
           </h2>
           <p className="text-body-lg mb-12 text-crisp-white/90 max-w-2xl mx-auto leading-relaxed animate-slide-up">
-            Licensed professional specializing in custom tattoo design, traditional American tattoos, 
+            Licensed professional specializing in custom tattoo design, American traditional tattoos, 
             realistic tattoos, fine line tattoos, minimalist tattoos, geometric tattoos, watercolor tattoos, flash tattoos, neo traditional tattoos, and cover-up tattoos. Serving Laurel, MD and DMV area with 95% perfect healing rate, same-day appointments available.
           </p>
           
@@ -407,7 +407,7 @@ export default function Home() {
               </div>
               <div>
                 <h4 className="font-medium text-gold mb-3">American Traditional Tattoos</h4>
-                <p className="text-crisp-white/80">Authentic traditional American tattoos with bold lines, vibrant colors, and timeless imagery that honors classic tattooing heritage.</p>
+                <p className="text-crisp-white/80">Authentic American traditional tattoos with bold lines, vibrant colors, and timeless imagery that honors classic tattooing heritage.</p>
               </div>
               <div>
                 <h4 className="font-medium text-gold mb-3">Realistic Tattoos & Realism Work</h4>
@@ -664,7 +664,7 @@ export default function Home() {
           </h2>
           <p className="text-body-lg mb-8 text-crisp-white/90">
             Located in Laurel, MD, serving Prince George&apos;s County and the entire DMV area. 
-            Free consultations available for custom tattoos, traditional American tattoos, realistic tattoos, flash tattoos, neo traditional tattoos, and cover-up tattoos.
+            Free consultations available for custom tattoos, American traditional tattoos, realistic tattoos, flash tattoos, neo traditional tattoos, and cover-up tattoos.
           </p>
           <div className="flex gap-4 justify-center items-center flex-wrap">
             <Link 

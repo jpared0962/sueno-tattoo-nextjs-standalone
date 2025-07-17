@@ -1,14 +1,15 @@
 {
   "$schema": "https://railway.com/railway.schema.json",
   "build": {
-    "builder": "DOCKERFILE",
-    "dockerfilePath": "Dockerfile"
+    "builder": "NIXPACKS",
+    "buildCommand": "NODE_OPTIONS='--max-old-space-size=8192' npm run build",
+    "nixpacksConfigPath": "nixpacks.toml"
   },
   "deploy": {
     "runtime": "V2",
     "numReplicas": 1,
     "startCommand": "npm start",
-    "healthcheckPath": "/api/health",
+    "healthcheckPath": "/",
     "sleepApplication": false,
     "restartPolicyType": "ON_FAILURE",
     "healthcheckTimeout": 300,
