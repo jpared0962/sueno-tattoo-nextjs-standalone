@@ -42,7 +42,7 @@ export default function Home() {
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
             "name": "Sueno Tattoo | Professional Tattoo Artist Jose",
-            "description": "Professional tattoo artist Jose specializing in custom tattoo design, American traditional tattoos, realistic tattoos, fine line tattoos, minimalist tattoos, geometric tattoos, watercolor tattoos, flash tattoos, neo traditional tattoos, and cover-up tattoos in Laurel, MD. Serving Prince George's County and DMV area.",
+            "description": "Professional tattoo artist Jose specializing in realistic tattoos, black and gray tattoos, custom tattoo design, fine line tattoos, minimalist tattoos, geometric tattoos, American traditional tattoos, watercolor tattoos, flash tattoos, neo traditional tattoos, and cover-up tattoos in Laurel, MD. Serving Prince George's County and DMV area.",
             "url": "https://www.suenotattoo.com",
             "image": "https://www.suenotattoo.com/images/logo/logo.png",
             "priceRange": "$100-$800",
@@ -91,13 +91,12 @@ export default function Home() {
                     "name": "American Traditional Tattoos",
                     "description": "Classic American traditional tattoos with bold lines and vibrant colors"
                   }
-                },
-                {
+                },                  {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Service",
                     "name": "Realistic Tattoos",
-                    "description": "Photorealistic tattoos with incredible detail perfect for portraits"
+                    "description": "Photorealistic tattoos with incredible detail perfect for illustrative portraits"
                   }
                 },
                 {
@@ -254,8 +253,8 @@ export default function Home() {
             Sueño Tattoo | Laurel, MD | 8+ Years Experience
           </h2>
           <p className="text-body-lg mb-12 text-crisp-white/90 max-w-2xl mx-auto leading-relaxed animate-slide-up">
-            Licensed professional specializing in custom tattoo design, American traditional tattoos, 
-            realistic tattoos, fine line tattoos, minimalist tattoos, geometric tattoos, watercolor tattoos, flash tattoos, neo traditional tattoos, and cover-up tattoos. Serving Laurel, MD and DMV area with 95% perfect healing rate, same-day appointments available.
+            Licensed professional specializing in realistic tattoos, black and gray tattoos, custom tattoo design, 
+            fine line tattoos, minimalist tattoos, geometric tattoos, American traditional tattoos, watercolor tattoos, flash tattoos, neo traditional tattoos, and cover-up tattoos. Serving Laurel, MD and DMV area with 95% perfect healing rate, same-day appointments available.
           </p>
           
           {/* Hero Buttons */}
@@ -290,28 +289,28 @@ export default function Home() {
       <section className="py-20 px-4" aria-labelledby="services-heading">
         <div className="max-w-6xl mx-auto">
           <h2 id="services-heading" className="text-display-lg text-center mb-12 text-crisp-white">
-            Professional Custom Tattoos & American Traditional Tattoos in Laurel, MD
+            Professional Realistic Tattoos, Black & Gray Tattoos & Custom Designs in Laurel, MD
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12" role="list">
             <VariedServiceCard
-              icon="⚡"
-              title="American Traditional Tattoos"
-              description="Bold, timeless American traditional tattoos with vibrant colors and clean lines that honor classic tattooing traditions."
+              icon="👤"
+              title="Realistic Tattoos & Black & Gray"
+              description="Photorealistic tattoos and detailed black & gray work capturing incredible detail, emotion, and lifelike precision."
               features={[
-                'Classic bold lines and vibrant colors',
-                'Traditional imagery and motifs',
-                'Time-tested designs that age beautifully',
-                'Authentic old-school techniques'
+                'Photorealistic illustrative portraits and imagery',
+                'Expert black and gray shading',
+                'Memorial and nature pieces',
+                'Wildlife and detailed artwork'
               ]}
-              pricing="$100-200"
+              pricing="$150-300"
               delay={0}
               variant="modern"
-              onClick={() => window.location.href = '/services/traditional'}
+              onClick={() => window.location.href = '/services/black-grey'}
             />
             <VariedServiceCard
               icon="🎨"
               title="Custom Tattoo Design"
-              description="Original custom tattoo design created specifically for you through our collaborative custom tattoos process."
+              description="Original custom tattoo designs created specifically for you through our collaborative consultation process."
               features={[
                 'Personal consultation and design session',
                 'Original artwork created just for you',
@@ -324,36 +323,36 @@ export default function Home() {
               onClick={() => window.location.href = '/services/custom-tattoos'}
             />
             <VariedServiceCard
-              icon="👤"
-              title="Realistic Tattoos & Realism Work"
-              description="Lifelike realistic tattoos capturing incredible detail and emotion with photorealistic precision in our realism work tattoos."
+              icon="⚡"
+              title="Fine Line & Minimalist Tattoos"
+              description="Delicate fine line tattoos and minimalist designs with precise detail and elegant simplicity."
               features={[
-                'Black and grey or color options',
-                'Photo-realistic detail and shading',
-                'Memorial and nature pieces',
-                'Wildlife and detailed imagery'
+                'Precise fine line work',
+                'Minimalist aesthetic designs',
+                'Delicate botanical elements',
+                'Modern clean styling'
               ]}
-              pricing="$150-250"
+              pricing="$100-200"
               delay={0.2}
               variant="minimal"
-              onClick={() => window.location.href = '/services/black-grey'}
+              onClick={() => window.location.href = '/services/fine-line'}
             />
           </div>
           
           {/* Additional Services */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 text-center">
             <div className="glass-card p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-crisp-white mb-3">Flash Tattoos</h3>
-              <p className="text-crisp-white/80 text-sm mb-4">Ready-to-ink flash tattoos with traditional American styling and bold designs for same-day appointments.</p>
-              <Link href="/flash" className="text-gold hover:text-gold/80 text-sm font-medium">
-                Browse Flash Designs →
+              <h3 className="text-xl font-semibold text-crisp-white mb-3">American Traditional Tattoos</h3>
+              <p className="text-crisp-white/80 text-sm mb-4">Classic American traditional tattoos with bold lines, vibrant colors, and timeless imagery that honors old-school traditions.</p>
+              <Link href="/services/traditional" className="text-gold hover:text-gold/80 text-sm font-medium">
+                View Traditional Work →
               </Link>
             </div>
             <div className="glass-card p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-crisp-white mb-3">Neo Traditional Tattoos</h3>
-              <p className="text-crisp-white/80 text-sm mb-4">Modern neo traditional tattoos combining classic elements with contemporary artistic flair and enhanced color palettes.</p>
-              <Link href="/services" className="text-gold hover:text-gold/80 text-sm font-medium">
-                Learn More →
+              <h3 className="text-xl font-semibold text-crisp-white mb-3">Geometric & Abstract Tattoos</h3>
+              <p className="text-crisp-white/80 text-sm mb-4">Modern geometric tattoos and abstract designs combining mathematical precision with artistic flair.</p>
+              <Link href="/services/geometric-tattoos" className="text-gold hover:text-gold/80 text-sm font-medium">
+                Explore Geometric →
               </Link>
             </div>
             <div className="glass-card p-6 rounded-lg">
@@ -381,7 +380,7 @@ export default function Home() {
       <section className="py-20 px-4 bg-charcoal-gray/20" aria-labelledby="why-choose-heading">
         <div className="max-w-4xl mx-auto text-center">
           <h2 id="why-choose-heading" className="text-display-lg mb-8 text-crisp-white">
-            Why Choose Sueno Tattoo for Custom Tattoos & American Traditional Tattoos in Laurel, MD?
+            Why Choose Sueno Tattoo for Realistic Tattoos, Black & Gray Work & Custom Designs in Laurel, MD?
           </h2>
           <div className="grid md:grid-cols-3 gap-8 mb-12" role="list">
             <div role="listitem" className="text-center">
@@ -406,20 +405,20 @@ export default function Home() {
             <h3 className="text-xl font-semibold text-crisp-white mb-6 text-center">Expert Specializations</h3>
             <div className="grid md:grid-cols-2 gap-6 text-sm">
               <div>
+                <h4 className="font-medium text-gold mb-3">Realistic Tattoos & Black & Gray Mastery</h4>
+                <p className="text-crisp-white/80">Specializing in photorealistic tattoos and expert black & gray work with incredible detail, perfect for illustrative portraits, wildlife, and memorial pieces.</p>
+              </div>
+              <div>
                 <h4 className="font-medium text-gold mb-3">Custom Tattoo Design Process</h4>
                 <p className="text-crisp-white/80">From concept to completion, our custom tattoos are crafted through collaborative design sessions, ensuring your vision becomes reality.</p>
               </div>
               <div>
-                <h4 className="font-medium text-gold mb-3">American Traditional Tattoos</h4>
-                <p className="text-crisp-white/80">Authentic American traditional tattoos with bold lines, vibrant colors, and timeless imagery that honors classic tattooing heritage.</p>
+                <h4 className="font-medium text-gold mb-3">Fine Line & Minimalist Expertise</h4>
+                <p className="text-crisp-white/80">Precise fine line tattoos and minimalist designs with delicate detail and modern aesthetic appeal for contemporary tattoo enthusiasts.</p>
               </div>
               <div>
-                <h4 className="font-medium text-gold mb-3">Realistic Tattoos & Realism Work</h4>
-                <p className="text-crisp-white/80">Photorealistic tattoos with incredible detail, perfect for portraits, wildlife, and memorial pieces that capture life-like quality.</p>
-              </div>
-              <div>
-                <h4 className="font-medium text-gold mb-3">Flash Tattoos & Cover-Up Tattoos</h4>
-                <p className="text-crisp-white/80">Ready-to-ink flash tattoos for same-day appointments, plus expert cover-up tattoos that transform unwanted ink into beautiful new art.</p>
+                <h4 className="font-medium text-gold mb-3">Diverse Style Mastery</h4>
+                <p className="text-crisp-white/80">Traditional, geometric, cover-ups, and watercolor tattoos - versatile expertise across all major tattoo styles and techniques.</p>
               </div>
             </div>
           </div>
@@ -430,17 +429,17 @@ export default function Home() {
       <section className="py-20 px-4" aria-labelledby="placement-guide-heading">
         <div className="max-w-6xl mx-auto">
           <h2 id="placement-guide-heading" className="text-display-lg text-center mb-8 text-crisp-white">
-            American Traditional Tattoo Placement Guide | Professional Advice
+            Professional Tattoo Placement Guide | Expert Advice for All Styles
           </h2>
           <p className="text-center text-crisp-white/80 mb-12 max-w-3xl mx-auto">
-            Expert guidance on optimal placement for American traditional tattoos. Jose's 8+ years of experience 
+            Expert guidance on optimal placement for realistic tattoos, black & gray work, fine line designs, and all tattoo styles. Jose's 8+ years of experience 
             helps you choose the perfect location for your tattoo's size, style, and personal lifestyle.
           </p>
           
           <div className="grid lg:grid-cols-2 gap-12 mb-12">
             {/* Classic Placement Areas */}
             <div className="glass-card p-8 rounded-lg">
-              <h3 className="text-2xl font-bold text-gold mb-6 text-center">Classic Traditional Placement Areas</h3>
+              <h3 className="text-2xl font-bold text-gold mb-6 text-center">Professional Tattoo Placement Areas</h3>
               <div className="space-y-6">
                 <div className="border-b border-crisp-white/10 pb-4">
                   <h4 className="font-semibold text-crisp-white mb-2 flex items-center">
@@ -448,10 +447,10 @@ export default function Home() {
                     Upper Arm & Shoulder
                   </h4>
                   <p className="text-crisp-white/80 text-sm mb-2">
-                    Perfect for medium to large traditional pieces. Easy to conceal for work, great canvas for bold designs.
+                    Perfect for medium to large realistic and detailed pieces. Easy to conceal for work, great canvas for intricate designs.
                   </p>
                   <div className="text-xs text-crisp-white/60">
-                    Best for: Eagles, panthers, roses • Size: 4-8 inches • Professional friendly
+                    Best for: Illustrative portraits, realistic animals, detailed scenes • Size: 4-8 inches • Professional friendly
                   </div>
                 </div>
                 
@@ -461,10 +460,10 @@ export default function Home() {
                     Forearm
                   </h4>
                   <p className="text-crisp-white/80 text-sm mb-2">
-                    Ideal for showcasing traditional artwork. Natural flow with arm movement, excellent visibility.
+                    Ideal for showcasing detailed artwork and fine line designs. Natural flow with arm movement, excellent visibility.
                   </p>
                   <div className="text-xs text-crisp-white/60">
-                    Best for: Daggers, anchors, banners • Size: 3-6 inches • Always visible
+                    Best for: Fine line work, geometric patterns, small illustrative portraits • Size: 3-6 inches • Always visible
                   </div>
                 </div>
                 
@@ -474,10 +473,10 @@ export default function Home() {
                     Chest
                   </h4>
                   <p className="text-crisp-white/80 text-sm mb-2">
-                    Premium canvas for large traditional pieces. Symmetrical placement options, easy to conceal.
+                    Premium canvas for large realistic pieces and detailed black & gray work. Symmetrical placement options, easy to conceal.
                   </p>
                   <div className="text-xs text-crisp-white/60">
-                    Best for: Large eagles, ships, memorial pieces • Size: 6-12 inches • Completely concealable
+                    Best for: Large illustrative portraits, realistic scenes, memorial pieces • Size: 6-12 inches • Completely concealable
                   </div>
                 </div>
                 
@@ -487,10 +486,10 @@ export default function Home() {
                     Thigh
                   </h4>
                   <p className="text-crisp-white/80 text-sm mb-2">
-                    Large flat surface ideal for detailed traditional work. Minimal distortion, easy healing.
+                    Large flat surface ideal for detailed realistic work and complex designs. Minimal distortion, easy healing.
                   </p>
                   <div className="text-xs text-crisp-white/60">
-                    Best for: Pin-ups, large florals, complex scenes • Size: 6-10 inches • Easily concealed
+                    Best for: Large realistic pieces, detailed scenes, complex artwork • Size: 6-10 inches • Easily concealed
                   </div>
                 </div>
                 
@@ -500,10 +499,10 @@ export default function Home() {
                     Back & Shoulder Blade
                   </h4>
                   <p className="text-crisp-white/80 text-sm mb-2">
-                    Premium real estate for statement pieces. Natural canvas shape, professional-friendly.
+                    Premium real estate for statement pieces and large-scale artwork. Natural canvas shape, professional-friendly.
                   </p>
                   <div className="text-xs text-crisp-white/60">
-                    Best for: Large traditional scenes, portraits • Size: 8-16 inches • Work appropriate
+                    Best for: Large realistic scenes, detailed artwork, illustrative portraits • Size: 8-16 inches • Work appropriate
                   </div>
                 </div>
               </div>
@@ -594,7 +593,7 @@ export default function Home() {
               <div className="text-4xl mb-4">👔</div>
               <h4 className="text-lg font-semibold text-gold mb-3">Professional-Friendly Placements</h4>
               <p className="text-crisp-white/80 text-sm mb-4">
-                Easily concealed areas perfect for government workers, corporate professionals, and those requiring discrete tattoos.
+                Easily concealed areas perfect for medical professionals, government workers, corporate professionals, and those requiring discrete tattoos.
               </p>
               <div className="text-xs text-crisp-white/60">
                 Upper arm, chest, back, thigh - hidden under business attire
@@ -627,35 +626,35 @@ export default function Home() {
           {/* Traditional Tattoo Building Tips */}
           <div className="glass-panel p-8 rounded-lg mb-12">
             <h3 className="text-2xl font-bold text-center mb-8 text-crisp-white">
-              Building Your Traditional Tattoo Collection
+              Building Your Traditional Tattoo Collection | Sleeve Planning Guide
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="text-center">
                 <div className="text-3xl mb-3">🔄</div>
-                <h4 className="font-semibold text-crisp-white mb-2">Sleeve Progression</h4>
+                <h4 className="font-semibold text-crisp-white mb-2">Traditional Sleeve Progression</h4>
                 <p className="text-crisp-white/80 text-xs">
-                  Start with upper arm, add forearm pieces, connect with flowing elements for cohesive traditional sleeve.
+                  Start with upper arm traditional pieces, add forearm tattoos, connect with flowing elements for cohesive traditional sleeve design.
                 </p>
               </div>
               <div className="text-center">
                 <div className="text-3xl mb-3">🎨</div>
-                <h4 className="font-semibold text-crisp-white mb-2">Theme Consistency</h4>
+                <h4 className="font-semibold text-crisp-white mb-2">Traditional Tattoo Theme Consistency</h4>
                 <p className="text-crisp-white/80 text-xs">
-                  Maintain traditional color palette and imagery themes across multiple pieces for unified collection.
+                  Maintain classic American traditional color palette and imagery themes across multiple tattoo pieces for unified collection.
                 </p>
               </div>
               <div className="text-center">
                 <div className="text-3xl mb-3">⚖️</div>
-                <h4 className="font-semibold text-crisp-white mb-2">Body Balance</h4>
+                <h4 className="font-semibold text-crisp-white mb-2">Tattoo Body Balance Planning</h4>
                 <p className="text-crisp-white/80 text-xs">
-                  Consider visual weight distribution - balance large pieces across different body areas for symmetry.
+                  Consider visual weight distribution - balance large traditional tattoo pieces across different body areas for symmetrical design.
                 </p>
               </div>
               <div className="text-center">
                 <div className="text-3xl mb-3">📅</div>
-                <h4 className="font-semibold text-crisp-white mb-2">Session Planning</h4>
+                <h4 className="font-semibold text-crisp-white mb-2">Multi-Session Tattoo Planning</h4>
                 <p className="text-crisp-white/80 text-xs">
-                  Large traditional pieces may require multiple sessions - plan placement for healing between appointments.
+                  Large traditional tattoo pieces may require multiple tattoo sessions - plan placement for proper healing between appointments.
                 </p>
               </div>
             </div>
@@ -738,7 +737,7 @@ export default function Home() {
       <section className="py-20 px-4" aria-labelledby="testimonials-heading">
         <div className="max-w-6xl mx-auto">
           <h2 id="testimonials-heading" className="text-display-lg text-center mb-12 text-crisp-white">
-            What Our Custom Tattoo & American Traditional Tattoo Clients Say
+            Client Transformation Stories | Real Tattoo Testimonials & Reviews
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredReviews.slice(0, 6).map((review, index) => {
