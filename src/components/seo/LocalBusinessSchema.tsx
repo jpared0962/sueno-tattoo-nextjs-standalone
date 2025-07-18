@@ -1,3 +1,17 @@
+/**
+ * LocalBusinessSchema Component
+ * 
+ * Generates schema.org-compliant LocalBusiness and Service structured data
+ * for improved SEO and rich search results.
+ * 
+ * Key Features:
+ * - Proper handling of closed days in opening hours (schema.org compliant)
+ * - Explicit service area type mapping (State, City, AdministrativeArea)
+ * - Configurable default ratings and review counts
+ * - Input validation for business info and service parameters
+ * - Dynamic employee count based on business type
+ * - Error handling with console warnings for missing data
+ */
 import { businessInfo } from '@/data/business-info';
 
 interface LocalBusinessSchemaProps {
@@ -9,13 +23,54 @@ interface LocalBusinessSchemaProps {
     date: string;
   }>;
   services?: string[];
+  defaultReviewCount?: number;
+  defaultRating?: string;
+}
+
+// Service area type mapping for better type classification
+const SERVICE_AREA_TYPES: Record<string, string> = {
+  'Maryland': 'State',
+  'Virginia': 'State', 
+  'Washington DC': 'City',
+  'Prince George\'s County': 'AdministrativeArea',
+  'Laurel': 'City',
+  'Beltsville': 'City',
+  'College Park': 'City',
+  'Greenbelt': 'City',
+  'Hyattsville': 'City'
+};
+
+// Validation helper
+function validateBusinessInfo() {
+  const required = ['name', 'description', 'contact.website', 'contact.phone', 'contact.email'];
+  const missing = required.filter(field => {
+    const keys = field.split('.');
+    let value = businessInfo as any;
+    for (const key of keys) {
+      value = value?.[key];
+    }
+    return !value;
+  });
+  
+  if (missing.length > 0) {
+    console.warn(`LocalBusinessSchema: Missing required fields: ${missing.join(', ')}`);
+  }
+  
+  return missing.length === 0;
 }
 
 export function LocalBusinessSchema({ 
   additionalData = {},
   reviews = [],
-  services = []
+  services = [],
+  defaultReviewCount = 59,
+  defaultRating = "5.0"
 }: LocalBusinessSchemaProps) {
+  
+  // Validate required business info
+  if (!validateBusinessInfo()) {
+    return null;
+  }
   
   const baseSchema = {
     "@context": "https://schema.org",
@@ -50,51 +105,65 @@ export function LocalBusinessSchema({
     "telephone": businessInfo.contact.phone,
     "email": businessInfo.contact.email,
     
-    // Operating Hours
+    // Operating Hours - Include all days, even closed ones
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday"],
-        "opens": businessInfo.hours.monday.isOpen ? businessInfo.hours.monday.open : null,
-        "closes": businessInfo.hours.monday.isOpen ? businessInfo.hours.monday.close : null
+        "dayOfWeek": "Monday",
+        ...(businessInfo.hours.monday.isOpen ? {
+          "opens": businessInfo.hours.monday.open,
+          "closes": businessInfo.hours.monday.close
+        } : {})
+      },
+      {
+        "@type": "OpeningHoursSpecification", 
+        "dayOfWeek": "Tuesday",
+        ...(businessInfo.hours.tuesday.isOpen ? {
+          "opens": businessInfo.hours.tuesday.open,
+          "closes": businessInfo.hours.tuesday.close
+        } : {})
       },
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Tuesday"],
-        "opens": businessInfo.hours.tuesday.isOpen ? businessInfo.hours.tuesday.open : null,
-        "closes": businessInfo.hours.tuesday.isOpen ? businessInfo.hours.tuesday.close : null
+        "dayOfWeek": "Wednesday", 
+        ...(businessInfo.hours.wednesday.isOpen ? {
+          "opens": businessInfo.hours.wednesday.open,
+          "closes": businessInfo.hours.wednesday.close
+        } : {})
       },
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Wednesday"],
-        "opens": businessInfo.hours.wednesday.isOpen ? businessInfo.hours.wednesday.open : null,
-        "closes": businessInfo.hours.wednesday.isOpen ? businessInfo.hours.wednesday.close : null
+        "dayOfWeek": "Thursday",
+        ...(businessInfo.hours.thursday.isOpen ? {
+          "opens": businessInfo.hours.thursday.open,
+          "closes": businessInfo.hours.thursday.close
+        } : {})
       },
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Thursday"],
-        "opens": businessInfo.hours.thursday.isOpen ? businessInfo.hours.thursday.open : null,
-        "closes": businessInfo.hours.thursday.isOpen ? businessInfo.hours.thursday.close : null
+        "dayOfWeek": "Friday",
+        ...(businessInfo.hours.friday.isOpen ? {
+          "opens": businessInfo.hours.friday.open,
+          "closes": businessInfo.hours.friday.close
+        } : {})
       },
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Friday"],
-        "opens": businessInfo.hours.friday.isOpen ? businessInfo.hours.friday.open : null,
-        "closes": businessInfo.hours.friday.isOpen ? businessInfo.hours.friday.close : null
+        "dayOfWeek": "Saturday",
+        ...(businessInfo.hours.saturday.isOpen ? {
+          "opens": businessInfo.hours.saturday.open,
+          "closes": businessInfo.hours.saturday.close
+        } : {})
       },
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Saturday"],
-        "opens": businessInfo.hours.saturday.isOpen ? businessInfo.hours.saturday.open : null,
-        "closes": businessInfo.hours.saturday.isOpen ? businessInfo.hours.saturday.close : null
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Sunday"],
-        "opens": businessInfo.hours.sunday.isOpen ? businessInfo.hours.sunday.open : null,
-        "closes": businessInfo.hours.sunday.isOpen ? businessInfo.hours.sunday.close : null
+        "dayOfWeek": "Sunday",
+        ...(businessInfo.hours.sunday.isOpen ? {
+          "opens": businessInfo.hours.sunday.open,
+          "closes": businessInfo.hours.sunday.close
+        } : {})
       }
-    ].filter(spec => spec.opens && spec.closes),
+    ],
     
     // Payment Methods
     "paymentAccepted": businessInfo.pricing.paymentMethods.join(", "),
@@ -103,20 +172,13 @@ export function LocalBusinessSchema({
     // Price Range
     "priceRange": "$100-$800",
     
-    // Service Areas
+    // Service Areas - Use explicit type mapping
     "areaServed": businessInfo.serviceAreas.map(area => {
-      // Check if it's a state or other geographic area
-      if (area.includes('MD') || area.includes('Virginia') || area.includes('DC')) {
-        return {
-          "@type": "State",
-          "name": area
-        };
-      } else {
-        return {
-          "@type": "City",
-          "name": area
-        };
-      }
+      const areaType = SERVICE_AREA_TYPES[area] || "City"; // Default to City if not found
+      return {
+        "@type": areaType,
+        "name": area
+      };
     }),
     
     // Services Offered
@@ -176,10 +238,10 @@ export function LocalBusinessSchema({
     
     // Additional Business Info
     "foundingDate": businessInfo.classification.founded.toString(),
-    "numberOfEmployees": "2-10", // [EMPLOYEE_COUNT_PLACEHOLDER]
+    "numberOfEmployees": businessInfo.classification.businessType === 'Sole Proprietorship' ? "1" : "2-10",
     "knowsAbout": [
       "Custom Tattoo Design",
-      "Traditional Tattoo Art",
+      "Traditional Tattoo Art", 
       "Fine Line Tattoos",
       "Tattoo Cover-ups",
       "Tattoo Aftercare",
@@ -209,20 +271,7 @@ export function LocalBusinessSchema({
       "95% Perfect Healing Rate",
       "500+ Satisfied Clients",
       "Licensed Professional"
-    ],
-    
-    // Legal and Licensing Information
-    "acquireLicensePage": `${businessInfo.contact.website}/about`,
-    "copyrightNotice": `© ${new Date().getFullYear()} ${businessInfo.name}. All rights reserved.`,
-    "license": "Licensed Professional Tattoo Artist - Maryland State",
-    "creditText": `Professional tattoo services by ${businessInfo.name}`,
-    
-    // Creator Information
-    "creator": {
-      "@type": "Person",
-      "name": "Jose",
-      "jobTitle": "Professional Tattoo Artist & Founder"
-    }
+    ]
   };
 
   // Add reviews and aggregate rating
@@ -251,14 +300,14 @@ export function LocalBusinessSchema({
       "datePublished": review.date
     }));
 
-    baseSchema["aggregateRating"] = aggregateRating;
-    baseSchema["review"] = reviewSchemas;
+    (baseSchema as any)["aggregateRating"] = aggregateRating;
+    (baseSchema as any)["review"] = reviewSchemas;
   } else {
-    // Default aggregate rating when no reviews provided
-    baseSchema["aggregateRating"] = {
+    // Default aggregate rating when no reviews provided - configurable values
+    (baseSchema as any)["aggregateRating"] = {
       "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "59",
+      "ratingValue": defaultRating,
+      "reviewCount": defaultReviewCount.toString(),
       "bestRating": "5",
       "worstRating": "1"
     };
@@ -277,7 +326,7 @@ export function LocalBusinessSchema({
   );
 }
 
-// Specific schema for tattoo services
+// Specific schema for tattoo services with validation
 export function TattooServiceSchema({ 
   serviceName, 
   description, 
@@ -287,6 +336,15 @@ export function TattooServiceSchema({
   description: string;
   priceRange: { min: number; max: number };
 }) {
+  // Validate inputs
+  if (!serviceName || !description || !priceRange || priceRange.min < 0 || priceRange.max <= priceRange.min) {
+    console.warn('TattooServiceSchema: Invalid or missing required parameters');
+    return null;
+  }
+  
+  if (!validateBusinessInfo()) {
+    return null;
+  }
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -315,29 +373,12 @@ export function TattooServiceSchema({
     "serviceType": "Body Art Service",
     "category": "Tattoo Service",
     "areaServed": businessInfo.serviceAreas.map(area => {
-      // Check if it's a state or other geographic area
-      if (area.includes('MD') || area.includes('Virginia') || area.includes('DC')) {
-        return {
-          "@type": "State",
-          "name": area
-        };
-      } else {
-        return {
-          "@type": "City",
-          "name": area
-        };
-      }
-    }),
-    
-    // Service Legal and Credit Information
-    "license": "Licensed Professional Tattoo Service - Maryland State",
-    "creditText": `Professional ${serviceName.toLowerCase()} by ${businessInfo.name}`,
-    "copyrightNotice": `© ${new Date().getFullYear()} ${businessInfo.name}. All rights reserved.`,
-    "creator": {
-      "@type": "Person",
-      "name": "Jose",
-      "jobTitle": "Professional Tattoo Artist"
-    }
+      const areaType = SERVICE_AREA_TYPES[area] || "City"; // Use explicit mapping
+      return {
+        "@type": areaType,
+        "name": area
+      };
+    })
   };
 
   return (

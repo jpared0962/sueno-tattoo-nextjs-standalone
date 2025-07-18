@@ -67,8 +67,7 @@ export default function About() {
                 "recognizedBy": {
                   "@type": "Organization",
                   "name": "Maryland State"
-                },
-                "validFrom": "2016-01-01"
+                }
               }
             ],
             "knowsAbout": [
@@ -106,7 +105,6 @@ export default function About() {
             "memberOf": {
               "@type": "ProfessionalService",
               "name": "Sueno Tattoo",
-              "serviceType": "Tattoo Services",
               "areaServed": {
                 "@type": "Place",
                 "name": "Laurel, MD and Prince George's County"
@@ -126,22 +124,6 @@ export default function About() {
             "alumniOf": {
               "@type": "Organization",
               "name": "Professional Tattoo Training"
-            },
-            "award": [
-              {
-                "@type": "Thing",
-                "name": "95% Perfect Healing Rate",
-                "description": "Exceptional client satisfaction and healing success rate"
-              },
-              {
-                "@type": "Thing",
-                "name": "500+ Satisfied Clients",
-                "description": "Proven track record of successful tattoo work"
-              }
-            ],
-            "seeks": {
-              "@type": "Thing",
-              "name": "Creating meaningful tattoo art that clients will proudly wear for life"
             }
           })
         }}

@@ -201,8 +201,7 @@ export const consultationServiceSchema = {
   "availableChannel": {
     "@type": "ServiceChannel",
     "name": "Online Consultation Booking",
-    "url": `${process.env.NEXT_PUBLIC_SITE_URL || 'https://suenotattoo.com'}/book-consultation`,
-    "serviceType": "Consultation Request Form"
+    "url": `${process.env.NEXT_PUBLIC_SITE_URL || 'https://suenotattoo.com'}/book-consultation`
   }
 }
 
